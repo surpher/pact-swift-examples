@@ -4,27 +4,27 @@
 
 The code in this repository does not represent good programming practices!
 
-This repository is used solely to demonstrate the minimal effort required to demonstrate how to set up and use [`PactSwift`](https://github.com/surpher/pact-swift) framework.
+This repository is used solely to demonstrate the minimal effort required to demonstrate how to set up and use [`PactSwift`](https://github.com/surpher/PactSwift) framework.
 
 ----
 
 ## Prepare dependencies
 
-Add [`PactSwift`](https://github.com/surpher/pact-swift) to your `Cartfile` :
+Add [`PactSwift`](https://github.com/surpher/PactSwift) to your `Cartfile` :
 
-	github "surpher/pact-swift" "master"
+	github "surpher/PactSwift" "master"
 
 _set version or branch - this one uses branch due to framework still being actively developed without a release version_
 
-Build [`PactSwift`](https://github.com/surpher/pact-swift) as dependency in your terminal:
+Build [`PactSwift`](https://github.com/surpher/PactSwift) as dependency in your terminal:
 
 	carthage update --platform ios --no-use-binaries --cache-builds
 
 ## Xcode setup
 
-[`PactSwift`](https://github.com/surpher/pact-swift) is a testing framework! Do not embed this framework into your deployable app bundle!
+[`PactSwift`](https://github.com/surpher/PactSwift) is a testing framework! Do not embed this framework into your deployable app bundle!
 
-Your app target, ideally, should not know about [`PactSwift`](https://github.com/surpher/pact-swift) at all!
+Your app target, ideally, should not know about [`PactSwift`](https://github.com/surpher/PactSwift) at all!
 
 ### Setup Build Phases
 
@@ -51,7 +51,7 @@ Edit scheme and add `PACT_DIR` environment variable with `dir` where you want yo
 
 ![set destination dir](res/04_destination_dir.png)
 
-**NOTE:** If this environment variable is not set, the default dir [`PactSwift`](https://github.com/surpher/pact-swift) writes the contract to is `/tmp/pacts`.
+**NOTE:** If this environment variable is not set, the default dir [`PactSwift`](https://github.com/surpher/PactSwift) writes the contract to is `/tmp/pacts`.
 
 ## Run tests
 
@@ -63,6 +63,6 @@ Edit scheme and add `PACT_DIR` environment variable with `dir` where you want yo
 
 Repeat for any test target that does Pact testing.
 
-## References 
+## References
 
 [PACT Foundation](https://docs.pact.io)
