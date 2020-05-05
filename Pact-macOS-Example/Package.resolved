@@ -15,7 +15,7 @@
         "repositoryURL": "https://github.com/surpher/PactMockServer.git",
         "state": {
           "branch": null,
-          "revision": "c0efd88237cd79ee26481d866abe18e629fd2911",
+          "revision": "aa3a2a6f6cbb2eb463e8f3ff63defc283473c3a4",
           "version": "0.0.1-beta"
         }
       },
@@ -24,7 +24,7 @@
         "repositoryURL": "https://github.com/surpher/PactSwift.git",
         "state": {
           "branch": "master",
-          "revision": "ff61e7e3463507ee499af3a91b7d17c4239cd256",
+          "revision": "46e488a6a71dd446f5560dd65f384f17b2c3bb34",
           "version": null
         }
       }

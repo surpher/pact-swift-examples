@@ -7,6 +7,7 @@
 //
 
 import XCTest
+
 import PactSwift
 
 @testable import Pact_macOS_Example
