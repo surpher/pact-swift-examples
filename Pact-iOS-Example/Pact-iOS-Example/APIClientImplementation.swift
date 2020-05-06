@@ -6,7 +6,10 @@
 //  Copyright © 2019 Appcoda. All rights reserved.
 //
 
-// Copied from https://raw.githubusercontent.com/appcoda/RESTful-Demo/master/RestManager/RestManager.swift
+//  Copied from https://raw.githubusercontent.com/appcoda/RESTful-Demo/master/RestManager/RestManager.swift
+//
+//  Expanded the functionality to ignore unsecure SSL certificates.
+//
 
 /*
 MIT License
@@ -34,7 +37,7 @@ SOFTWARE.
 
 import Foundation
 
-class RestManager {
+class RestManager: NSObject, URLSessionDelegate {
 
 	// MARK: - Properties
 
@@ -63,8 +66,8 @@ class RestManager {
 							return
 					}
 
-					let sessionConfiguration = URLSessionConfiguration.default
-					let session = URLSession(configuration: sessionConfiguration)
+					let session = URLSession(configuration: .ephemeral, delegate: self, delegateQueue: .main)
+
 					let task = session.dataTask(with: request) { (data, response, error) in
 							completion(Results(withData: data,
 																 response: Response(fromURLResponse: response),
@@ -140,6 +143,23 @@ class RestManager {
 			request.httpBody = httpBody
 			return request
 	}
+
+	// MARK: - Ignore insecure certificates
+
+	func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
+		guard
+			challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust,
+			(challenge.protectionSpace.host.contains("0.0.0.0") || challenge.protectionSpace.host.contains("localhost")),
+			let serverTrust = challenge.protectionSpace.serverTrust
+		else {
+			completionHandler(.performDefaultHandling, nil)
+			return
+		}
+
+		let credential = URLCredential(trust: serverTrust)
+		completionHandler(.useCredential, credential)
+	}
+
 }
 
 
@@ -230,3 +250,4 @@ extension RestManager.CustomError: LocalizedError {
 			}
 	}
 }
+

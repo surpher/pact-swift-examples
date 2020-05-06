@@ -76,6 +76,54 @@ class PassingTestsExample: XCTestCase {
 		}
 	}
 
+	func testGetsUsers_over_SSL() {
+		// Set MockService to start up using TLS (using a self-signed certificate)
+		let secureMockService = MockService(consumer: "secure-consumer", provider: "secure-provider", scheme: .secure)
+		_ = secureMockService
+			.uponReceiving("A request for a list of users over SSL")
+			.given("users exist and more")
+			.withRequest(
+				method: .GET,
+				path: "/api/users"
+			)
+			.willRespondWith(
+				status: 200,
+				body: userDataResponse
+			)
+
+		let apiClient = RestManager()
+
+		// Testing the expectations by running our makeRequest() method,
+		// pointing it to the mockService we programmed it just above
+
+		// This following block tests our RestManager implementation...
+		secureMockService.run(timeout: 320) { completed in
+			guard let url = URL(string: "\(secureMockService.baseUrl)/api/users") else {
+				XCTFail("Failed to prepare url!")
+				return
+			}
+
+			// This is using our API Client implementation in the main target.
+			apiClient.makeRequest(toURL: url, withHttpMethod: .get) { results in
+				if let data = results.data {
+					let decoder = JSONDecoder()
+					decoder.keyDecodingStrategy = .convertFromSnakeCase
+					guard let userData = try? decoder.decode(UserData.self, from: data) else {
+						XCTFail("Failed to decode UserData")
+						completed() // Notify MockService we're done with our test
+						return
+					}
+
+					// test the response from server is what we expected and it decodes into userData
+					XCTAssertEqual(userData.page, 1)
+					XCTAssertEqual(userData.data?.first?.firstName, "John")
+					XCTAssertEqual(userData.data?.first?.lastName, "Tester")
+				}
+				completed() // Notify MockService we're done with our test
+			}
+		}
+	}
+
 	func testGetsSingleUser() {
 		// Expectations
 		_ = mockService
@@ -207,6 +255,24 @@ class PassingTestsExample: XCTestCase {
 				completed() // Notify MockService we're done with our test
 			}
 		}
+	}
+
+}
+
+extension PassingTestsExample: URLSessionDelegate {
+
+	func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
+		guard
+			challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust,
+			(challenge.protectionSpace.host.contains("0.0.0.0") || challenge.protectionSpace.host.contains("localhost")),
+			let serverTrust = challenge.protectionSpace.serverTrust
+		else {
+			completionHandler(.performDefaultHandling, nil)
+			return
+		}
+
+		let credential = URLCredential(trust: serverTrust)
+		completionHandler(.useCredential, credential)
 	}
 
 }

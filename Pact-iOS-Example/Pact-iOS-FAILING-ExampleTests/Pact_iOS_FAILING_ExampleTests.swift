@@ -248,7 +248,8 @@ class XCTestFailingExampleTests: XCTestCase {
 			// This is using our API Client implementation in the main target.
 			apiClient.requestHttpHeaders.add(value: "application/json", forKey: "Content-Type")
 			//  apiClient.httpBodyParameters.add(value: "John", forKey: "name") // We promised we will send "Julia"
-
+			//  but the `apiClient = RestManager()`, for some reason (bad and buggy implementation), sends `{\n\n}`
+			//  when no body is provided but Content-Type set to app/json 🤷‍♂️
 			apiClient.makeRequest(toURL: url, withHttpMethod: .post) { results in
 				//  No need to handle response in this example, as the request fails because the body we're sending
 				//  does not match the body we promised we will send... We promised "name": "Julia"
