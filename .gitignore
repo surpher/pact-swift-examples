@@ -119,8 +119,8 @@ iOSInjectionProject/
 ### SwiftPM ###
 **/Packages/**
 **/.build/
-**/xcuserdata
-**/DerivedData/
+#**/xcuserdata
+x**/DerivedData/
 # **/*.xcodeproj
 
 

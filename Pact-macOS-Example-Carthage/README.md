@@ -31,7 +31,7 @@ Your app target, ideally, should not know about [`PactSwift`](https://github.com
 `Test Target > Build Settings > Link Binary With Libraries > Add Other > Add Files...`  
 Find your Carthage folder, `./Build/macos/` and select `PactSwift.framework` to link it:
 
-![link binary with libraries](res/01_link_binary_with_libraries.png)
+![link binary with libraries](../Pact-iOS-Example/res/01_link_binary_with_libraries.png)
 
 ... Or drag and drop the framework into the Build Phase.
 
@@ -39,17 +39,17 @@ Find your Carthage folder, `./Build/macos/` and select `PactSwift.framework` to 
 
 1. In `Test Target > Build Settings` add `$(PROJECT_DIR)/Carthage/Build/iOS` (non-recursive) to `Framework Search Paths` configuration key.
 
-![set framework search paths](res/02_framework_search_paths.png)
+![set framework search paths](../Pact-iOS-Example/res/02_framework_search_paths.png)
 
 2. In `Test Target > Build Settings` Add `$(FRAMEWORK_SEARCH_PATHS)` to `Linking > Runpath Search Paths`
 
-![set runpath search paths](res/03_runpath_search_paths.png)
+![set runpath search paths](../Pact-iOS-Example/res/03_runpath_search_paths.png)
 
 ### Set destination dir
 
 Edit scheme and add `PACT_DIR` environment variable with `dir` where you want your Pact contracts to be written to:
 
-![set destination dir](res/04_destination_dir.png)
+![set destination dir](../Pact-iOS-Example/res/04_destination_dir.png)
 
 **NOTE:** If this environment variable is not set, the default dir [`PactSwift`](https://github.com/surpher/PactSwift) writes the contract to is `/tmp/pacts`.
 
