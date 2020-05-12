@@ -1,0 +1,627 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AD204AF824565CB600ABE1EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD204AF724565CB600ABE1EB /* AppDelegate.swift */; };
+		AD204AFA24565CB600ABE1EB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD204AF924565CB600ABE1EB /* SceneDelegate.swift */; };
+		AD204AFC24565CB600ABE1EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD204AFB24565CB600ABE1EB /* ViewController.swift */; };
+		AD204AFF24565CB600ABE1EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD204AFD24565CB600ABE1EB /* Main.storyboard */; };
+		AD204B0124565CB700ABE1EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD204B0024565CB700ABE1EB /* Assets.xcassets */; };
+		AD204B0424565CB700ABE1EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD204B0224565CB700ABE1EB /* LaunchScreen.storyboard */; };
+		AD204B1A24565DAE00ABE1EB /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD204B1924565DAE00ABE1EB /* TestData.swift */; };
+		AD204B2224565DCD00ABE1EB /* Pact_iOS_FAILING_ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD204B2124565DCD00ABE1EB /* Pact_iOS_FAILING_ExampleTests.swift */; };
+		AD204B2E24565E1A00ABE1EB /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD204B1924565DAE00ABE1EB /* TestData.swift */; };
+		AD204B3024565E6100ABE1EB /* APIClientImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD204B2F24565E6100ABE1EB /* APIClientImplementation.swift */; };
+		AD204B3324565F8400ABE1EB /* PactSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD204B3224565F8400ABE1EB /* PactSwift.framework */; };
+		AD204B3424565FB800ABE1EB /* Pact_iOS_ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD204B2924565DEC00ABE1EB /* Pact_iOS_ExampleTests.swift */; };
+		AD204B36245660D600ABE1EB /* PactSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD204B3224565F8400ABE1EB /* PactSwift.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AD204B0B24565CB700ABE1EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AD204AEC24565CB600ABE1EB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD204AF324565CB600ABE1EB;
+			remoteInfo = "Pact-iOS-Example";
+		};
+		AD204B2424565DCD00ABE1EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AD204AEC24565CB600ABE1EB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD204AF324565CB600ABE1EB;
+			remoteInfo = "Pact-iOS-Example";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AD204AF424565CB600ABE1EB /* Pact-iOS-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pact-iOS-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD204AF724565CB600ABE1EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AD204AF924565CB600ABE1EB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		AD204AFB24565CB600ABE1EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AD204AFE24565CB600ABE1EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AD204B0024565CB700ABE1EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AD204B0324565CB700ABE1EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AD204B0524565CB700ABE1EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD204B0A24565CB700ABE1EB /* Pact-iOS-ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pact-iOS-ExampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD204B1024565CB700ABE1EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD204B1924565DAE00ABE1EB /* TestData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
+		AD204B1F24565DCC00ABE1EB /* Pact-iOS-ExampleTests-FAILING.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pact-iOS-ExampleTests-FAILING.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD204B2124565DCD00ABE1EB /* Pact_iOS_FAILING_ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pact_iOS_FAILING_ExampleTests.swift; sourceTree = "<group>"; };
+		AD204B2324565DCD00ABE1EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD204B2924565DEC00ABE1EB /* Pact_iOS_ExampleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pact_iOS_ExampleTests.swift; sourceTree = "<group>"; };
+		AD204B2F24565E6100ABE1EB /* APIClientImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClientImplementation.swift; sourceTree = "<group>"; };
+		AD204B3224565F8400ABE1EB /* PactSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PactSwift.framework; path = Carthage/Build/iOS/PactSwift.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AD204AF124565CB600ABE1EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD204B0724565CB700ABE1EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD204B3324565F8400ABE1EB /* PactSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD204B1C24565DCC00ABE1EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD204B36245660D600ABE1EB /* PactSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AD204AEB24565CB600ABE1EB = {
+			isa = PBXGroup;
+			children = (
+				AD204AF624565CB600ABE1EB /* Pact-iOS-Example */,
+				AD204B0D24565CB700ABE1EB /* Pact-iOS-ExampleTests */,
+				AD204B2024565DCC00ABE1EB /* Pact-iOS-FAILING-ExampleTests */,
+				AD204AF524565CB600ABE1EB /* Products */,
+				AD204B3124565F8300ABE1EB /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		AD204AF524565CB600ABE1EB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AD204AF424565CB600ABE1EB /* Pact-iOS-Example.app */,
+				AD204B0A24565CB700ABE1EB /* Pact-iOS-ExampleTests.xctest */,
+				AD204B1F24565DCC00ABE1EB /* Pact-iOS-ExampleTests-FAILING.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AD204AF624565CB600ABE1EB /* Pact-iOS-Example */ = {
+			isa = PBXGroup;
+			children = (
+				AD204B2F24565E6100ABE1EB /* APIClientImplementation.swift */,
+				AD204AF724565CB600ABE1EB /* AppDelegate.swift */,
+				AD204AF924565CB600ABE1EB /* SceneDelegate.swift */,
+				AD204AFB24565CB600ABE1EB /* ViewController.swift */,
+				AD204AFD24565CB600ABE1EB /* Main.storyboard */,
+				AD204B0024565CB700ABE1EB /* Assets.xcassets */,
+				AD204B0224565CB700ABE1EB /* LaunchScreen.storyboard */,
+				AD204B0524565CB700ABE1EB /* Info.plist */,
+			);
+			path = "Pact-iOS-Example";
+			sourceTree = "<group>";
+		};
+		AD204B0D24565CB700ABE1EB /* Pact-iOS-ExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				AD204B1024565CB700ABE1EB /* Info.plist */,
+				AD204B2924565DEC00ABE1EB /* Pact_iOS_ExampleTests.swift */,
+				AD204B1924565DAE00ABE1EB /* TestData.swift */,
+			);
+			path = "Pact-iOS-ExampleTests";
+			sourceTree = "<group>";
+		};
+		AD204B2024565DCC00ABE1EB /* Pact-iOS-FAILING-ExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				AD204B2124565DCD00ABE1EB /* Pact_iOS_FAILING_ExampleTests.swift */,
+				AD204B2324565DCD00ABE1EB /* Info.plist */,
+			);
+			path = "Pact-iOS-FAILING-ExampleTests";
+			sourceTree = "<group>";
+		};
+		AD204B3124565F8300ABE1EB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AD204B3224565F8400ABE1EB /* PactSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AD204AF324565CB600ABE1EB /* Pact-iOS-Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD204B1324565CB700ABE1EB /* Build configuration list for PBXNativeTarget "Pact-iOS-Example" */;
+			buildPhases = (
+				AD204AF024565CB600ABE1EB /* Sources */,
+				AD204AF124565CB600ABE1EB /* Frameworks */,
+				AD204AF224565CB600ABE1EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pact-iOS-Example";
+			productName = "Pact-iOS-Example";
+			productReference = AD204AF424565CB600ABE1EB /* Pact-iOS-Example.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AD204B0924565CB700ABE1EB /* Pact-iOS-ExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD204B1624565CB700ABE1EB /* Build configuration list for PBXNativeTarget "Pact-iOS-ExampleTests" */;
+			buildPhases = (
+				AD204B0624565CB700ABE1EB /* Sources */,
+				AD204B0724565CB700ABE1EB /* Frameworks */,
+				AD204B0824565CB700ABE1EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AD204B0C24565CB700ABE1EB /* PBXTargetDependency */,
+			);
+			name = "Pact-iOS-ExampleTests";
+			productName = "Pact-iOS-ExampleTests";
+			productReference = AD204B0A24565CB700ABE1EB /* Pact-iOS-ExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AD204B1E24565DCC00ABE1EB /* Pact-iOS-ExampleTests-FAILING */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD204B2624565DCD00ABE1EB /* Build configuration list for PBXNativeTarget "Pact-iOS-ExampleTests-FAILING" */;
+			buildPhases = (
+				AD204B1B24565DCC00ABE1EB /* Sources */,
+				AD204B1C24565DCC00ABE1EB /* Frameworks */,
+				AD204B1D24565DCC00ABE1EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AD204B2524565DCD00ABE1EB /* PBXTargetDependency */,
+			);
+			name = "Pact-iOS-ExampleTests-FAILING";
+			productName = "Pact-iOS-FAILING-ExampleTests";
+			productReference = AD204B1F24565DCC00ABE1EB /* Pact-iOS-ExampleTests-FAILING.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AD204AEC24565CB600ABE1EB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = "PACT Foundation";
+				TargetAttributes = {
+					AD204AF324565CB600ABE1EB = {
+						CreatedOnToolsVersion = 11.4;
+					};
+					AD204B0924565CB700ABE1EB = {
+						CreatedOnToolsVersion = 11.4;
+						TestTargetID = AD204AF324565CB600ABE1EB;
+					};
+					AD204B1E24565DCC00ABE1EB = {
+						CreatedOnToolsVersion = 11.4;
+						TestTargetID = AD204AF324565CB600ABE1EB;
+					};
+				};
+			};
+			buildConfigurationList = AD204AEF24565CB600ABE1EB /* Build configuration list for PBXProject "Pact-iOS-Example" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AD204AEB24565CB600ABE1EB;
+			productRefGroup = AD204AF524565CB600ABE1EB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AD204AF324565CB600ABE1EB /* Pact-iOS-Example */,
+				AD204B0924565CB700ABE1EB /* Pact-iOS-ExampleTests */,
+				AD204B1E24565DCC00ABE1EB /* Pact-iOS-ExampleTests-FAILING */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AD204AF224565CB600ABE1EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD204B0424565CB700ABE1EB /* LaunchScreen.storyboard in Resources */,
+				AD204B0124565CB700ABE1EB /* Assets.xcassets in Resources */,
+				AD204AFF24565CB600ABE1EB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD204B0824565CB700ABE1EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD204B1D24565DCC00ABE1EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AD204AF024565CB600ABE1EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD204AFC24565CB600ABE1EB /* ViewController.swift in Sources */,
+				AD204AF824565CB600ABE1EB /* AppDelegate.swift in Sources */,
+				AD204B3024565E6100ABE1EB /* APIClientImplementation.swift in Sources */,
+				AD204AFA24565CB600ABE1EB /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD204B0624565CB700ABE1EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD204B3424565FB800ABE1EB /* Pact_iOS_ExampleTests.swift in Sources */,
+				AD204B1A24565DAE00ABE1EB /* TestData.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD204B1B24565DCC00ABE1EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD204B2E24565E1A00ABE1EB /* TestData.swift in Sources */,
+				AD204B2224565DCD00ABE1EB /* Pact_iOS_FAILING_ExampleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AD204B0C24565CB700ABE1EB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD204AF324565CB600ABE1EB /* Pact-iOS-Example */;
+			targetProxy = AD204B0B24565CB700ABE1EB /* PBXContainerItemProxy */;
+		};
+		AD204B2524565DCD00ABE1EB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD204AF324565CB600ABE1EB /* Pact-iOS-Example */;
+			targetProxy = AD204B2424565DCD00ABE1EB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AD204AFD24565CB600ABE1EB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AD204AFE24565CB600ABE1EB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AD204B0224565CB700ABE1EB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AD204B0324565CB700ABE1EB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AD204B1124565CB700ABE1EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AD204B1224565CB700ABE1EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AD204B1424565CB700ABE1EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4L73KZWFMS;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
+				INFOPLIST_FILE = "Pact-iOS-Example/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "au.com.pact-foundation.Pact-iOS-Example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AD204B1524565CB700ABE1EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4L73KZWFMS;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
+				INFOPLIST_FILE = "Pact-iOS-Example/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "au.com.pact-foundation.Pact-iOS-Example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AD204B1724565CB700ABE1EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
+				INFOPLIST_FILE = "Pact-iOS-ExampleTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+					"$(FRAMEWORK_SEARCH_PATHS)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "au.com.pact-foundation.Pact-iOS-ExampleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pact-iOS-Example.app/Pact-iOS-Example";
+			};
+			name = Debug;
+		};
+		AD204B1824565CB700ABE1EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
+				INFOPLIST_FILE = "Pact-iOS-ExampleTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+					"$(FRAMEWORK_SEARCH_PATHS)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "au.com.pact-foundation.Pact-iOS-ExampleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pact-iOS-Example.app/Pact-iOS-Example";
+			};
+			name = Release;
+		};
+		AD204B2724565DCD00ABE1EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
+				INFOPLIST_FILE = "Pact-iOS-FAILING-ExampleTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+					"$(FRAMEWORK_SEARCH_PATHS)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "au.com.pact-foundation.Pact-iOS-FAILING-ExampleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pact-iOS-Example.app/Pact-iOS-Example";
+			};
+			name = Debug;
+		};
+		AD204B2824565DCD00ABE1EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
+				INFOPLIST_FILE = "Pact-iOS-FAILING-ExampleTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+					"$(FRAMEWORK_SEARCH_PATHS)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "au.com.pact-foundation.Pact-iOS-FAILING-ExampleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pact-iOS-Example.app/Pact-iOS-Example";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AD204AEF24565CB600ABE1EB /* Build configuration list for PBXProject "Pact-iOS-Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD204B1124565CB700ABE1EB /* Debug */,
+				AD204B1224565CB700ABE1EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD204B1324565CB700ABE1EB /* Build configuration list for PBXNativeTarget "Pact-iOS-Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD204B1424565CB700ABE1EB /* Debug */,
+				AD204B1524565CB700ABE1EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD204B1624565CB700ABE1EB /* Build configuration list for PBXNativeTarget "Pact-iOS-ExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD204B1724565CB700ABE1EB /* Debug */,
+				AD204B1824565CB700ABE1EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD204B2624565DCD00ABE1EB /* Build configuration list for PBXNativeTarget "Pact-iOS-ExampleTests-FAILING" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD204B2724565DCD00ABE1EB /* Debug */,
+				AD204B2824565DCD00ABE1EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AD204AEC24565CB600ABE1EB /* Project object */;
+}
