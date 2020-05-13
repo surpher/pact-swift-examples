@@ -125,7 +125,7 @@ class XCTestFailingExampleTests: XCTestCase {
 				body: userDataResponse
 			)
 
-		mockService.run(timeout: 1) { completed in
+		mockService.run(waitFor: 1) { completed in
 			/*
 			Some code that we assume would make the API call we defined in .withRequest()
 			Something like:
@@ -164,7 +164,7 @@ class XCTestFailingExampleTests: XCTestCase {
 
 		let apiClient = RestManager()
 
-		mockService.run(timeout: 1) { completed in
+		mockService.run(waitFor: 1) { completed in
 			guard let url = URL(string: "\(self.mockService.baseUrl)/api/users?states=TAS") else {
 				XCTFail("Failed to prepare url!")
 				return
@@ -202,7 +202,7 @@ class XCTestFailingExampleTests: XCTestCase {
 
 		let apiClient = RestManager()
 
-		mockService.run(timeout: 1) { completed in
+		mockService.run(waitFor: 1) { completed in
 			guard let url = URL(string: "\(self.mockService.baseUrl)/api/users") else {
 				XCTFail("Failed to prepare url!")
 				return
@@ -239,7 +239,7 @@ class XCTestFailingExampleTests: XCTestCase {
 
 		let apiClient = RestManager()
 
-		mockService.run(timeout: 1) { completed in
+		mockService.run(waitFor: 1) { completed in
 			guard let url = URL(string: "\(self.mockService.baseUrl)/api/users") else {
 				XCTFail("Failed to prepare url!")
 				return

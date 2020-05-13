@@ -97,7 +97,7 @@ class PassingTestsExample: XCTestCase {
 		// pointing it to the mockService we programmed it just above
 
 		// This following block tests our RestManager implementation...
-		secureMockService.run(timeout: 320) { completed in
+		secureMockService.run(waitFor: 1) { completed in
 			guard let url = URL(string: "\(secureMockService.baseUrl)/api/users") else {
 				XCTFail("Failed to prepare url!")
 				return
@@ -240,7 +240,7 @@ class PassingTestsExample: XCTestCase {
 
 		let apiClient = RestManager()
 
-		mockService.run(timeout: 1) { completed in
+		mockService.run(waitFor: 1) { completed in
 			guard let url = URL(string: "\(self.mockService.baseUrl)/api/users") else {
 				XCTFail("Failed to prepare url!")
 				return
