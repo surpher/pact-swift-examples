@@ -60,6 +60,13 @@
             ReferencedContainer = "container:Pact-macOS-Example-Carthage.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "PACT_DIR"
+            value = "$(PROJECT_DIR)/pacts"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+      </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
