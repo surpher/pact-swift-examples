@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD6051B3246CCC6200B09866 /* Pact_macOS_Example_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8FC78B24639AF400361854 /* Pact_macOS_Example_Tests.swift */; };
 		AD8FC77924639AF200361854 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8FC77824639AF200361854 /* AppDelegate.swift */; };
 		AD8FC77B24639AF200361854 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8FC77A24639AF200361854 /* ViewController.swift */; };
 		AD8FC77D24639AF400361854 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD8FC77C24639AF400361854 /* Assets.xcassets */; };
 		AD8FC78024639AF400361854 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD8FC77E24639AF400361854 /* Main.storyboard */; };
 		AD8FC8312463E76900361854 /* APIClientImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8FC8302463E76900361854 /* APIClientImplementation.swift */; };
-		AD8FC83C2463EB1200361854 /* Pact_macOS_Example_CarthageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8FC83B2463EB1200361854 /* Pact_macOS_Example_CarthageTests.swift */; };
 		AD8FC8432463EB3700361854 /* PactSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD8FC8332463E80900361854 /* PactSwift.framework */; };
 		AD8FC8442463EBEA00361854 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8FC82E2463E72200361854 /* TestData.swift */; };
 /* End PBXBuildFile section */
@@ -28,21 +28,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		AD8FC77524639AF200361854 /* Pact-macOS-Example-Carthage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pact-macOS-Example-Carthage.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD8FC77524639AF200361854 /* Pact-macOS-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pact-macOS-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD8FC77824639AF200361854 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD8FC77A24639AF200361854 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AD8FC77C24639AF400361854 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD8FC77F24639AF400361854 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AD8FC78124639AF400361854 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AD8FC78224639AF400361854 /* Pact_macOS_Example_Carthage.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pact_macOS_Example_Carthage.entitlements; sourceTree = "<group>"; };
-		AD8FC78B24639AF400361854 /* Pact_macOS_Example_CarthageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pact_macOS_Example_CarthageTests.swift; sourceTree = "<group>"; };
+		AD8FC78224639AF400361854 /* Pact_macOS_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pact_macOS_Example.entitlements; sourceTree = "<group>"; };
+		AD8FC78B24639AF400361854 /* Pact_macOS_Example_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pact_macOS_Example_Tests.swift; sourceTree = "<group>"; };
 		AD8FC78D24639AF400361854 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD8FC82E2463E72200361854 /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
 		AD8FC8302463E76900361854 /* APIClientImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientImplementation.swift; sourceTree = "<group>"; };
 		AD8FC8332463E80900361854 /* PactSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PactSwift.framework; path = Carthage/Build/Mac/PactSwift.framework; sourceTree = "<group>"; };
-		AD8FC8392463EB1200361854 /* Pact-macOS-Example-CarthageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pact-macOS-Example-CarthageTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AD8FC83B2463EB1200361854 /* Pact_macOS_Example_CarthageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pact_macOS_Example_CarthageTests.swift; sourceTree = "<group>"; };
-		AD8FC83D2463EB1200361854 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD8FC8392463EB1200361854 /* Pact-macOS-ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pact-macOS-ExampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,9 +65,8 @@
 		AD8FC76C24639AF200361854 = {
 			isa = PBXGroup;
 			children = (
-				AD8FC77724639AF200361854 /* Pact-macOS-Example-Carthage */,
-				AD8FC78A24639AF400361854 /* Pact-macOS-Example-CarthageTests */,
-				AD8FC83A2463EB1200361854 /* Pact-macOS-Example-CarthageTests */,
+				AD8FC77724639AF200361854 /* Pact-macOS-Example */,
+				AD8FC78A24639AF400361854 /* Pact-macOS-Example-Tests */,
 				AD8FC77624639AF200361854 /* Products */,
 				AD8FC8322463E80900361854 /* Frameworks */,
 			);
@@ -78,13 +75,13 @@
 		AD8FC77624639AF200361854 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AD8FC77524639AF200361854 /* Pact-macOS-Example-Carthage.app */,
-				AD8FC8392463EB1200361854 /* Pact-macOS-Example-CarthageTests.xctest */,
+				AD8FC77524639AF200361854 /* Pact-macOS-Example.app */,
+				AD8FC8392463EB1200361854 /* Pact-macOS-ExampleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AD8FC77724639AF200361854 /* Pact-macOS-Example-Carthage */ = {
+		AD8FC77724639AF200361854 /* Pact-macOS-Example */ = {
 			isa = PBXGroup;
 			children = (
 				AD8FC8302463E76900361854 /* APIClientImplementation.swift */,
@@ -93,19 +90,19 @@
 				AD8FC77C24639AF400361854 /* Assets.xcassets */,
 				AD8FC77E24639AF400361854 /* Main.storyboard */,
 				AD8FC78124639AF400361854 /* Info.plist */,
-				AD8FC78224639AF400361854 /* Pact_macOS_Example_Carthage.entitlements */,
+				AD8FC78224639AF400361854 /* Pact_macOS_Example.entitlements */,
 			);
-			path = "Pact-macOS-Example-Carthage";
+			path = "Pact-macOS-Example";
 			sourceTree = "<group>";
 		};
-		AD8FC78A24639AF400361854 /* Pact-macOS-Example-CarthageTests */ = {
+		AD8FC78A24639AF400361854 /* Pact-macOS-Example-Tests */ = {
 			isa = PBXGroup;
 			children = (
 				AD8FC78D24639AF400361854 /* Info.plist */,
-				AD8FC78B24639AF400361854 /* Pact_macOS_Example_CarthageTests.swift */,
+				AD8FC78B24639AF400361854 /* Pact_macOS_Example_Tests.swift */,
 				AD8FC82E2463E72200361854 /* TestData.swift */,
 			);
-			path = "Pact-macOS-Example-CarthageTests";
+			path = "Pact-macOS-Example-Tests";
 			sourceTree = "<group>";
 		};
 		AD8FC8322463E80900361854 /* Frameworks */ = {
@@ -116,21 +113,12 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		AD8FC83A2463EB1200361854 /* Pact-macOS-Example-CarthageTests */ = {
-			isa = PBXGroup;
-			children = (
-				AD8FC83B2463EB1200361854 /* Pact_macOS_Example_CarthageTests.swift */,
-				AD8FC83D2463EB1200361854 /* Info.plist */,
-			);
-			path = "Pact-macOS-Example-CarthageTests";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AD8FC77424639AF200361854 /* Pact-macOS-Example-Carthage */ = {
+		AD8FC77424639AF200361854 /* Pact-macOS-Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AD8FC79024639AF400361854 /* Build configuration list for PBXNativeTarget "Pact-macOS-Example-Carthage" */;
+			buildConfigurationList = AD8FC79024639AF400361854 /* Build configuration list for PBXNativeTarget "Pact-macOS-Example" */;
 			buildPhases = (
 				AD8FC77124639AF200361854 /* Sources */,
 				AD8FC77224639AF200361854 /* Frameworks */,
@@ -140,14 +128,14 @@
 			);
 			dependencies = (
 			);
-			name = "Pact-macOS-Example-Carthage";
+			name = "Pact-macOS-Example";
 			productName = "Pact-macOS-Example-Carthage";
-			productReference = AD8FC77524639AF200361854 /* Pact-macOS-Example-Carthage.app */;
+			productReference = AD8FC77524639AF200361854 /* Pact-macOS-Example.app */;
 			productType = "com.apple.product-type.application";
 		};
-		AD8FC8382463EB1200361854 /* Pact-macOS-Example-CarthageTests */ = {
+		AD8FC8382463EB1200361854 /* Pact-macOS-ExampleTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AD8FC8402463EB1200361854 /* Build configuration list for PBXNativeTarget "Pact-macOS-Example-CarthageTests" */;
+			buildConfigurationList = AD8FC8402463EB1200361854 /* Build configuration list for PBXNativeTarget "Pact-macOS-ExampleTests" */;
 			buildPhases = (
 				AD8FC8352463EB1200361854 /* Sources */,
 				AD8FC8362463EB1200361854 /* Frameworks */,
@@ -158,9 +146,9 @@
 			dependencies = (
 				AD8FC83F2463EB1200361854 /* PBXTargetDependency */,
 			);
-			name = "Pact-macOS-Example-CarthageTests";
+			name = "Pact-macOS-ExampleTests";
 			productName = "Pact-macOS-Example-CarthageTests";
-			productReference = AD8FC8392463EB1200361854 /* Pact-macOS-Example-CarthageTests.xctest */;
+			productReference = AD8FC8392463EB1200361854 /* Pact-macOS-ExampleTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -182,7 +170,7 @@
 					};
 				};
 			};
-			buildConfigurationList = AD8FC77024639AF200361854 /* Build configuration list for PBXProject "Pact-macOS-Example-Carthage" */;
+			buildConfigurationList = AD8FC77024639AF200361854 /* Build configuration list for PBXProject "Pact-macOS-Example" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -195,8 +183,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AD8FC77424639AF200361854 /* Pact-macOS-Example-Carthage */,
-				AD8FC8382463EB1200361854 /* Pact-macOS-Example-CarthageTests */,
+				AD8FC77424639AF200361854 /* Pact-macOS-Example */,
+				AD8FC8382463EB1200361854 /* Pact-macOS-ExampleTests */,
 			);
 		};
 /* End PBXProject section */
@@ -235,7 +223,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD8FC83C2463EB1200361854 /* Pact_macOS_Example_CarthageTests.swift in Sources */,
+				AD6051B3246CCC6200B09866 /* Pact_macOS_Example_Tests.swift in Sources */,
 				AD8FC8442463EBEA00361854 /* TestData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -245,7 +233,7 @@
 /* Begin PBXTargetDependency section */
 		AD8FC83F2463EB1200361854 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AD8FC77424639AF200361854 /* Pact-macOS-Example-Carthage */;
+			target = AD8FC77424639AF200361854 /* Pact-macOS-Example */;
 			targetProxy = AD8FC83E2463EB1200361854 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -379,20 +367,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Pact-macOS-Example-Carthage/Pact_macOS_Example_Carthage.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Pact-macOS-Example/Pact_macOS_Example.entitlements";
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
-				INFOPLIST_FILE = "Pact-macOS-Example-Carthage/Info.plist";
+				INFOPLIST_FILE = "Pact-macOS-Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "au.com.pact-foundation.Pact-macOS-Example-Carthage";
+				PRODUCT_BUNDLE_IDENTIFIER = "au.com.pact-foundation.Pact-macOS-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -402,20 +391,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Pact-macOS-Example-Carthage/Pact_macOS_Example_Carthage.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Pact-macOS-Example/Pact_macOS_Example.entitlements";
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
-				INFOPLIST_FILE = "Pact-macOS-Example-Carthage/Info.plist";
+				INFOPLIST_FILE = "Pact-macOS-Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "au.com.pact-foundation.Pact-macOS-Example-Carthage";
+				PRODUCT_BUNDLE_IDENTIFIER = "au.com.pact-foundation.Pact-macOS-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -427,21 +417,22 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 4L73KZWFMS;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
-				INFOPLIST_FILE = "Pact-macOS-Example-CarthageTests/Info.plist";
+				INFOPLIST_FILE = "Pact-macOS-Example-Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 					"$(FRAMEWORK_SEARCH_PATHS)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "au.com.pact-foundation.Pact-macOS-Example-CarthageTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "au.com.pact-foundation.Pact-macOS-Example-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pact-macOS-Example-Carthage.app/Contents/MacOS/Pact-macOS-Example-Carthage";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pact-macOS-Example.app/Contents/MacOS/Pact-macOS-Example";
 			};
 			name = Debug;
 		};
@@ -451,28 +442,29 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 4L73KZWFMS;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
-				INFOPLIST_FILE = "Pact-macOS-Example-CarthageTests/Info.plist";
+				INFOPLIST_FILE = "Pact-macOS-Example-Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 					"$(FRAMEWORK_SEARCH_PATHS)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "au.com.pact-foundation.Pact-macOS-Example-CarthageTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "au.com.pact-foundation.Pact-macOS-Example-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pact-macOS-Example-Carthage.app/Contents/MacOS/Pact-macOS-Example-Carthage";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pact-macOS-Example.app/Contents/MacOS/Pact-macOS-Example";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AD8FC77024639AF200361854 /* Build configuration list for PBXProject "Pact-macOS-Example-Carthage" */ = {
+		AD8FC77024639AF200361854 /* Build configuration list for PBXProject "Pact-macOS-Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AD8FC78E24639AF400361854 /* Debug */,
@@ -481,7 +473,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AD8FC79024639AF400361854 /* Build configuration list for PBXNativeTarget "Pact-macOS-Example-Carthage" */ = {
+		AD8FC79024639AF400361854 /* Build configuration list for PBXNativeTarget "Pact-macOS-Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AD8FC79124639AF400361854 /* Debug */,
@@ -490,7 +482,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AD8FC8402463EB1200361854 /* Build configuration list for PBXNativeTarget "Pact-macOS-Example-CarthageTests" */ = {
+		AD8FC8402463EB1200361854 /* Build configuration list for PBXNativeTarget "Pact-macOS-ExampleTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AD8FC8412463EB1200361854 /* Debug */,

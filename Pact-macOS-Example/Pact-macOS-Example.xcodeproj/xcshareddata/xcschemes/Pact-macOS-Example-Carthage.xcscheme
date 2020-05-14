@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AD8FC77424639AF200361854"
-               BuildableName = "Pact-macOS-Example-Carthage.app"
-               BlueprintName = "Pact-macOS-Example-Carthage"
-               ReferencedContainer = "container:Pact-macOS-Example-Carthage.xcodeproj">
+               BuildableName = "Pact-macOS-Example.app"
+               BlueprintName = "Pact-macOS-Example"
+               ReferencedContainer = "container:Pact-macOS-Example.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AD8FC8382463EB1200361854"
-               BuildableName = "Pact-macOS-Example-CarthageTests.xctest"
-               BlueprintName = "Pact-macOS-Example-CarthageTests"
-               ReferencedContainer = "container:Pact-macOS-Example-Carthage.xcodeproj">
+               BuildableName = "Pact-macOS-ExampleTests.xctest"
+               BlueprintName = "Pact-macOS-ExampleTests"
+               ReferencedContainer = "container:Pact-macOS-Example.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,18 +55,11 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AD8FC77424639AF200361854"
-            BuildableName = "Pact-macOS-Example-Carthage.app"
-            BlueprintName = "Pact-macOS-Example-Carthage"
-            ReferencedContainer = "container:Pact-macOS-Example-Carthage.xcodeproj">
+            BuildableName = "Pact-macOS-Example.app"
+            BlueprintName = "Pact-macOS-Example"
+            ReferencedContainer = "container:Pact-macOS-Example.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <EnvironmentVariables>
-         <EnvironmentVariable
-            key = "PACT_DIR"
-            value = "$(PROJECT_DIR)/pacts"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-      </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -79,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AD8FC77424639AF200361854"
-            BuildableName = "Pact-macOS-Example-Carthage.app"
-            BlueprintName = "Pact-macOS-Example-Carthage"
-            ReferencedContainer = "container:Pact-macOS-Example-Carthage.xcodeproj">
+            BuildableName = "Pact-macOS-Example.app"
+            BlueprintName = "Pact-macOS-Example"
+            ReferencedContainer = "container:Pact-macOS-Example.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -9,11 +9,11 @@
 import XCTest
 import PactSwift
 
-@testable import Pact_macOS_Example_Carthage
+@testable import Pact_macOS_Example
 
 class Pact_macOS_Example_CarthageTests: XCTestCase {
 
-	var mockService = MockService(consumer: "passing-app", provider: "test-provider")
+	var mockService = MockService(consumer: "macOS_app", provider: "test_provider")
 
 	override func tearDown() {
 		super.tearDown()
@@ -97,7 +97,7 @@ class Pact_macOS_Example_CarthageTests: XCTestCase {
 		// pointing it to the mockService we programmed it just above
 
 		// This following block tests our RestManager implementation...
-		secureMockService.run(timeout: 320) { completed in
+		secureMockService.run(waitFor: 5) { completed in
 			guard let url = URL(string: "\(secureMockService.baseUrl)/api/users") else {
 				XCTFail("Failed to prepare url!")
 				return
@@ -240,7 +240,7 @@ class Pact_macOS_Example_CarthageTests: XCTestCase {
 
 		let apiClient = RestManager()
 
-		mockService.run(timeout: 1) { completed in
+		mockService.run(waitFor: 1) { completed in
 			guard let url = URL(string: "\(self.mockService.baseUrl)/api/users") else {
 				XCTFail("Failed to prepare url!")
 				return
