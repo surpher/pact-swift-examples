@@ -13,7 +13,7 @@ import PactSwift
 
 class XCTestFailingExampleTests: XCTestCase {
 
-	var mockService = MockService(consumer: "test-consumer", provider: "test-provider")
+	var mockService = MockService(consumer: "failing_iOS_app", provider: "test_provider")
 
 	override func tearDown() {
 		mockService.finalize {

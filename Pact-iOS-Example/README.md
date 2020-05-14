@@ -4,7 +4,7 @@
 
 The code in this repository does not represent good programming practices!
 
-This repository is used solely to demonstrate the minimal effort required to demonstrate how to set up and use [`PactSwift`](https://github.com/surpher/PactSwift) framework.
+This repository is used solely to demonstrate the minimal effort required to set up and use [`PactSwift`](https://github.com/surpher/PactSwift) framework.
 
 ----
 
@@ -20,13 +20,23 @@ Build [`PactSwift`](https://github.com/surpher/PactSwift) as dependency in your 
 
 	carthage update --platform ios --no-use-binaries --cache-builds
 
-## Xcode setup
+## Run Test targets in this example project
+
+`cmd + u`
+
+1. Target `Pact-iOS-FAILING-ExampleTest` will fail with 4 tests and show the benefits of testing your "real" (and buggy) API Client implementation.
+
+2. Target `Pact-iOS-ExampleTests` will pass all tests and as a result a _[consumer_name]-[provider_name].json_ (eg: `passing-app-test-provider.json`) Pact Contract file is generated in `$(PROJECT_DIR)/pacts` folder, as defined in the scheme's Environment Variable `PACT_DIR`
+
+## Steps to setup your own project
+
+### Xcode setup
 
 [`PactSwift`](https://github.com/surpher/PactSwift) is a testing framework! Do not embed this framework into your deployable app bundle!
 
 Your app target, ideally, should not know about [`PactSwift`](https://github.com/surpher/PactSwift) at all!
 
-### Setup Build Phases
+#### Setup Build Phases
 
 `Test Target > Build Settings > Link Binary With Libraries > Add Other > Add Files...`  
 Find your Carthage folder, `./Build/iOS/` and select `PactSwift.framework` to link it:
@@ -35,7 +45,7 @@ Find your Carthage folder, `./Build/iOS/` and select `PactSwift.framework` to li
 
 ... Or drag and drop the framework into the Build Phase.
 
-### Setup Framework Build Settings
+#### Setup Framework Build Settings
 
 1. In `Test Target > Build Settings` add `$(PROJECT_DIR)/Carthage/Build/iOS` (non-recursive) to `Framework Search Paths` configuration key.
 
@@ -45,7 +55,7 @@ Find your Carthage folder, `./Build/iOS/` and select `PactSwift.framework` to li
 
 ![set runpath search paths](res/03_runpath_search_paths.png)
 
-### Set destination dir
+#### Set destination dir
 
 Edit scheme and add `PACT_DIR` environment variable with `dir` where you want your Pact contracts to be written to:
 

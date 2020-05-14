@@ -73,7 +73,7 @@
       <EnvironmentVariables>
          <EnvironmentVariable
             key = "PACT_DIR"
-            value = "$(PROJECT_DIR)/tmp/pacts"
+            value = "$(PROJECT_DIR)/pacts"
             isEnabled = "YES">
          </EnvironmentVariable>
       </EnvironmentVariables>
