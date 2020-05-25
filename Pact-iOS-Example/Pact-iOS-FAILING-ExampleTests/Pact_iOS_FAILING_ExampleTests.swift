@@ -15,17 +15,6 @@ class XCTestFailingExampleTests: XCTestCase {
 
 	var mockService = MockService(consumer: "failing_iOS_app", provider: "test_provider")
 
-	override func tearDown() {
-		mockService.finalize {
-			switch $0 {
-			case .success: return
-			case .failure(let error):
-				XCTFail(error.description)
-			}
-		}
-		super.tearDown()
-	}
-
 	// Test that the makeRequest() method handles the request and response based on our expectations
 	func testGetsUsers() {
 		// Expectations
@@ -254,6 +243,37 @@ class XCTestFailingExampleTests: XCTestCase {
 				//  No need to handle response in this example, as the request fails because the body we're sending
 				//  does not match the body we promised we will send... We promised "name": "Julia"
 				completed() // Notify MockService we're done with our test
+			}
+		}
+	}
+
+	func testWithTimeout() {
+		// Expectations
+		_ = mockService
+			.uponReceiving("Sixth request for a list of users")
+			.given("users exist")
+			.withRequest(
+				method: .POST,
+				path: "/api/users",
+				body: [
+					"name": "Julia"
+				]
+			)
+			.willRespondWith(
+				status: 201
+			)
+
+		let apiClient = RestManager()
+
+		mockService.run(waitFor: 1) { completed in
+			guard let url = URL(string: "\(self.mockService.baseUrl)/api/users") else {
+				XCTFail("Failed to prepare url!")
+				return
+			}
+
+			apiClient.requestHttpHeaders.add(value: "application/json", forKey: "Content-Type")
+			apiClient.makeRequest(toURL: url, withHttpMethod: .post) { results in
+//				completed() // not calling the completed should timeout (as in Pact test taking too long)
 			}
 		}
 	}

@@ -1,1 +1,1 @@
-github "surpher/PactSwift" "master"
+github "surpher/PactSwift" ~> 0.1

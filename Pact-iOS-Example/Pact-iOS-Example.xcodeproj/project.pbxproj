@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,7 +17,7 @@
 		AD204B2224565DCD00ABE1EB /* Pact_iOS_FAILING_ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD204B2124565DCD00ABE1EB /* Pact_iOS_FAILING_ExampleTests.swift */; };
 		AD204B2E24565E1A00ABE1EB /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD204B1924565DAE00ABE1EB /* TestData.swift */; };
 		AD204B3024565E6100ABE1EB /* APIClientImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD204B2F24565E6100ABE1EB /* APIClientImplementation.swift */; };
-		AD204B3324565F8400ABE1EB /* PactSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD204B3224565F8400ABE1EB /* PactSwift.framework */; };
+		AD204B3324565F8400ABE1EB /* PactSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD204B3224565F8400ABE1EB /* PactSwift.framework */; platformFilter = ios; };
 		AD204B3424565FB800ABE1EB /* Pact_iOS_ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD204B2924565DEC00ABE1EB /* Pact_iOS_ExampleTests.swift */; };
 		AD204B36245660D600ABE1EB /* PactSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD204B3224565F8400ABE1EB /* PactSwift.framework */; };
 /* End PBXBuildFile section */
