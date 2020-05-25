@@ -126,3 +126,5 @@ x**/DerivedData/
 
 # End of https://www.gitignore.io/api/swiftpm,carthage
 pacts
+*.resolved
+Cartfile.resolved
