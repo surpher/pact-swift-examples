@@ -15,16 +15,6 @@ class Pact_macOS_Example_CarthageTests: XCTestCase {
 
 	var mockService = MockService(consumer: "macOS_app", provider: "test_provider")
 
-	override func tearDown() {
-		super.tearDown()
-		mockService.finalize { result in
-			switch result {
-			case .success(let result): debugPrint(result)
-			case .failure(let error): debugPrint(error.description)
-			}
-		}
-	}
-
 	// MARK: - Tests
 
 	func testGetsUsers() {
