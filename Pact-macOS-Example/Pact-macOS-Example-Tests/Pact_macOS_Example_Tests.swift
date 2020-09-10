@@ -221,7 +221,7 @@ class Pact_macOS_Example_CarthageTests: XCTestCase {
 				method: .POST,
 				path: "/api/users",
 				body: [
-					"name": SomethingLike("Julia") // We only say we care about the key name ("name") and the type of value (a `String` should be expected)
+					"name": Matcher.SomethingLike("Julia") // We only say we care about the key name ("name") and the type of value (a `String` should be expected)
 				]
 			)
 			.willRespondWith(
