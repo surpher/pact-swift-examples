@@ -11,15 +11,15 @@ import PactSwift
 
 var userDataResponse: Any {
 	[
-		"page": SomethingLike(1),
-		"per_page": SomethingLike(25),
-		"total": SomethingLike(1234),
-		"total_pages": SomethingLike(493),
+		"page": Matcher.SomethingLike(1),
+		"per_page": Matcher.SomethingLike(25),
+		"total": Matcher.SomethingLike(1234),
+		"total_pages": Matcher.SomethingLike(493),
 		"data": [
 			[
-				"id": IntegerLike(1),
-				"first_name": SomethingLike("John"),
-				"last_name": SomethingLike("Tester")
+				"id": Matcher.IntegerLike(1),
+				"first_name": Matcher.SomethingLike("John"),
+				"last_name": Matcher.SomethingLike("Tester")
 				// and we don't care about the avatar 🤷‍♂️
 			]
 		]
@@ -29,9 +29,9 @@ var userDataResponse: Any {
 var singleUserResponse: Any {
 	[
 		"data": [
-			"id": IntegerLike(1),
-			"first_name": SomethingLike("John"),
-			"last_name": SomethingLike("Tester")
+			"id": Matcher.IntegerLike(1),
+			"first_name": Matcher.SomethingLike("John"),
+			"last_name": Matcher.SomethingLike("Tester")
 			// and we don't care about the avatar 🤷‍♂️
 		]
 	]
