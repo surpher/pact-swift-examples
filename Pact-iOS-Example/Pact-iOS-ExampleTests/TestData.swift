@@ -86,17 +86,21 @@ struct SingleUserData: Codable {
 
 struct User: Codable, CustomStringConvertible {
 	var id: Int?
+	var uuid: String?
 	var firstName: String?
 	var lastName: String?
 	var avatar: String?
+	var joined: String?
 
 	var description: String {
 		return """
 		------------
 		id = \(id ?? defInt)
+		uuid = \(uuid ?? defString)
 		firstName = \(firstName ?? defString)
 		lastName = \(lastName ?? defString)
 		avatar = \(avatar ?? defString)
+		joined = \(joined ?? defString)
 		------------
 		"""
 	}

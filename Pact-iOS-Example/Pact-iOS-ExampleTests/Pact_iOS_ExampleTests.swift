@@ -247,6 +247,88 @@ class PassingTestsExample: XCTestCase {
 		}
 	}
 
+	func testGetsUsers_UsingExampleGenerators() {
+		// Expectations
+		_ = mockService
+			.uponReceiving("A request for list of users (using example generators)")
+			.given(ProviderState(description: "users exists", params: ["page": "3"]))
+			.withRequest(
+				method: .GET,
+				path: "/api/users",
+				query: ["page": ["3"]]
+			)
+			.willRespondWith(
+				status: 200,
+				headers: ["Content-Type": "application/json"],
+				body: [
+					"page": ExampleGenerator.RandomInt(min: 0, max: 100),
+					"per_page": Matcher.SomethingLike(25),
+					"total": ExampleGenerator.RandomInt(min: 0, max: 500),
+					"total_pages": ExampleGenerator.RandomInt(min: 1, max: 500),
+					"data": [
+						[
+							"id": Matcher.SomethingLike(1),
+							"uuid": ExampleGenerator.RandomUUID(),
+							"first_name": Matcher.SomethingLike("John"),
+							"last_name": Matcher.SomethingLike("Tester"),
+							"joined": ExampleGenerator.RandomDate(format: "dd.MM.yyyy"),
+							// and we don't care about the avatar 🤷‍♂️
+						]
+					]
+				]
+			)
+
+		let apiClient = RestManager()
+
+		// This following block tests our RestManager implementation...
+		mockService.run { [unowned self] completed in
+			guard let url = URL(string: "\(self.mockService.baseUrl)/api/users?page=3") else {
+				XCTFail("Failed to prepare url!")
+				return
+			}
+
+			// This is using our API Client implementation in the main target.
+			apiClient.makeRequest(toURL: url, withHttpMethod: .get) { results in
+				if let data = results.data {
+					let decoder = JSONDecoder()
+					decoder.keyDecodingStrategy = .convertFromSnakeCase
+					guard let userData = try? decoder.decode(UserData.self, from: data) else {
+						// There's something with the structure of data either on our end, or how we defined the body we are expecting...
+						// Either way, they don't match meaning there's something wrong with our decoder implementation (or model) or body defined in .willRespondWith(...)
+						XCTFail("Failed to decode UserData")
+						completed() // Notify MockService we're done with our test
+						return
+					}
+
+					// test the response from server is what we expected and it decodes into userData
+					do {
+						// Assert the returned random Int is between 0 and 100
+						let resultPage = try XCTUnwrap(userData.page)
+						XCTAssertTrue((0...100).contains(resultPage))
+
+						// Assert the returned random string is a valid UUID
+						// MockServer might return a "simple" UUID (lowercased and
+						let resultUUID = try XCTUnwrap(userData.data?.first?.uuid)
+						if resultUUID.contains("-") {
+							XCTAssertNotNil(UUID(uuidString: resultUUID.uppercased()))
+						} else {
+							XCTAssertNotNil(resultUUID.uuid)
+						}
+
+						// Assert the returned random string is valid date with the specific format we expect it in
+						let resultDate = try XCTUnwrap(userData.data?.first?.joined)
+						let dateFormatter = DateFormatter()
+						dateFormatter.dateFormat = "dd.MM.yyyy"
+						XCTAssertNotNil(dateFormatter.date(from: resultDate))
+					} catch {
+						XCTFail("Failed to test example generators")
+					}
+				}
+				completed() // Notify MockService we're done with our test
+			}
+		}
+	}
+
 }
 
 extension PassingTestsExample: URLSessionDelegate {
@@ -263,6 +345,21 @@ extension PassingTestsExample: URLSessionDelegate {
 
 		let credential = URLCredential(trust: serverTrust)
 		completionHandler(.useCredential, credential)
+	}
+
+}
+
+private extension String {
+
+	var uuid: UUID? {
+		guard !self.contains("-") else {
+			return nil
+		}
+
+		var str: String = self
+		[8, 13, 18, 23].forEach { str.insert("-", at: str.index(str.startIndex, offsetBy: $0)) }
+
+		return UUID(uuidString: str.uppercased())
 	}
 
 }
