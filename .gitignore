@@ -128,3 +128,4 @@ x**/DerivedData/
 pacts
 *.resolved
 Cartfile.resolved
+**/Cartfile
