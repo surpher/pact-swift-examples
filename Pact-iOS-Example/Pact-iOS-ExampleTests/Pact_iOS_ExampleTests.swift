@@ -19,7 +19,7 @@ class PassingTestsExample: XCTestCase {
 
 	func testGetsUsers() {
 		// Expectations
-		_ = mockService
+		mockService
 			.uponReceiving("A request for a list of users")
 			.given("users exist and more")
 			.withRequest(
@@ -116,7 +116,7 @@ class PassingTestsExample: XCTestCase {
 
 	func testGetsSingleUser() {
 		// Expectations
-		_ = mockService
+		mockService
 			.uponReceiving("A request for user")
 			.given(ProviderState(description: "user exists", params: ["id": "1"]))
 			.withRequest(
@@ -166,7 +166,7 @@ class PassingTestsExample: XCTestCase {
 
 	func testGetsUsers_WithRequestQuery() {
 		// Expectations
-		_ = mockService
+		mockService
 			.uponReceiving("A request for list of users")
 			.given(ProviderState(description: "users exists", params: ["page": "3"]))
 			.withRequest(
@@ -214,7 +214,7 @@ class PassingTestsExample: XCTestCase {
 
 	func testCreateUser_WithBodyThatMatchesAType() {
 		// Expectations
-		_ = mockService
+		mockService
 			.uponReceiving("A request to create a user")
 			.given(ProviderState(description: "user does not exist", params: ["name" : "Julia"]))
 			.withRequest( // this is what we promise our apiClient will call
@@ -249,7 +249,7 @@ class PassingTestsExample: XCTestCase {
 
 	func testGetsUsers_UsingExampleGenerators() {
 		// Expectations
-		_ = mockService
+		mockService
 			.uponReceiving("A request for list of users (using example generators)")
 			.given(ProviderState(description: "users exists", params: ["page": "3"]))
 			.withRequest(
