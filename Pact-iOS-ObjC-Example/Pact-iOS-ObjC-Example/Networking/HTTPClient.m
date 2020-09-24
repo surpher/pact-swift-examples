@@ -20,10 +20,10 @@
 	return self;
 }
 
--(void)sayHelloWith:(void (^)(NSDictionary *responseDict))success
+-(void)pingWith:(void (^)(NSDictionary *responseDict))success
 						failure:(void(^)(NSError* error))failure {
 		NSURLSession *session = [NSURLSession sharedSession];
-		NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", self.baseUrl, @"sayHello"]];
+		NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", self.baseUrl, @"ping"]];
 
 		NSURLSessionDataTask *dataTask = [session dataTaskWithURL:url
 																						completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {

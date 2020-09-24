@@ -11,11 +11,7 @@
 
 - (id) initWithBaseUrl:(NSString *)url;
 
--(void) sayHelloWith:(void (^)(NSDictionary *responseDict))success
-				 failure:(void(^)(NSError* error))failure;
-
-//- (NSString *)findFriendsByAgeAndChild;
-//
-//- (void) unfriend:(void (^)(NSString *response))success failure:(void (^)(NSInteger errorCode))failure;
+-(void)pingWith:(void (^)(NSDictionary *responseDict))success
+				failure:(void(^)(NSError* error))failure;
 
 @end

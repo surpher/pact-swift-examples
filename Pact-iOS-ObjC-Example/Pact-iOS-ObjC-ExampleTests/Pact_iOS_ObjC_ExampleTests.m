@@ -22,16 +22,30 @@
 - (void)setUp {
 	self.mockService = [[MockService alloc] initWithConsumer:@"Consumer-app"
 																									provider:@"Provider-server"
-																					transferProtocol:0];
+																					transferProtocol:TransferProtocolStandard];
 }
 
 - (void)tearDown {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+- (void)testPingRequest {
+	typedef void (^CompleteBlock)(void);
+
+	// Prepare the provider state
+	[[[self.mockService uponReceiving:@"a ping request"]
+	 // Prepare the expectations of our request
+	 withRequestHTTPMethod:PactHTTPMethodGET path:@"/ping" query:NULL headers:NULL body:NULL]
+	 // Prepare the expectations of providers response
+	 willRespondWithStatus:200 headers:@{@"Content-Type": @"application/json"} body:@"pong"];
+
+		[self.mockService run:^(CompleteBlock testComplete) {
+			// execute the http request to the provider
+//				NSString *requestReply = [self.httpClient sayHelloWith];
+//				XCTAssertEqualObjects(requestReply, @"Hello");
+				testComplete();
+			}
+		];
 }
 
 @end
