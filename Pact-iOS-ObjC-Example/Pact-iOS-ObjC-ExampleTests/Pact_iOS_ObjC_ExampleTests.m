@@ -20,32 +20,95 @@
 @implementation Pact_iOS_ObjC_ExampleTests
 
 - (void)setUp {
+	[super setUp];
 	self.mockService = [[MockService alloc] initWithConsumer:@"Consumer-app"
 																									provider:@"Provider-server"
 																					transferProtocol:TransferProtocolStandard];
+
+	self.httpClient = [[HTTPClient alloc] initWithBaseUrl:self.mockService.baseUrl];
 }
 
 - (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
+	[super tearDown];
 }
+
+// MARK: - Tests
 
 - (void)testPingRequest {
 	typedef void (^CompleteBlock)(void);
 
-	// Prepare the provider state
-	[[[self.mockService uponReceiving:@"a ping request"]
-	 // Prepare the expectations of our request
-	 withRequestHTTPMethod:PactHTTPMethodGET path:@"/ping" query:NULL headers:NULL body:NULL]
-	 // Prepare the expectations of providers response
-	 willRespondWithStatus:200 headers:@{@"Content-Type": @"application/json"} body:@"pong"];
+	XCTestExpectation *expectation = [self expectationWithDescription:@"ping request expectation"];
 
-		[self.mockService run:^(CompleteBlock testComplete) {
-			// execute the http request to the provider
-//				NSString *requestReply = [self.httpClient sayHelloWith];
-//				XCTAssertEqualObjects(requestReply, @"Hello");
-				testComplete();
-			}
-		];
+	// Prepare the request expectation (what provider would see)
+	[[[[self.mockService
+		uponReceiving:@"a ping request"]
+		// Prepare provider states
+		givenProviderStates: @[[[ProviderState alloc] initWithDescription:@"user exists" params:@{@"user_id": @"f329q0ds902"}]]]
+		// Prepare the expectations of our request
+		withRequestHTTPMethod:PactHTTPMethodGET path:@"/ping" query:NULL headers:NULL body:NULL]
+		// Prepare the expectations of providers response
+		willRespondWithStatus:200 headers:@{@"Content-Type": @"application/json"} body:@{@"message":@"pong"}];
+
+	[self.mockService run:^(CompleteBlock testComplete) {
+		// execute the http request to the provider
+		[self.httpClient
+		 pingWith:^(NSDictionary *responseDict) {
+			NSLog(@"### Received:\n%@", responseDict);
+
+			// Test that the response was converted to a dictionary with expected key and value
+			XCTAssertTrue([responseDict isEqualToDictionary: @{@"message":@"pong"}]);
+
+			// Expectation is fulfilled
+			[expectation fulfill];
+			// Test is complete
+			testComplete();
+		 }
+		 failure:^(NSError *error) {
+			XCTFail(@"Failed to receive response from /ping");
+			// Test is complete
+			testComplete();
+		 }];
+	}];
+
+	// Wait for expectations because we're making an async call
+	[self waitForExpectationsWithTimeout:1.0 handler:NULL];
+}
+
+-(void)testAddingAFriendRequest {
+	typedef void (^CompleteBlock)(void);
+
+	XCTestExpectation *expectation = [self expectationWithDescription:@"make friend expectation"];
+
+	NSArray *fooParams = [[NSArray alloc] initWithObjects:@"bar", nil];
+	NSDictionary *requestQuery = @{@"foo":fooParams};
+
+	NSDictionary *requestHeaders = @{@"Content-Type":@"application/json; charset=utf-8"};
+	NSDictionary *requestBody = @{@"friend": @{@"name":@"Johnny Appleseed", @"age":@"25"}};
+
+	NSDictionary *responseBody = @{@"id":@"ojf283jfa9fe30"};
+
+	[[[[self.mockService
+		uponReceiving:@"a request to add a friend"]
+		givenProviderState:@"friend does not exist"]
+		withRequestHTTPMethod:PactHTTPMethodPOST path:@"/friends/add" query:requestQuery headers:NULL body:requestBody]
+	  willRespondWithStatus:201 headers:@{@"Content-Type": @"application/json"} body:responseBody];
+
+	[[self.mockService uponReceiving:@"sa"] withRequestHTTPMethod:<#(enum PactHTTPMethod)#> path:<#(NSString * _Nonnull)#> query:(NSDictionary<NSString *,NSArray<NSString *> *> * _Nullable) headers:<#(NSDictionary<NSString *,NSString *> * _Nullable)#> body:<#(id _Nullable)#>
+
+	[self.mockService run:^(CompleteBlock testComplete) {
+		[self.httpClient makeFriendsWith:@"Johnny Appleseed" age:@25
+		 onSuccess:^(NSDictionary *responseDict) {
+			NSLog(@"### Received:\n%@", responseDict);
+			XCTAssertTrue([responseDict isEqualToDictionary: @{@"id":@"ojf283jfa9fe30"}]);
+			testComplete();
+			[expectation fulfill];
+		} onFailure:^(NSError *error) {
+			XCTFail(@"Failed to recieve a response from /friends/add");
+			testComplete();
+		}];
+	} withTimeout:1.0];
+
+	[self waitForExpectationsWithTimeout:1.0 handler:NULL];
 }
 
 @end
