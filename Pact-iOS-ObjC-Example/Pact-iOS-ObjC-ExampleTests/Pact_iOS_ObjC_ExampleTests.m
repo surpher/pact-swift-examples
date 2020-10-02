@@ -81,8 +81,7 @@
 
 	NSArray *fooParams = [[NSArray alloc] initWithObjects:@"bar", nil];
 	NSDictionary *requestQuery = @{@"foo":fooParams};
-
-	NSDictionary *requestHeaders = @{@"Content-Type":@"application/json; charset=utf-8"};
+	NSDictionary *requestHeaders = @{@"Content-Type": @"application/json"};
 	NSDictionary *requestBody = @{@"friend": @{@"name":@"Johnny Appleseed", @"age":@"25"}};
 
 	NSDictionary *responseBody = @{@"id":@"ojf283jfa9fe30"};
@@ -90,10 +89,12 @@
 	[[[[self.mockService
 		uponReceiving:@"a request to add a friend"]
 		givenProviderState:@"friend does not exist"]
-		withRequestHTTPMethod:PactHTTPMethodPOST path:@"/friends/add" query:requestQuery headers:NULL body:requestBody]
+		withRequestHTTPMethod:PactHTTPMethodPOST
+										 path:@"/friends/add"
+										query:requestQuery
+									headers:requestHeaders
+										 body:requestBody]
 	  willRespondWithStatus:201 headers:@{@"Content-Type": @"application/json"} body:responseBody];
-
-	[[self.mockService uponReceiving:@"sa"] withRequestHTTPMethod:<#(enum PactHTTPMethod)#> path:<#(NSString * _Nonnull)#> query:(NSDictionary<NSString *,NSArray<NSString *> *> * _Nullable) headers:<#(NSDictionary<NSString *,NSString *> * _Nullable)#> body:<#(id _Nullable)#>
 
 	[self.mockService run:^(CompleteBlock testComplete) {
 		[self.httpClient makeFriendsWith:@"Johnny Appleseed" age:@25

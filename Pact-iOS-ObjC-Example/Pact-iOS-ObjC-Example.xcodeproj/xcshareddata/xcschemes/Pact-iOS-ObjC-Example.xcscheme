@@ -72,8 +72,8 @@
       </BuildableProductRunnable>
       <EnvironmentVariables>
          <EnvironmentVariable
-            key = "PACT_LOGGING_LEVEL"
-            value = "debug"
+            key = "PACT_ENABLE_LOGGING"
+            value = "true"
             isEnabled = "YES">
          </EnvironmentVariable>
          <EnvironmentVariable
