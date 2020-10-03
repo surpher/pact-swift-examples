@@ -83,24 +83,19 @@
 	NSDictionary *requestQuery = @{@"foo":fooParams};
 	NSDictionary *requestHeaders = @{@"Content-Type": @"application/json"};
 	NSDictionary *requestBody = @{@"friend": @{@"name":@"Johnny Appleseed", @"age":@"25"}};
-
-	NSDictionary *responseBody = @{@"id":@"ojf283jfa9fe30"};
+	NSDictionary *responseBodyWithMatcher = @{@"id": [[Matcher_DecimalLike alloc] initWithValue:[@1234.56 decimalValue]] };
 
 	[[[[self.mockService
 		uponReceiving:@"a request to add a friend"]
 		givenProviderState:@"friend does not exist"]
-		withRequestHTTPMethod:PactHTTPMethodPOST
-										 path:@"/friends/add"
-										query:requestQuery
-									headers:requestHeaders
-										 body:requestBody]
-	  willRespondWithStatus:201 headers:@{@"Content-Type": @"application/json"} body:responseBody];
+		withRequestHTTPMethod:PactHTTPMethodPOST path:@"/friends/add" query:requestQuery headers:requestHeaders body:requestBody]
+	  willRespondWithStatus:201 headers:@{@"Content-Type": @"application/json"} body:responseBodyWithMatcher];
 
 	[self.mockService run:^(CompleteBlock testComplete) {
 		[self.httpClient makeFriendsWith:@"Johnny Appleseed" age:@25
 		 onSuccess:^(NSDictionary *responseDict) {
 			NSLog(@"### Received:\n%@", responseDict);
-			XCTAssertTrue([responseDict isEqualToDictionary: @{@"id":@"ojf283jfa9fe30"}]);
+			XCTAssertTrue([responseDict isEqualToDictionary: @{@"id":@1234.56}]);
 			testComplete();
 			[expectation fulfill];
 		} onFailure:^(NSError *error) {
