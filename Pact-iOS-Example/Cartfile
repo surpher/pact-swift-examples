@@ -1,1 +1,1 @@
-git "file:///Users/marko/Developer/pact-foundation/PactSwift" "feature/objective-c"
+github "surpher/PactSwift"
