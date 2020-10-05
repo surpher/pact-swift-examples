@@ -3,7 +3,7 @@
 //  Pact-iOS-ObjC-ExampleTests
 //
 //  Created by Marko Justinek on 24/9/20.
-//
+//  Disclaimer: This file demonstrates how to use PactSwift DSL and is not an example of how to "properly" write unit tests.
 
 #import <XCTest/XCTest.h>
 #import <PactSwift/PactSwift.h>
@@ -21,10 +21,8 @@
 
 - (void)setUp {
 	[super setUp];
-	self.mockService = [[MockService alloc] initWithConsumer:@"Consumer-app"
-																									provider:@"Provider-server"
-																					transferProtocol:TransferProtocolStandard];
 
+	self.mockService = [[MockService alloc] initWithConsumer:@"Consumer-app" provider:@"Provider-server" transferProtocol:TransferProtocolStandard];
 	self.httpClient = [[HTTPClient alloc] initWithBaseUrl:self.mockService.baseUrl];
 }
 
@@ -83,7 +81,7 @@
 	NSDictionary *requestQuery = @{@"foo":fooParams};
 	NSDictionary *requestHeaders = @{@"Content-Type": @"application/json"};
 	NSDictionary *requestBody = @{@"friend": @{@"name":@"Johnny Appleseed", @"age":@"25"}};
-	NSDictionary *responseBodyWithMatcher = @{@"id": [[Matcher_DecimalLike alloc] initWithValue:[@1234.56 decimalValue]] };
+	NSDictionary *responseBodyWithMatcher = @{@"id": [[PFMatcherDecimalLike alloc] value:[@1234.56 decimalValue]] };
 
 	[[[[self.mockService
 		uponReceiving:@"a request to add a friend"]
