@@ -27,7 +27,7 @@ Build [`PactSwift`](https://github.com/surpher/PactSwift) as dependency in your 
 ## Run the tests in this example project
 
 1. `cmd + u`
-2. Pact contract JSON file will be written to `~/Library/Containers/au.com.pact-foundation.Pact-macOS-Example/Data/Documents`.
+2. Pact contract JSON file will be written to `~/Library/Containers/au.com.pact-foundation.Pact-macOS-Example/Data/Documents`. Or `~/Documents` using Xcode 12???
 
 ## Setup for your own project
 
