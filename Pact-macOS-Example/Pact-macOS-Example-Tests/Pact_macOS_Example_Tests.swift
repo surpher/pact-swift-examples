@@ -19,7 +19,7 @@ class Pact_macOS_Example_CarthageTests: XCTestCase {
 
 	func testGetsUsers() {
 		// Expectations
-		_ = mockService
+		mockService
 			.uponReceiving("A request for a list of users")
 			.given("users exist and more")
 			.withRequest(
@@ -69,7 +69,7 @@ class Pact_macOS_Example_CarthageTests: XCTestCase {
 	func testGetsUsers_over_SSL() {
 		// Set MockService to start up using TLS (using a self-signed certificate)
 		let secureMockService = MockService(consumer: "secure-consumer", provider: "secure-provider", scheme: .secure)
-		_ = secureMockService
+		secureMockService
 			.uponReceiving("A request for a list of users over SSL")
 			.given("users exist and more")
 			.withRequest(
@@ -116,7 +116,7 @@ class Pact_macOS_Example_CarthageTests: XCTestCase {
 
 	func testGetsSingleUser() {
 		// Expectations
-		_ = mockService
+		mockService
 			.uponReceiving("A request for user")
 			.given(ProviderState(description: "user exists", params: ["id": "1"]))
 			.withRequest(
@@ -166,7 +166,7 @@ class Pact_macOS_Example_CarthageTests: XCTestCase {
 
 	func testGetsUsers_WithRequestQuery() {
 		// Expectations
-		_ = mockService
+		mockService
 			.uponReceiving("A request for list of users")
 			.given(ProviderState(description: "users exists", params: ["page": "3"]))
 			.withRequest(
@@ -214,18 +214,19 @@ class Pact_macOS_Example_CarthageTests: XCTestCase {
 
 	func testCreateUser_WithBodyThatMatchesAType() {
 		// Expectations
-		_ = mockService
+		mockService
 			.uponReceiving("A request to create a user")
 			.given(ProviderState(description: "user does not exist", params: ["name" : "Julia"]))
 			.withRequest( // this is what we promise our apiClient will call
-				method: .POST,
+				method: .PUT,
 				path: "/api/users",
 				body: [
 					"name": Matcher.SomethingLike("Julia") // We only say we care about the key name ("name") and the type of value (a `String` should be expected)
 				]
 			)
 			.willRespondWith(
-				status: 201
+				status: 201,
+				body: userDataResponse
 			)
 
 		let apiClient = RestManager()
@@ -240,7 +241,7 @@ class Pact_macOS_Example_CarthageTests: XCTestCase {
 			apiClient.requestHttpHeaders.add(value: "application/json", forKey: "Content-Type")
 			apiClient.httpBodyParameters.add(value: "Someones Name", forKey: "name") // We only promised we will send a `String`, so we're golden
 
-			apiClient.makeRequest(toURL: url, withHttpMethod: .post) { results in
+			apiClient.makeRequest(toURL: url, withHttpMethod: .put) { results in
 				// Do some assertions here that the 201 response is returned and handled by our apiClient?
 				completed() // Notify MockService we're done with our test
 			}
@@ -249,14 +250,15 @@ class Pact_macOS_Example_CarthageTests: XCTestCase {
 
 	func testCreateUser_UsingExampleGenerator() {
 		// Expectations
-		_ = mockService
+		mockService
 			.uponReceiving("A request to create a user (using example generators)")
 			.given(ProviderState(description: "user does not exist", params: ["name" : "Julia"]))
 			.withRequest( // this is what we promise our apiClient will call
 				method: .POST,
 				path: "/api/users/add/verbose",
 				body: [
-					"name": Matcher.SomethingLike("Julia") // We only say we care about the key name ("name") and the type of value (a `String` should be expected)
+					"name": Matcher.SomethingLike("Julia"), // We only say we care about the key name ("name") and the type of value (a `String` should be expected)
+					"age": Matcher.SomethingLike(42)
 				]
 			)
 			.willRespondWith(
