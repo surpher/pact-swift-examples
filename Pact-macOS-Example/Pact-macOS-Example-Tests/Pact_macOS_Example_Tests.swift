@@ -221,12 +221,15 @@ class Pact_macOS_Example_CarthageTests: XCTestCase {
 				method: .PUT,
 				path: "/api/users",
 				body: [
-					"name": Matcher.SomethingLike("Julia") // We only say we care about the key name ("name") and the type of value (a `String` should be expected)
+					"name": Matcher.SomethingLike("baz")
 				]
 			)
 			.willRespondWith(
 				status: 201,
-				body: userDataResponse
+				body: [
+					"name": Matcher.SomethingLike("foo"),
+					"age": ExampleGenerator.RandomInt(min: 18, max: 64)
+				]
 			)
 
 		let apiClient = RestManager()
@@ -257,8 +260,7 @@ class Pact_macOS_Example_CarthageTests: XCTestCase {
 				method: .POST,
 				path: "/api/users/add/verbose",
 				body: [
-					"name": Matcher.SomethingLike("Julia"), // We only say we care about the key name ("name") and the type of value (a `String` should be expected)
-					"age": Matcher.SomethingLike(42)
+					"name": Matcher.SomethingLike("Foo") // We only say we care about the key name ("name") and the type of value (a `String` should be expected)
 				]
 			)
 			.willRespondWith(
@@ -291,7 +293,7 @@ class Pact_macOS_Example_CarthageTests: XCTestCase {
 
 			// This is using our API Client implementation in the main target.
 			apiClient.requestHttpHeaders.add(value: "application/json", forKey: "Content-Type")
-			apiClient.httpBodyParameters.add(value: "Someones Name", forKey: "name") // We only promised we will send a `String`, so we're golden
+			apiClient.httpBodyParameters.add(value: "Bar", forKey: "name") // We only promised we will send a `String`, so we're golden
 
 			apiClient.makeRequest(toURL: url, withHttpMethod: .post) { results in
 				if let data = results.data {

@@ -37,11 +37,6 @@
                BlueprintName = "Pact-macOS-ExampleTests"
                ReferencedContainer = "container:Pact-macOS-Example.xcodeproj">
             </BuildableReference>
-            <SkippedTests>
-               <Test
-                  Identifier = "Pact_macOS_Example_CarthageTests/testCreateUser_UsingExampleGenerator()">
-               </Test>
-            </SkippedTests>
          </TestableReference>
       </Testables>
    </TestAction>
@@ -69,7 +64,7 @@
          <EnvironmentVariable
             key = "PACT_ENABLE_LOGGING"
             value = "true"
-            isEnabled = "YES">
+            isEnabled = "NO">
          </EnvironmentVariable>
       </EnvironmentVariables>
    </LaunchAction>
