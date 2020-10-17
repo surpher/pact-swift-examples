@@ -28,9 +28,9 @@
             buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AD204B1E24565DCC00ABE1EB"
-               BuildableName = "Pact-iOS-ExampleTests-FAILING.xctest"
-               BlueprintName = "Pact-iOS-ExampleTests-FAILING"
+               BlueprintIdentifier = "AD204B0924565CB700ABE1EB"
+               BuildableName = "Pact-iOS-ExampleTests.xctest"
+               BlueprintName = "Pact-iOS-ExampleTests"
                ReferencedContainer = "container:Pact-iOS-Example.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,9 +46,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AD204B0924565CB700ABE1EB"
-               BuildableName = "Pact-iOS-ExampleTests.xctest"
-               BlueprintName = "Pact-iOS-ExampleTests"
+               BlueprintIdentifier = "AD204B1E24565DCC00ABE1EB"
+               BuildableName = "Pact-iOS-ExampleTests-FAILING.xctest"
+               BlueprintName = "Pact-iOS-ExampleTests-FAILING"
                ReferencedContainer = "container:Pact-iOS-Example.xcodeproj">
             </BuildableReference>
          </TestableReference>
