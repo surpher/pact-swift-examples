@@ -24,5 +24,6 @@ jobs:
 
       - name: Test the iOS (Objective-C) project
         run: |
-          cd Pact-iOS-Example
+          cd Pact-iOS-ObjC-Example
+          carthage update --platform iOS
           set -o pipefail && xcodebuild clean test -project Pact-iOS-ObjC-Example.xcodeproj -scheme Pact-iOS-ObjC-Example -destination "platform=iOS Simulator,name=iPhone 11 Pro" | xcbeautify
