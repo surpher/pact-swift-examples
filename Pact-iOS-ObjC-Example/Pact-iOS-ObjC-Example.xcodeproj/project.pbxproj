@@ -15,19 +15,11 @@
 		AD31511C251C8FD6007C8E0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD31511A251C8FD6007C8E0F /* LaunchScreen.storyboard */; };
 		AD31511F251C8FD6007C8E0F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AD31511E251C8FD6007C8E0F /* main.m */; };
 		AD315129251C8FD7007C8E0F /* Pact_iOS_ObjC_ExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AD315128251C8FD7007C8E0F /* Pact_iOS_ObjC_ExampleTests.m */; };
-		AD315134251C8FD7007C8E0F /* Pact_iOS_ObjC_ExampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AD315133251C8FD7007C8E0F /* Pact_iOS_ObjC_ExampleUITests.m */; };
 		ADA1F797251C925400439736 /* HTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA1F796251C925400439736 /* HTTPClient.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		AD315125251C8FD7007C8E0F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AD315101251C8FD5007C8E0F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AD315108251C8FD5007C8E0F;
-			remoteInfo = "Pact-iOS-ObjC-Example";
-		};
-		AD315130251C8FD7007C8E0F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AD315101251C8FD5007C8E0F /* Project object */;
 			proxyType = 1;
@@ -52,9 +44,6 @@
 		AD315124251C8FD7007C8E0F /* Pact-iOS-ObjC-ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pact-iOS-ObjC-ExampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD315128251C8FD7007C8E0F /* Pact_iOS_ObjC_ExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pact_iOS_ObjC_ExampleTests.m; sourceTree = "<group>"; };
 		AD31512A251C8FD7007C8E0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AD31512F251C8FD7007C8E0F /* Pact-iOS-ObjC-ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pact-iOS-ObjC-ExampleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AD315133251C8FD7007C8E0F /* Pact_iOS_ObjC_ExampleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pact_iOS_ObjC_ExampleUITests.m; sourceTree = "<group>"; };
-		AD315135251C8FD7007C8E0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ADA1F796251C925400439736 /* HTTPClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTTPClient.m; sourceTree = "<group>"; };
 		ADA1F79B251C928700439736 /* HTTPClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTTPClient.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,13 +63,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AD31512C251C8FD7007C8E0F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -89,7 +71,6 @@
 			children = (
 				AD31510B251C8FD5007C8E0F /* Pact-iOS-ObjC-Example */,
 				AD315127251C8FD7007C8E0F /* Pact-iOS-ObjC-ExampleTests */,
-				AD315132251C8FD7007C8E0F /* Pact-iOS-ObjC-ExampleUITests */,
 				AD31510A251C8FD5007C8E0F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -99,7 +80,6 @@
 			children = (
 				AD315109251C8FD5007C8E0F /* Pact-iOS-ObjC-Example.app */,
 				AD315124251C8FD7007C8E0F /* Pact-iOS-ObjC-ExampleTests.xctest */,
-				AD31512F251C8FD7007C8E0F /* Pact-iOS-ObjC-ExampleUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -130,15 +110,6 @@
 				AD31512A251C8FD7007C8E0F /* Info.plist */,
 			);
 			path = "Pact-iOS-ObjC-ExampleTests";
-			sourceTree = "<group>";
-		};
-		AD315132251C8FD7007C8E0F /* Pact-iOS-ObjC-ExampleUITests */ = {
-			isa = PBXGroup;
-			children = (
-				AD315133251C8FD7007C8E0F /* Pact_iOS_ObjC_ExampleUITests.m */,
-				AD315135251C8FD7007C8E0F /* Info.plist */,
-			);
-			path = "Pact-iOS-ObjC-ExampleUITests";
 			sourceTree = "<group>";
 		};
 		ADA1F795251C922600439736 /* Networking */ = {
@@ -188,24 +159,6 @@
 			productReference = AD315124251C8FD7007C8E0F /* Pact-iOS-ObjC-ExampleTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		AD31512E251C8FD7007C8E0F /* Pact-iOS-ObjC-ExampleUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AD31513E251C8FD7007C8E0F /* Build configuration list for PBXNativeTarget "Pact-iOS-ObjC-ExampleUITests" */;
-			buildPhases = (
-				AD31512B251C8FD7007C8E0F /* Sources */,
-				AD31512C251C8FD7007C8E0F /* Frameworks */,
-				AD31512D251C8FD7007C8E0F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				AD315131251C8FD7007C8E0F /* PBXTargetDependency */,
-			);
-			name = "Pact-iOS-ObjC-ExampleUITests";
-			productName = "Pact-iOS-ObjC-ExampleUITests";
-			productReference = AD31512F251C8FD7007C8E0F /* Pact-iOS-ObjC-ExampleUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -218,10 +171,6 @@
 						CreatedOnToolsVersion = 12.0;
 					};
 					AD315123251C8FD7007C8E0F = {
-						CreatedOnToolsVersion = 12.0;
-						TestTargetID = AD315108251C8FD5007C8E0F;
-					};
-					AD31512E251C8FD7007C8E0F = {
 						CreatedOnToolsVersion = 12.0;
 						TestTargetID = AD315108251C8FD5007C8E0F;
 					};
@@ -242,7 +191,6 @@
 			targets = (
 				AD315108251C8FD5007C8E0F /* Pact-iOS-ObjC-Example */,
 				AD315123251C8FD7007C8E0F /* Pact-iOS-ObjC-ExampleTests */,
-				AD31512E251C8FD7007C8E0F /* Pact-iOS-ObjC-ExampleUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -259,13 +207,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		AD315122251C8FD7007C8E0F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AD31512D251C8FD7007C8E0F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -295,14 +236,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AD31512B251C8FD7007C8E0F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AD315134251C8FD7007C8E0F /* Pact_iOS_ObjC_ExampleUITests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -310,11 +243,6 @@
 			isa = PBXTargetDependency;
 			target = AD315108251C8FD5007C8E0F /* Pact-iOS-ObjC-Example */;
 			targetProxy = AD315125251C8FD7007C8E0F /* PBXContainerItemProxy */;
-		};
-		AD315131251C8FD7007C8E0F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AD315108251C8FD5007C8E0F /* Pact-iOS-ObjC-Example */;
-			targetProxy = AD315130251C8FD7007C8E0F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -389,7 +317,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -442,7 +370,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -457,6 +385,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Pact-iOS-ObjC-Example/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -474,6 +403,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Pact-iOS-ObjC-Example/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -491,7 +421,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
 				INFOPLIST_FILE = "Pact-iOS-ObjC-ExampleTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -512,7 +442,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
 				INFOPLIST_FILE = "Pact-iOS-ObjC-ExampleTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -523,40 +453,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pact-iOS-ObjC-Example.app/Pact-iOS-ObjC-Example";
-			};
-			name = Release;
-		};
-		AD31513F251C8FD7007C8E0F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Pact-iOS-ObjC-ExampleUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.pact-foundation.PactSwift.Pact-iOS-ObjC-ExampleUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Pact-iOS-ObjC-Example";
-			};
-			name = Debug;
-		};
-		AD315140251C8FD7007C8E0F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Pact-iOS-ObjC-ExampleUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.pact-foundation.PactSwift.Pact-iOS-ObjC-ExampleUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Pact-iOS-ObjC-Example";
 			};
 			name = Release;
 		};
@@ -586,15 +482,6 @@
 			buildConfigurations = (
 				AD31513C251C8FD7007C8E0F /* Debug */,
 				AD31513D251C8FD7007C8E0F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		AD31513E251C8FD7007C8E0F /* Build configuration list for PBXNativeTarget "Pact-iOS-ObjC-ExampleUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AD31513F251C8FD7007C8E0F /* Debug */,
-				AD315140251C8FD7007C8E0F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
