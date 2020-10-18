@@ -8,60 +8,9 @@ This repository is used solely to demonstrate the minimal effort required to set
 
 ----
 
-## Prepare dependencies
+## Installation
 
-Add [`PactSwift`](https://github.com/surpher/PactSwift) to your `Cartfile` :
-
-	github "surpher/PactSwift" "master"
-
-_set version or branch - this one uses branch due to framework still being actively developed without a release version_
-
-Build [`PactSwift`](https://github.com/surpher/PactSwift) as dependency in your terminal:
-
-	carthage update --platform ios --no-use-binaries --cache-builds
-
-## Run Test targets in this example project
-
-`cmd + u`
-
-1. Target `Pact-iOS-FAILING-ExampleTest` will fail with 4 tests and show the benefits of testing your "real" (and buggy) API Client implementation.
-
-2. Target `Pact-iOS-ExampleTests` will pass all tests and as a result a _[consumer_name]-[provider_name].json_ (eg: `passing-app-test-provider.json`) Pact Contract file is generated in `$(PROJECT_DIR)/pacts` folder, as defined in the scheme's Environment Variable `PACT_DIR`
-
-## Steps to setup your own project
-
-### Xcode setup
-
-[`PactSwift`](https://github.com/surpher/PactSwift) is a testing framework! Do not embed this framework into your deployable app bundle!
-
-Your app target, ideally, should not know about [`PactSwift`](https://github.com/surpher/PactSwift) at all!
-
-#### Setup Build Phases
-
-`Test Target > Build Settings > Link Binary With Libraries > Add Other > Add Files...`  
-Find your Carthage folder, `./Build/iOS/` and select `PactSwift.framework` to link it:
-
-![link binary with libraries](res/01_link_binary_with_libraries.png)
-
-... Or drag and drop the framework into the Build Phase.
-
-#### Setup Framework Build Settings
-
-1. In `Test Target > Build Settings` add `$(PROJECT_DIR)/Carthage/Build/iOS` (non-recursive) to `Framework Search Paths` configuration key.
-
-![set framework search paths](res/02_framework_search_paths.png)
-
-2. In `Test Target > Build Settings` Add `$(FRAMEWORK_SEARCH_PATHS)` to `Linking > Runpath Search Paths`
-
-![set runpath search paths](res/03_runpath_search_paths.png)
-
-#### Set destination dir
-
-Edit scheme and add `PACT_DIR` environment variable with `dir` where you want your Pact contracts to be written to:
-
-![set destination dir](res/04_destination_dir.png)
-
-**NOTE:** If this environment variable is not set, the default dir [`PactSwift`](https://github.com/surpher/PactSwift) writes the contract to `pacts` folder in current user's home directory (eg: `/Users/john_appleseed/pacts`).
+See [PactSwift](https://github.com/surhper/PactSwift) for setup information.
 
 ## References
 

@@ -1,4 +1,4 @@
-# macOS Example
+# iOS (Objective-C) Example
 
 ## Disclaimer
 
