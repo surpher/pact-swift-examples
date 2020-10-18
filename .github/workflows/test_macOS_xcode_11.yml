@@ -1,0 +1,28 @@
+name: Test macOS project
+
+on: push
+
+jobs:
+  test_ios:
+    name: Run tests
+    runs-on: macOS-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
+
+      - name: Use Xcode 11.7
+        run: sudo xcode-select -switch /Applications/Xcode_11.7.app
+
+      - name: Prepare the tools
+        run: |
+          brew install rust
+          brew tap thii/xcbeautify https://github.com/thii/xcbeautify.git
+          brew install swiftlint xcbeautify
+
+      - name: Test the macOS project
+        run: |
+          cd Pact-iOS-Example
+          set -o pipefail && xcodebuild clean test -project Pact-macOS-Example.xcodeproj -scheme Pact-macOS-Example -destination "platform=macOS,arch=x86_64" | xcbeautify
