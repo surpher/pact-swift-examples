@@ -256,7 +256,7 @@ class XCTestFailingExampleTests: XCTestCase {
 				method: .POST,
 				path: "/api/users",
 				body: [
-					"name": "Julia"
+					"name": Matcher.SomethingLike("Foo")
 				]
 			)
 			.willRespondWith(

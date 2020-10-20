@@ -172,7 +172,7 @@ class PassingTestsExample: XCTestCase {
 			.withRequest(
 				method: .GET,
 				path: "/api/users",
-				query: ["page": ["3"]]
+				query: ["page": [Matcher.SomethingLike("4")]]
 			)
 			.willRespondWith(
 				status: 200,
