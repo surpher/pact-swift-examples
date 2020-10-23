@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,18 +12,13 @@
 		ADEFD156253F8B710081A1B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADEFD155253F8B710081A1B1 /* Assets.xcassets */; };
 		ADEFD159253F8B710081A1B1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADEFD158253F8B710081A1B1 /* Preview Assets.xcassets */; };
 		ADEFD164253F8B710081A1B1 /* Pact_iOS_SPM_ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEFD163253F8B710081A1B1 /* Pact_iOS_SPM_ExampleTests.swift */; };
-		ADEFD16F253F8B710081A1B1 /* Pact_iOS_SPM_ExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEFD16E253F8B710081A1B1 /* Pact_iOS_SPM_ExampleUITests.swift */; };
+		ADEFD1C52542BA210081A1B1 /* PactSwift in Frameworks */ = {isa = PBXBuildFile; productRef = ADEFD1C42542BA210081A1B1 /* PactSwift */; };
+		ADEFD1D62542BE2B0081A1B1 /* APIClientImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEFD1D52542BE2B0081A1B1 /* APIClientImplementation.swift */; };
+		ADEFD1DE2542C82D0081A1B1 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEFD1DD2542C82D0081A1B1 /* TestData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		ADEFD160253F8B710081A1B1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = ADEFD146253F8B6E0081A1B1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = ADEFD14D253F8B6E0081A1B1;
-			remoteInfo = "Pact-iOS-SPM-Example";
-		};
-		ADEFD16B253F8B710081A1B1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = ADEFD146253F8B6E0081A1B1 /* Project object */;
 			proxyType = 1;
@@ -42,9 +37,8 @@
 		ADEFD15F253F8B710081A1B1 /* Pact-iOS-SPM-ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pact-iOS-SPM-ExampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADEFD163253F8B710081A1B1 /* Pact_iOS_SPM_ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pact_iOS_SPM_ExampleTests.swift; sourceTree = "<group>"; };
 		ADEFD165253F8B710081A1B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ADEFD16A253F8B710081A1B1 /* Pact-iOS-SPM-ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pact-iOS-SPM-ExampleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		ADEFD16E253F8B710081A1B1 /* Pact_iOS_SPM_ExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pact_iOS_SPM_ExampleUITests.swift; sourceTree = "<group>"; };
-		ADEFD170253F8B710081A1B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ADEFD1D52542BE2B0081A1B1 /* APIClientImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientImplementation.swift; sourceTree = "<group>"; };
+		ADEFD1DD2542C82D0081A1B1 /* TestData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestData.swift; path = "../../Pact-iOS-Example/Pact-iOS-ExampleTests/TestData.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,13 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ADEFD167253F8B710081A1B1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				ADEFD1C52542BA210081A1B1 /* PactSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,7 +65,6 @@
 			children = (
 				ADEFD150253F8B6E0081A1B1 /* Pact-iOS-SPM-Example */,
 				ADEFD162253F8B710081A1B1 /* Pact-iOS-SPM-ExampleTests */,
-				ADEFD16D253F8B710081A1B1 /* Pact-iOS-SPM-ExampleUITests */,
 				ADEFD14F253F8B6E0081A1B1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -87,7 +74,6 @@
 			children = (
 				ADEFD14E253F8B6E0081A1B1 /* Pact-iOS-SPM-Example.app */,
 				ADEFD15F253F8B710081A1B1 /* Pact-iOS-SPM-ExampleTests.xctest */,
-				ADEFD16A253F8B710081A1B1 /* Pact-iOS-SPM-ExampleUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -100,6 +86,7 @@
 				ADEFD155253F8B710081A1B1 /* Assets.xcassets */,
 				ADEFD15A253F8B710081A1B1 /* Info.plist */,
 				ADEFD157253F8B710081A1B1 /* Preview Content */,
+				ADEFD1D52542BE2B0081A1B1 /* APIClientImplementation.swift */,
 			);
 			path = "Pact-iOS-SPM-Example";
 			sourceTree = "<group>";
@@ -116,18 +103,10 @@
 			isa = PBXGroup;
 			children = (
 				ADEFD163253F8B710081A1B1 /* Pact_iOS_SPM_ExampleTests.swift */,
+				ADEFD1DD2542C82D0081A1B1 /* TestData.swift */,
 				ADEFD165253F8B710081A1B1 /* Info.plist */,
 			);
 			path = "Pact-iOS-SPM-ExampleTests";
-			sourceTree = "<group>";
-		};
-		ADEFD16D253F8B710081A1B1 /* Pact-iOS-SPM-ExampleUITests */ = {
-			isa = PBXGroup;
-			children = (
-				ADEFD16E253F8B710081A1B1 /* Pact_iOS_SPM_ExampleUITests.swift */,
-				ADEFD170253F8B710081A1B1 /* Info.plist */,
-			);
-			path = "Pact-iOS-SPM-ExampleUITests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,6 +133,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ADEFD176253F8B710081A1B1 /* Build configuration list for PBXNativeTarget "Pact-iOS-SPM-ExampleTests" */;
 			buildPhases = (
+				ADEFD1C82542BA390081A1B1 /* Build libpact_mock_server.a */,
 				ADEFD15B253F8B710081A1B1 /* Sources */,
 				ADEFD15C253F8B710081A1B1 /* Frameworks */,
 				ADEFD15D253F8B710081A1B1 /* Resources */,
@@ -164,27 +144,12 @@
 				ADEFD161253F8B710081A1B1 /* PBXTargetDependency */,
 			);
 			name = "Pact-iOS-SPM-ExampleTests";
+			packageProductDependencies = (
+				ADEFD1C42542BA210081A1B1 /* PactSwift */,
+			);
 			productName = "Pact-iOS-SPM-ExampleTests";
 			productReference = ADEFD15F253F8B710081A1B1 /* Pact-iOS-SPM-ExampleTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		ADEFD169253F8B710081A1B1 /* Pact-iOS-SPM-ExampleUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = ADEFD179253F8B710081A1B1 /* Build configuration list for PBXNativeTarget "Pact-iOS-SPM-ExampleUITests" */;
-			buildPhases = (
-				ADEFD166253F8B710081A1B1 /* Sources */,
-				ADEFD167253F8B710081A1B1 /* Frameworks */,
-				ADEFD168253F8B710081A1B1 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				ADEFD16C253F8B710081A1B1 /* PBXTargetDependency */,
-			);
-			name = "Pact-iOS-SPM-ExampleUITests";
-			productName = "Pact-iOS-SPM-ExampleUITests";
-			productReference = ADEFD16A253F8B710081A1B1 /* Pact-iOS-SPM-ExampleUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -202,10 +167,6 @@
 						CreatedOnToolsVersion = 12.0;
 						TestTargetID = ADEFD14D253F8B6E0081A1B1;
 					};
-					ADEFD169253F8B710081A1B1 = {
-						CreatedOnToolsVersion = 12.0;
-						TestTargetID = ADEFD14D253F8B6E0081A1B1;
-					};
 				};
 			};
 			buildConfigurationList = ADEFD149253F8B6E0081A1B1 /* Build configuration list for PBXProject "Pact-iOS-SPM-Example" */;
@@ -217,13 +178,15 @@
 				Base,
 			);
 			mainGroup = ADEFD145253F8B6E0081A1B1;
+			packageReferences = (
+				ADEFD1C32542BA210081A1B1 /* XCRemoteSwiftPackageReference "PactSwift" */,
+			);
 			productRefGroup = ADEFD14F253F8B6E0081A1B1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				ADEFD14D253F8B6E0081A1B1 /* Pact-iOS-SPM-Example */,
 				ADEFD15E253F8B710081A1B1 /* Pact-iOS-SPM-ExampleTests */,
-				ADEFD169253F8B710081A1B1 /* Pact-iOS-SPM-ExampleUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -245,14 +208,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		ADEFD168253F8B710081A1B1 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		ADEFD1C82542BA390081A1B1 /* Build libpact_mock_server.a */ = {
+			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Build libpact_mock_server.a";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
 			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "chmod -R 755 $BUILD_DIR/../../SourcePackages/checkouts/PactSwift/Resources\n$BUILD_DIR/../../SourcePackages/checkouts/PactSwift/Scripts/BuildPhases/build-spm-dependency ios\n";
 		};
-/* End PBXResourcesBuildPhase section */
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		ADEFD14A253F8B6E0081A1B1 /* Sources */ = {
@@ -261,6 +238,7 @@
 			files = (
 				ADEFD154253F8B6E0081A1B1 /* ContentView.swift in Sources */,
 				ADEFD152253F8B6E0081A1B1 /* Pact_iOS_SPM_ExampleApp.swift in Sources */,
+				ADEFD1D62542BE2B0081A1B1 /* APIClientImplementation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,14 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADEFD164253F8B710081A1B1 /* Pact_iOS_SPM_ExampleTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ADEFD166253F8B710081A1B1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				ADEFD16F253F8B710081A1B1 /* Pact_iOS_SPM_ExampleUITests.swift in Sources */,
+				ADEFD1DE2542C82D0081A1B1 /* TestData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,11 +258,6 @@
 			isa = PBXTargetDependency;
 			target = ADEFD14D253F8B6E0081A1B1 /* Pact-iOS-SPM-Example */;
 			targetProxy = ADEFD160253F8B710081A1B1 /* PBXContainerItemProxy */;
-		};
-		ADEFD16C253F8B710081A1B1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = ADEFD14D253F8B6E0081A1B1 /* Pact-iOS-SPM-Example */;
-			targetProxy = ADEFD16B253F8B710081A1B1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -467,6 +433,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = "$BUILD_DIR/../../SourcePackages/checkouts/PactSwift/Resources/**";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pact-foundation.PactSwift.Pact-iOS-SPM-ExampleTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -488,49 +455,12 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = "$BUILD_DIR/../../SourcePackages/checkouts/PactSwift/Resources/**";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pact-foundation.PactSwift.Pact-iOS-SPM-ExampleTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pact-iOS-SPM-Example.app/Pact-iOS-SPM-Example";
-			};
-			name = Release;
-		};
-		ADEFD17A253F8B710081A1B1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Pact-iOS-SPM-ExampleUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.pact-foundation.PactSwift.Pact-iOS-SPM-ExampleUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Pact-iOS-SPM-Example";
-			};
-			name = Debug;
-		};
-		ADEFD17B253F8B710081A1B1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Pact-iOS-SPM-ExampleUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.pact-foundation.PactSwift.Pact-iOS-SPM-ExampleUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Pact-iOS-SPM-Example";
 			};
 			name = Release;
 		};
@@ -564,16 +494,26 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		ADEFD179253F8B710081A1B1 /* Build configuration list for PBXNativeTarget "Pact-iOS-SPM-ExampleUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				ADEFD17A253F8B710081A1B1 /* Debug */,
-				ADEFD17B253F8B710081A1B1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		ADEFD1C32542BA210081A1B1 /* XCRemoteSwiftPackageReference "PactSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/surpher/PactSwift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		ADEFD1C42542BA210081A1B1 /* PactSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ADEFD1C32542BA210081A1B1 /* XCRemoteSwiftPackageReference "PactSwift" */;
+			productName = PactSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = ADEFD146253F8B6E0081A1B1 /* Project object */;
 }
