@@ -227,7 +227,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "chmod -R 755 $BUILD_DIR/../../SourcePackages/checkouts/PactSwift/Resources\n$BUILD_DIR/../../SourcePackages/checkouts/PactSwift/Scripts/BuildPhases/build-spm-dependency ios\n";
+			shellScript = "chmod -R 755 $BUILD_DIR/../../SourcePackages/checkouts/PactSwift/Resources\nchmod -R 755 $BUILD_DIR/../../SourcePackages/checkouts/PactSwift/Submodules/pact-reference/rust\n$BUILD_DIR/../../SourcePackages/checkouts/PactSwift/Scripts/BuildPhases/build-spm-dependency ios\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
