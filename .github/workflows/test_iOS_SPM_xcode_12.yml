@@ -1,0 +1,31 @@
+name: Run tests for SPM (Xcode 12)
+
+env:
+  SIMULATOR_NAME: "iPhone 12 Pro"
+
+on: push
+
+jobs:
+  test_ios:
+    name: Run tests for SPM
+    runs-on: macOS-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
+
+      - name: Use Xcode 12
+        run: sudo xcode-select -switch /Applications/Xcode_12.app
+
+      - name: Prepare the tools
+        run: |
+          brew install rust
+          brew tap thii/xcbeautify https://github.com/thii/xcbeautify.git
+          brew install swiftlint xcbeautify
+
+      - name: Run the tests
+        run: |
+          cd Pact-iOS-SPM-Example
+          et -o pipefail && xcodebuild clean test -project Pact-iOS-SPM-Example.xcodeproj -scheme Pact-iOS-SPM-Example -destination "platform=iOS Simulator,name=${{ env.SIMULATOR_NAME }}" | xcbeautify
