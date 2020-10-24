@@ -33,7 +33,9 @@ The source code for `libpact_mock_server_ffi` is in the PactSwift git submodule 
 
 <img src="Resources/Assets/01-build-step.png" width="400" alt="Build step" />
 
-### Add the `Library Search Path` to build settings
+### Edit the search paths in build settings
+
+Add `$BUILD_DIR/../../SourcePackages/checkouts/PactSwift/Resources` -recursive to `Library Search Paths` and `Frameworks Search Paths` in your test target's build settings.
 
 <img src="Resources/Assets/02-library-search-path.png" width="400" alt="Swift package" />
 
