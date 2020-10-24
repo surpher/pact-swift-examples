@@ -3,7 +3,7 @@ name: Test macOS project
 on: push
 
 jobs:
-  test_ios:
+  test_macOS:
     name: Run tests
     runs-on: macOS-latest
 
