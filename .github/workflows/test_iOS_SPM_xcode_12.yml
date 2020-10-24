@@ -26,6 +26,7 @@ jobs:
       - name: Run the tests
         run: |
           cd Pact-iOS-SPM-Example
-          set -o pipefail && xcodebuild clean build -resolvePackageDependencies -showBuildSettings -project Pact-iOS-SPM-Example.xcodeproj -scheme Pact-iOS-SPM-Example | xcbeautify
+          set -o pipefail && xcodebuild -resolvePackageDependencies -project Pact-iOS-SPM-Example.xcodeproj -scheme Pact-iOS-SPM-Example | xcbeautify
+          set -o pipefail && xcodebuild clean build -project Pact-iOS-SPM-Example.xcodeproj -scheme Pact-iOS-SPM-Example -destination "platform=iOS Simulator,name=iPhone 11 Pro" | xcbeautify
           set -o pipefail && xcodebuild test -project Pact-iOS-SPM-Example.xcodeproj -scheme Pact-iOS-SPM-Example -destination "platform=iOS Simulator,name=iPhone 11 Pro" | xcbeautify
           more pacts/iOS_app-test_provider.json
