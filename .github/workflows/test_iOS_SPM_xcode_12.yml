@@ -1,4 +1,4 @@
-name: Run iOS (SPM) project
+name: Test iOS (SPM) project
 
 on: push
 
