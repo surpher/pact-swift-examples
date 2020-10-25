@@ -1,0 +1,30 @@
+name: Test macOS (SPM) project
+
+on: push
+
+jobs:
+  test_macOS:
+    name: Run tests for SPM
+    runs-on: macOS-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
+
+      - name: Use Xcode 12
+        run: sudo xcode-select -switch /Applications/Xcode_12.app
+
+      - name: Prepare the tools
+        run: |
+          brew install rust
+          brew tap thii/xcbeautify https://github.com/thii/xcbeautify.git
+          brew install swiftlint xcbeautify
+
+      - name: Run the tests
+        run: |
+          cd Pact-macOS-SPM-Example
+          set -o pipefail && xcodebuild -resolvePackageDependencies -project Pact-macOS-SPM-Example.xcodeproj -scheme Pact-macOS-SPM-Example | xcbeautify
+          set -o pipefail && xcodebuild clean build -project Pact-macOS-SPM-Example.xcodeproj -scheme Pact-macOS-SPM-Example -destination "platform=macOS,arch=x86_64" | xcbeautify
+          set -o pipefail && xcodebuild test -project Pact-macOS-SPM-Example.xcodeproj -scheme Pact-macOS-SPM-Example -destination "platform=macOS,arch=x86_64" | xcbeautify
