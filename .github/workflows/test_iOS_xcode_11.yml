@@ -1,9 +1,6 @@
 name: Test iOS project
 
-env:
-    SIMULATOR_NAME: "iPhone 11 Pro"
-
-on: push
+on: [push, workflow_dispatch, repository_dispatch]
 
 jobs:
   test_ios:
