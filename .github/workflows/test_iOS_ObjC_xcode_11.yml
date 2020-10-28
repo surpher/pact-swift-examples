@@ -13,6 +13,18 @@ jobs:
         with:
           submodules: recursive
 
+      - name: Cache Rust targets
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-rust-targets
+        with:
+          path: Carthage/Checkouts/PactSwift/Submodules/rust-reference/rust/target
+          key: ${{ runner.os }}-build-ios-objc-${{ env.cache-name }}-${{ hashFiles('**/CACHEDIR.TAG') }}
+          restore-keys: |
+            ${{ runner.os }}-build-ios-objc-${{ env.cache-name }}-
+            ${{ runner.os }}-build-ios-objc-
+            ${{ runner.os }}-
+
       - name: Use Xcode 11.7
         run: sudo xcode-select -switch /Applications/Xcode_11.7.app
 
