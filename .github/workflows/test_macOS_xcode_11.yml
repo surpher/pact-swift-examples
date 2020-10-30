@@ -18,8 +18,8 @@ jobs:
         env:
           cache-name: cache-rust-targets
         with:
-          path: Carthage/Checkouts/PactSwift/Submodules/rust-reference/rust/target
-          key: ${{ runner.os }}-build-macos-${{ env.cache-name }}-${{ hashFiles('**/CACHEDIR.TAG') }}
+          path: Carthage
+          key: ${{ runner.os }}-build-macos-${{ env.cache-name }}-${{ hashFiles('**/Cartfile.resolved') }}
           restore-keys: |
             ${{ runner.os }}-build-macos-${{ env.cache-name }}-
             ${{ runner.os }}-build-macos-
