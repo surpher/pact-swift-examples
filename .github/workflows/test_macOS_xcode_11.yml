@@ -37,5 +37,5 @@ jobs:
       - name: Test the macOS project
         run: |
           cd Pact-macOS-Example
-          carthage update --platform macOS
+          ../carthage_xcode12 update --platform macOS
           set -o pipefail && xcodebuild clean test -project Pact-macOS-Example.xcodeproj -scheme Pact-macOS-Example -destination "platform=macOS,arch=x86_64" | xcbeautify
