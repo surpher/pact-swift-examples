@@ -14,7 +14,7 @@ jobs:
           submodules: recursive
 
       - name: Use Xcode 12
-        run: sudo xcode-select -switch /Applications/Xcode_12.app
+        run: sudo xcode-select -switch /Applications/Xcode_12.2.app
 
       - name: Prepare the tools
         run: |
@@ -27,6 +27,6 @@ jobs:
         run: |
           cd Pact-iOS-SPM-Example
           set -o pipefail && xcodebuild -resolvePackageDependencies -project Pact-iOS-SPM-Example.xcodeproj -scheme Pact-iOS-SPM-Example | xcbeautify
-          set -o pipefail && xcodebuild clean build -project Pact-iOS-SPM-Example.xcodeproj -scheme Pact-iOS-SPM-Example -destination "platform=iOS Simulator,name=iPhone 11 Pro" | xcbeautify
-          set -o pipefail && xcodebuild test -project Pact-iOS-SPM-Example.xcodeproj -scheme Pact-iOS-SPM-Example -destination "platform=iOS Simulator,name=iPhone 11 Pro" | xcbeautify
+          set -o pipefail && xcodebuild clean build -project Pact-iOS-SPM-Example.xcodeproj -scheme Pact-iOS-SPM-Example -destination "platform=iOS Simulator,name=iPhone 12 Pro" | xcbeautify
+          set -o pipefail && xcodebuild test -project Pact-iOS-SPM-Example.xcodeproj -scheme Pact-iOS-SPM-Example -destination "platform=iOS Simulator,name=iPhone 12 Pro" | xcbeautify
           more pacts/iOS_app-test_provider.json
