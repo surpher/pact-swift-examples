@@ -13,18 +13,6 @@ jobs:
         with:
           submodules: recursive
 
-      - name: Cache Rust targets
-        uses: actions/cache@v2
-        env:
-          cache-name: cache-rust-targets
-        with:
-          path: Carthage
-          key: ${{ runner.os }}-build-macos-${{ env.cache-name }}-${{ hashFiles('**/Cartfile.resolved') }}
-          restore-keys: |
-            ${{ runner.os }}-build-macos-${{ env.cache-name }}-
-            ${{ runner.os }}-build-macos-
-            ${{ runner.os }}-
-
       - name: Use Xcode 11.7
         run: sudo xcode-select -switch /Applications/Xcode_11.7.app
 
@@ -33,6 +21,15 @@ jobs:
           brew install rust
           brew tap thii/xcbeautify https://github.com/thii/xcbeautify.git
           brew install swiftlint xcbeautify
+
+      - name: Cache Rust targets
+        uses: actions/cache@v2
+        with:
+          path: Submodules/pact-reference/rust/target
+          key: ${{ runner.os }}-pactswift-examples-submodule-${{ hashFiles('**/Submodules/pact-reference/rust/Cargo.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-pactswift-examples-submodule-
+            ${{ runner.os }}-
 
       - name: Test the macOS project
         run: |

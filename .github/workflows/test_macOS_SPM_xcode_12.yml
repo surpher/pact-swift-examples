@@ -22,6 +22,15 @@ jobs:
           brew tap thii/xcbeautify https://github.com/thii/xcbeautify.git
           brew install swiftlint xcbeautify
 
+      - name: Cache Rust targets
+          uses: actions/cache@v2
+          with:
+            path: Submodules/pact-reference/rust/target
+            key: ${{ runner.os }}-pactswift-examples-submodule-${{ hashFiles('**/Submodules/pact-reference/rust/Cargo.lock') }}
+            restore-keys: |
+              ${{ runner.os }}-pactswift-examples-submodule-
+              ${{ runner.os }}-
+
       - name: Run the tests
         run: |
           cd Pact-macOS-SPM-Example
