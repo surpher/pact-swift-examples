@@ -29,7 +29,7 @@ jobs:
           set -o pipefail && xcodebuild clean build -project Pact-macOS-SPM-Example.xcodeproj -scheme Pact-macOS-SPM-Example -destination "platform=macOS,arch=x86_64" | xcbeautify
           set -o pipefail && xcodebuild test -project Pact-macOS-SPM-Example.xcodeproj -scheme Pact-macOS-SPM-Example -destination "platform=macOS,arch=x86_64" | xcbeautify
 
-  test_macOS:
+  test_macOS_bigsur:
     name: Run tests for SPM
     runs-on: macos-11.0
 
