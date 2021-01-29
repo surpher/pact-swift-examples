@@ -30,31 +30,3 @@ jobs:
           set -o pipefail && xcodebuild clean build -project Pact-iOS-SPM-Example.xcodeproj -scheme Pact-iOS-SPM-Example -destination "platform=iOS Simulator,name=iPhone 12 Pro" | xcbeautify
           set -o pipefail && xcodebuild test -project Pact-iOS-SPM-Example.xcodeproj -scheme Pact-iOS-SPM-Example -destination "platform=iOS Simulator,name=iPhone 12 Pro" | xcbeautify
           more pacts/iOS_app-test_provider.json
-
-  test_on_bigsur:
-    name: Run tests for SPM
-    runs-on: macos-11.0
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-        with:
-          submodules: recursive
-
-      - name: Use Xcode 12.3
-        run: sudo xcode-select -switch /Applications/Xcode_12.3.app
-
-      - name: Prepare the tools
-        run: |
-          brew install rust
-          cargo install cargo-lipo
-          brew tap thii/xcbeautify https://github.com/thii/xcbeautify.git
-          brew install swiftlint xcbeautify
-
-      - name: Run the tests
-        run: |
-          cd Pact-iOS-SPM-Example
-          set -o pipefail && xcodebuild -resolvePackageDependencies -project Pact-iOS-SPM-Example.xcodeproj -scheme Pact-iOS-SPM-Example | xcbeautify
-          set -o pipefail && xcodebuild clean build -project Pact-iOS-SPM-Example.xcodeproj -scheme Pact-iOS-SPM-Example -destination "platform=iOS Simulator,name=iPhone 12 Pro" | xcbeautify
-          set -o pipefail && xcodebuild test -project Pact-iOS-SPM-Example.xcodeproj -scheme Pact-iOS-SPM-Example -destination "platform=iOS Simulator,name=iPhone 12 Pro" | xcbeautify
-          more pacts/iOS_app-test_provider.json
