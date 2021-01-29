@@ -21,7 +21,7 @@ jobs:
           brew install rust
           cargo install cargo-lipo
           brew tap thii/xcbeautify https://github.com/thii/xcbeautify.git
-          brew install swiftlint xcbeautify
+          brew install xcbeautify
 
       - name: Run the tests
         run: |
