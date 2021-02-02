@@ -13,8 +13,8 @@ jobs:
         with:
           submodules: recursive
 
-      - name: Use Xcode 12
-        run: sudo xcode-select -switch /Applications/Xcode_12.2.app
+      - name: Use Xcode 12.4
+        run: sudo xcode-select -switch /Applications/Xcode_12.4.app
 
       - name: Prepare the tools
         run: |
