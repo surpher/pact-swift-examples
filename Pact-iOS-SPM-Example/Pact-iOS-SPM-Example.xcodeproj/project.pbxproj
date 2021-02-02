@@ -240,7 +240,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
+<<<<<<< Updated upstream
 			shellScript = "export PATH=\"$HOME/.cargo/bin:/usr/bin:$PATH\"\n\n# This is not good, but the only way to actually build the Rust dependency and replace it in the Swift Package\nchmod -R 755 $BUILD_DIR/../../SourcePackages/checkouts/PactSwift/Resources\nchmod -R 755 $BUILD_DIR/../../SourcePackages/checkouts/PactSwift/Submodules/pact-reference/rust \n\n# This next line runs the script that triggers `cargo build | cargo lipo` and replaces fake binary with the binary built for your machine\n$BUILD_DIR/../../SourcePackages/checkouts/PactSwift/Scripts/BuildPhases/build-spm-dependency ios\n";
+=======
+			shellScript = "export PATH=\"$HOME/.cargo/bin:$PATH\" \n\n# This is not good, but the only way to actually build the Rust dependency and replace it in the Swift Package\nchmod -R 755 $BUILD_DIR/../../SourcePackages/checkouts/PactSwift/Resources\nchmod -R 755 $BUILD_DIR/../../SourcePackages/checkouts/PactSwift/Submodules/pact-reference/rust \n# This next line runs the script that triggers `cargo build | cargo lipo` and replaces fake binary with the binary built for your machine\n$BUILD_DIR/../../SourcePackages/checkouts/PactSwift/Scripts/BuildPhases/build-spm-dependency ios\n";
+>>>>>>> Stashed changes
 		};
 /* End PBXShellScriptBuildPhase section */
 
