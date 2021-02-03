@@ -1,8 +1,5 @@
 name: Test macOS (SPM) project
 
-env:
-  RUSTFLAGS: "-Awarnings"
-
 on: [push, workflow_dispatch, repository_dispatch]
 
 jobs:
