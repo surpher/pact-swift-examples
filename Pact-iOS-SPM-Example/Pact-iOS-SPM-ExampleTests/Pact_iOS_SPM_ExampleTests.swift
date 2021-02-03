@@ -68,7 +68,9 @@ class PassingTestsExample: XCTestCase {
 	func testGetsUsers_over_SSL() {
 		// Set MockService to start up using TLS (using a self-signed certificate)
 		let secureMockService = MockService(consumer: "secure-consumer", provider: "secure-provider", scheme: .secure)
-		_ = secureMockService
+
+		// Set API interaction expectations
+		secureMockService
 			.uponReceiving("A request for a list of users over SSL")
 			.given("users exist and more")
 			.withRequest(
