@@ -10,7 +10,7 @@ This repository is used solely to demonstrate the minimal effort required to set
 
 ## Installation
 
-See [PactSwift](https://github.com/surhper/PactSwift) for setup information.
+See [PactSwift](https://github.com/surher/PactSwift) for setup information.
 
 ## References
 
