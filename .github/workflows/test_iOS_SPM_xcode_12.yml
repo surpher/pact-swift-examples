@@ -1,4 +1,4 @@
-name: Test iOS (SPM) project
+name: Test iOS (SPM)
 
 on: [push, workflow_dispatch, repository_dispatch]
 
