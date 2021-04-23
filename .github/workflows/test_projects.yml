@@ -1,4 +1,4 @@
-name: Test iOS (Objective-C)
+name: Build and test all demo projects
 
 on: [push, workflow_dispatch, repository_dispatch]
 
