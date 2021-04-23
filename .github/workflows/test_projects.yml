@@ -1,10 +1,10 @@
-name: Build and test all demo projects
+name: PactSwift demo projects
 
 on: [push, workflow_dispatch, repository_dispatch]
 
 jobs:
   test_iOS_carthage_ObjC:
-    name: Run tests
+    name: iOS (Objective-C) using Carthage
     runs-on: macOS-latest
 
     steps:
@@ -22,14 +22,14 @@ jobs:
           brew tap thii/xcbeautify https://github.com/thii/xcbeautify.git
           brew install xcbeautify
 
-      - name: Test the iOS (Objective-C) project
+      - name: Run tests
         run: |
           cd Pact-iOS-ObjC-Example
           ../carthage_xcode12 update --platform iOS
           set -o pipefail && xcodebuild clean test -project Pact-iOS-ObjC-Example.xcodeproj -scheme Pact-iOS-ObjC-Example -destination "platform=iOS Simulator,name=iPhone 11 Pro" | xcbeautify
 
   test_iOS_SPM:
-    name: Run tests for SPM
+    name: iOS using SPM
     runs-on: macOS-latest
 
     steps:
@@ -48,7 +48,7 @@ jobs:
           brew tap thii/xcbeautify https://github.com/thii/xcbeautify.git
           brew install xcbeautify
 
-      - name: Run the tests
+      - name: Run tests
         run: |
           cd Pact-iOS-SPM-Example
           set -o pipefail && xcodebuild -resolvePackageDependencies -project Pact-iOS-SPM-Example.xcodeproj -scheme Pact-iOS-SPM-Example | xcbeautify
@@ -57,7 +57,7 @@ jobs:
           more pacts/iOS_app-test_provider.json
 
   test_iOS_carthage_Xcode_11:
-    name: Run tests
+    name: iOS on Xcode 11.7 using Carthage
     runs-on: macOS-latest
 
     steps:
@@ -75,14 +75,14 @@ jobs:
           brew tap thii/xcbeautify https://github.com/thii/xcbeautify.git
           brew install xcbeautify
 
-      - name: Test the iOS project
+      - name: Run tests
         run: |
           cd Pact-iOS-Example
           ../carthage_xcode12 update --platform iOS
           set -o pipefail && xcodebuild clean test -project Pact-iOS-Example.xcodeproj -scheme Pact-iOS-Example -destination "platform=iOS Simulator,name=iPhone 11 Pro" | xcbeautify
 
   test_iOS_carthage_on_macOS_11:
-    name: Run tests on macOS 11.0
+    name: iOS on macOS 11.0
     runs-on: macOS-11.0
 
     steps:
@@ -100,14 +100,14 @@ jobs:
           brew tap thii/xcbeautify https://github.com/thii/xcbeautify.git
           brew install xcbeautify
 
-      - name: Test the iOS project
+      - name: Run tests
         run: |
           cd Pact-iOS-Example
           ../carthage_xcode12 update --platform iOS
           set -o pipefail && xcodebuild clean test -project Pact-iOS-Example.xcodeproj -scheme Pact-iOS-Example -destination "platform=iOS Simulator,name=iPhone 12 Pro" | xcbeautify
 
   test_iOS_carthage_Xcode_latest:
-    name: Run tests
+    name: iOS using Carthage
     runs-on: macOS-latest
 
     steps:
@@ -125,14 +125,14 @@ jobs:
           brew tap thii/xcbeautify https://github.com/thii/xcbeautify.git
           brew install xcbeautify
 
-      - name: Test the iOS project
+      - name: Run tests
         run: |
           cd Pact-iOS-Example
           ../carthage_xcode12 update --platform iOS
           set -o pipefail && xcodebuild clean test -project Pact-iOS-Example.xcodeproj -scheme Pact-iOS-Example -destination "platform=iOS Simulator,name=iPhone 11 Pro" | xcbeautify
 
   test_macOS_SPM:
-    name: Run tests for SPM
+    name: macOS using SPM
     runs-on: macOS-latest
 
     steps:
@@ -150,7 +150,7 @@ jobs:
           brew tap thii/xcbeautify https://github.com/thii/xcbeautify.git
           brew install xcbeautify
 
-      - name: Run the tests
+      - name: Run tests
         run: |
           cd Pact-macOS-SPM-Example
           set -o pipefail && xcodebuild -resolvePackageDependencies -project Pact-macOS-SPM-Example.xcodeproj -scheme Pact-macOS-SPM-Example | xcbeautify
@@ -158,7 +158,7 @@ jobs:
           set -o pipefail && xcodebuild test -project Pact-macOS-SPM-Example.xcodeproj -scheme Pact-macOS-SPM-Example -destination "platform=macOS,arch=x86_64" | xcbeautify
 
   test_macOS_Xcode_11:
-    name: Run tests
+    name: macOS on Xcode 11.7
     runs-on: macOS-latest
 
     steps:
@@ -176,7 +176,7 @@ jobs:
           brew tap thii/xcbeautify https://github.com/thii/xcbeautify.git
           brew install xcbeautify
 
-      - name: Test the macOS project
+      - name: Run tests
         run: |
           cd Pact-macOS-Example
           ../carthage_xcode12 update --platform macOS
