@@ -1,4 +1,4 @@
-name: Test macOS project
+name: Test macOS
 
 on: [push, workflow_dispatch, repository_dispatch]
 

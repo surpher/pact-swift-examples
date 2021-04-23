@@ -1,4 +1,4 @@
-name: Test iOS project - macOS 11.0
+name: Test iOS - macOS 11.0
 
 on: [push, workflow_dispatch, repository_dispatch]
 
