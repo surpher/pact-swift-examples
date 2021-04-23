@@ -4,7 +4,7 @@ Example projects using [PactSwift](https://github.com/surpher/pact-swift) framew
 
 | Project | Status | Dependency manager |
 | ---     | ---    | --- |
-| [iOS][project-ios] | [![Test iOS project - Xcode 11](https://github.com/surpher/pact-swift-examples/actions/workflows/test_iOS_xcode_11.yml/badge.svg)][workflow-ios-xcode-11]<br />[![Test iOS project - Xcode 12.4](https://github.com/surpher/pact-swift-examples/actions/workflows/test_iOS_xcode_12.4.yml/badge.svg)][workflow-ios-xcode12.4]<br />[![Test iOS project - macOS 11.0](https://github.com/surpher/pact-swift-examples/actions/workflows/test_iOS_xcode_12.4_bigsur.yml/badge.svg)][workflow-ios-macos-11.0] | Carthage |
+| [iOS][project-ios] | [![Test iOS - Xcode 11](https://github.com/surpher/pact-swift-examples/actions/workflows/test_iOS_xcode_11.yml/badge.svg)][workflow-ios-xcode-11]<br />[![Test iOS - Xcode 12.4](https://github.com/surpher/pact-swift-examples/actions/workflows/test_iOS_xcode_12.4.yml/badge.svg)][workflow-ios-xcode12.4]<br />[![Test iOS - macOS 11.0](https://github.com/surpher/pact-swift-examples/actions/workflows/test_iOS_xcode_12.4_bigsur.yml/badge.svg)][workflow-ios-macos-11.0] | Carthage |
 | [iOS (Objective-C)][project-ios-objc] | [![Test iOS (Objective-C) project](https://github.com/surpher/pact-swift-examples/workflows/Test%20iOS%20(Objective-C)%20project/badge.svg)][workflow-ios-objc] | Carthage |
 | [iOS][project-ios-spm] | [![Test iOS (SPM) project](https://github.com/surpher/pact-swift-examples/workflows/Test%20iOS%20(SPM)%20project/badge.svg)][workflow-ios-spm] | Swift Package Manager |
 | [macOS][project-macos] | [![Test macOS project](https://github.com/surpher/pact-swift-examples/workflows/Test%20macOS%20project/badge.svg)][workflow-macos]| Carthage |
