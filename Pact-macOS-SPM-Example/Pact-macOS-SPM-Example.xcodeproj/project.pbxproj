@@ -167,7 +167,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ADA11F702544D85000AFEB95 /* Build configuration list for PBXNativeTarget "Pact-macOS-SPM-ExampleTests" */;
 			buildPhases = (
-				ADA11F812544D92C00AFEB95 /* Build libpact_mock_server.a */,
 				ADA11F552544D85000AFEB95 /* Sources */,
 				ADA11F562544D85000AFEB95 /* Frameworks */,
 				ADA11F572544D85000AFEB95 /* Resources */,
@@ -274,27 +273,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		ADA11F812544D92C00AFEB95 /* Build libpact_mock_server.a */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Build libpact_mock_server.a";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# This is not good, but the only way to actually build the Rust dependency and replace it in the Swift Package\nchmod -R 755 $BUILD_DIR/../../SourcePackages/checkouts/PactSwift/Resources\nchmod -R 755 $BUILD_DIR/../../SourcePackages/checkouts/PactSwift/Submodules/pact-reference/rust \n# This next line runs the script that triggers `cargo build` and replaces fake binary with the binary built for by your machine for your machine\n$BUILD_DIR/../../SourcePackages/checkouts/PactSwift/Scripts/BuildPhases/build-spm-dependency macos\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		ADA11F402544D84E00AFEB95 /* Sources */ = {
@@ -519,15 +497,14 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = $BUILD_DIR/../../SourcePackages/checkouts/PactSwift/Resources/macOS;
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "Pact-macOS-SPM-ExampleTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
-					"$(FRAMEWORK_SEARCH_PATHS)",
 				);
-				LIBRARY_SEARCH_PATHS = $BUILD_DIR/../../SourcePackages/checkouts/PactSwift/Resources/macOS;
+				LIBRARY_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pact-foundation.PactSwift.Pact-macOS-SPM-ExampleTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -543,15 +520,14 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = $BUILD_DIR/../../SourcePackages/checkouts/PactSwift/Resources/macOS;
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "Pact-macOS-SPM-ExampleTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
-					"$(FRAMEWORK_SEARCH_PATHS)",
 				);
-				LIBRARY_SEARCH_PATHS = $BUILD_DIR/../../SourcePackages/checkouts/PactSwift/Resources/macOS;
+				LIBRARY_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pact-foundation.PactSwift.Pact-macOS-SPM-ExampleTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";

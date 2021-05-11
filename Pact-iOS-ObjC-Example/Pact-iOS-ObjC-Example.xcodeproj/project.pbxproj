@@ -3,60 +3,80 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AD31510E251C8FD5007C8E0F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AD31510D251C8FD5007C8E0F /* AppDelegate.m */; };
-		AD315111251C8FD5007C8E0F /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AD315110251C8FD5007C8E0F /* SceneDelegate.m */; };
-		AD315114251C8FD5007C8E0F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD315113251C8FD5007C8E0F /* ViewController.m */; };
-		AD315117251C8FD5007C8E0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD315115251C8FD5007C8E0F /* Main.storyboard */; };
-		AD315119251C8FD6007C8E0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD315118251C8FD6007C8E0F /* Assets.xcassets */; };
-		AD31511C251C8FD6007C8E0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD31511A251C8FD6007C8E0F /* LaunchScreen.storyboard */; };
-		AD31511F251C8FD6007C8E0F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AD31511E251C8FD6007C8E0F /* main.m */; };
-		AD315129251C8FD7007C8E0F /* Pact_iOS_ObjC_ExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AD315128251C8FD7007C8E0F /* Pact_iOS_ObjC_ExampleTests.m */; };
-		ADA1F797251C925400439736 /* HTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA1F796251C925400439736 /* HTTPClient.m */; };
+		AD9463FC264A240600695774 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AD9463FB264A240600695774 /* AppDelegate.m */; };
+		AD9463FF264A240600695774 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AD9463FE264A240600695774 /* SceneDelegate.m */; };
+		AD946402264A240600695774 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD946401264A240600695774 /* ViewController.m */; };
+		AD946405264A240600695774 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD946403264A240600695774 /* Main.storyboard */; };
+		AD946407264A240700695774 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD946406264A240700695774 /* Assets.xcassets */; };
+		AD94640A264A240700695774 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD946408264A240700695774 /* LaunchScreen.storyboard */; };
+		AD94640D264A240700695774 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AD94640C264A240700695774 /* main.m */; };
+		AD946417264A240700695774 /* Pact_iOS_ObjC_ExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AD946416264A240700695774 /* Pact_iOS_ObjC_ExampleTests.m */; };
+		AD946422264A240700695774 /* Pact_iOS_ObjC_ExampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AD946421264A240700695774 /* Pact_iOS_ObjC_ExampleUITests.m */; };
+		AD946432264A243900695774 /* HTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AD946431264A243900695774 /* HTTPClient.m */; };
+		AD946435264A249500695774 /* PactSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AD946434264A249500695774 /* PactSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		AD315125251C8FD7007C8E0F /* PBXContainerItemProxy */ = {
+		AD946413264A240700695774 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = AD315101251C8FD5007C8E0F /* Project object */;
+			containerPortal = AD9463EF264A240600695774 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = AD315108251C8FD5007C8E0F;
+			remoteGlobalIDString = AD9463F6264A240600695774;
+			remoteInfo = "Pact-iOS-ObjC-Example";
+		};
+		AD94641E264A240700695774 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AD9463EF264A240600695774 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD9463F6264A240600695774;
 			remoteInfo = "Pact-iOS-ObjC-Example";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		AD315109251C8FD5007C8E0F /* Pact-iOS-ObjC-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pact-iOS-ObjC-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AD31510C251C8FD5007C8E0F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		AD31510D251C8FD5007C8E0F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		AD31510F251C8FD5007C8E0F /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		AD315110251C8FD5007C8E0F /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		AD315112251C8FD5007C8E0F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		AD315113251C8FD5007C8E0F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		AD315116251C8FD5007C8E0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		AD315118251C8FD6007C8E0F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		AD31511B251C8FD6007C8E0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		AD31511D251C8FD6007C8E0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AD31511E251C8FD6007C8E0F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		AD315124251C8FD7007C8E0F /* Pact-iOS-ObjC-ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pact-iOS-ObjC-ExampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AD315128251C8FD7007C8E0F /* Pact_iOS_ObjC_ExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pact_iOS_ObjC_ExampleTests.m; sourceTree = "<group>"; };
-		AD31512A251C8FD7007C8E0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ADA1F796251C925400439736 /* HTTPClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTTPClient.m; sourceTree = "<group>"; };
-		ADA1F79B251C928700439736 /* HTTPClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTTPClient.h; sourceTree = "<group>"; };
+		AD9463F7264A240600695774 /* Pact-iOS-ObjC-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pact-iOS-ObjC-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD9463FA264A240600695774 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		AD9463FB264A240600695774 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		AD9463FD264A240600695774 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		AD9463FE264A240600695774 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		AD946400264A240600695774 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		AD946401264A240600695774 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		AD946404264A240600695774 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AD946406264A240700695774 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AD946409264A240700695774 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AD94640B264A240700695774 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD94640C264A240700695774 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AD946412264A240700695774 /* Pact-iOS-ObjC-ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pact-iOS-ObjC-ExampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD946416264A240700695774 /* Pact_iOS_ObjC_ExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pact_iOS_ObjC_ExampleTests.m; sourceTree = "<group>"; };
+		AD946418264A240700695774 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD94641D264A240700695774 /* Pact-iOS-ObjC-ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pact-iOS-ObjC-ExampleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD946421264A240700695774 /* Pact_iOS_ObjC_ExampleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pact_iOS_ObjC_ExampleUITests.m; sourceTree = "<group>"; };
+		AD946423264A240700695774 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD946430264A242E00695774 /* HTTPClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTTPClient.h; sourceTree = "<group>"; };
+		AD946431264A243900695774 /* HTTPClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTTPClient.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		AD315106251C8FD5007C8E0F /* Frameworks */ = {
+		AD9463F4264A240600695774 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AD315121251C8FD7007C8E0F /* Frameworks */ = {
+		AD94640F264A240700695774 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD946435264A249500695774 /* PactSwift in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD94641A264A240700695774 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -66,57 +86,68 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AD315100251C8FD5007C8E0F = {
+		AD9463EE264A240600695774 = {
 			isa = PBXGroup;
 			children = (
-				AD31510B251C8FD5007C8E0F /* Pact-iOS-ObjC-Example */,
-				AD315127251C8FD7007C8E0F /* Pact-iOS-ObjC-ExampleTests */,
-				AD31510A251C8FD5007C8E0F /* Products */,
+				AD9463F9264A240600695774 /* Pact-iOS-ObjC-Example */,
+				AD946415264A240700695774 /* Pact-iOS-ObjC-ExampleTests */,
+				AD946420264A240700695774 /* Pact-iOS-ObjC-ExampleUITests */,
+				AD9463F8264A240600695774 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		AD31510A251C8FD5007C8E0F /* Products */ = {
+		AD9463F8264A240600695774 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AD315109251C8FD5007C8E0F /* Pact-iOS-ObjC-Example.app */,
-				AD315124251C8FD7007C8E0F /* Pact-iOS-ObjC-ExampleTests.xctest */,
+				AD9463F7264A240600695774 /* Pact-iOS-ObjC-Example.app */,
+				AD946412264A240700695774 /* Pact-iOS-ObjC-ExampleTests.xctest */,
+				AD94641D264A240700695774 /* Pact-iOS-ObjC-ExampleUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AD31510B251C8FD5007C8E0F /* Pact-iOS-ObjC-Example */ = {
+		AD9463F9264A240600695774 /* Pact-iOS-ObjC-Example */ = {
 			isa = PBXGroup;
 			children = (
-				ADA1F795251C922600439736 /* Networking */,
-				AD31510C251C8FD5007C8E0F /* AppDelegate.h */,
-				AD31510D251C8FD5007C8E0F /* AppDelegate.m */,
-				AD31510F251C8FD5007C8E0F /* SceneDelegate.h */,
-				AD315110251C8FD5007C8E0F /* SceneDelegate.m */,
-				AD315112251C8FD5007C8E0F /* ViewController.h */,
-				AD315113251C8FD5007C8E0F /* ViewController.m */,
-				AD315115251C8FD5007C8E0F /* Main.storyboard */,
-				AD315118251C8FD6007C8E0F /* Assets.xcassets */,
-				AD31511A251C8FD6007C8E0F /* LaunchScreen.storyboard */,
-				AD31511D251C8FD6007C8E0F /* Info.plist */,
-				AD31511E251C8FD6007C8E0F /* main.m */,
+				AD94642F264A241A00695774 /* Networking */,
+				AD9463FA264A240600695774 /* AppDelegate.h */,
+				AD9463FB264A240600695774 /* AppDelegate.m */,
+				AD9463FD264A240600695774 /* SceneDelegate.h */,
+				AD9463FE264A240600695774 /* SceneDelegate.m */,
+				AD946400264A240600695774 /* ViewController.h */,
+				AD946401264A240600695774 /* ViewController.m */,
+				AD946403264A240600695774 /* Main.storyboard */,
+				AD946406264A240700695774 /* Assets.xcassets */,
+				AD946408264A240700695774 /* LaunchScreen.storyboard */,
+				AD94640B264A240700695774 /* Info.plist */,
+				AD94640C264A240700695774 /* main.m */,
 			);
 			path = "Pact-iOS-ObjC-Example";
 			sourceTree = "<group>";
 		};
-		AD315127251C8FD7007C8E0F /* Pact-iOS-ObjC-ExampleTests */ = {
+		AD946415264A240700695774 /* Pact-iOS-ObjC-ExampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				AD315128251C8FD7007C8E0F /* Pact_iOS_ObjC_ExampleTests.m */,
-				AD31512A251C8FD7007C8E0F /* Info.plist */,
+				AD946416264A240700695774 /* Pact_iOS_ObjC_ExampleTests.m */,
+				AD946418264A240700695774 /* Info.plist */,
 			);
 			path = "Pact-iOS-ObjC-ExampleTests";
 			sourceTree = "<group>";
 		};
-		ADA1F795251C922600439736 /* Networking */ = {
+		AD946420264A240700695774 /* Pact-iOS-ObjC-ExampleUITests */ = {
 			isa = PBXGroup;
 			children = (
-				ADA1F79B251C928700439736 /* HTTPClient.h */,
-				ADA1F796251C925400439736 /* HTTPClient.m */,
+				AD946421264A240700695774 /* Pact_iOS_ObjC_ExampleUITests.m */,
+				AD946423264A240700695774 /* Info.plist */,
+			);
+			path = "Pact-iOS-ObjC-ExampleUITests";
+			sourceTree = "<group>";
+		};
+		AD94642F264A241A00695774 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				AD946430264A242E00695774 /* HTTPClient.h */,
+				AD946431264A243900695774 /* HTTPClient.m */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -124,13 +155,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AD315108251C8FD5007C8E0F /* Pact-iOS-ObjC-Example */ = {
+		AD9463F6264A240600695774 /* Pact-iOS-ObjC-Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AD315138251C8FD7007C8E0F /* Build configuration list for PBXNativeTarget "Pact-iOS-ObjC-Example" */;
+			buildConfigurationList = AD946426264A240700695774 /* Build configuration list for PBXNativeTarget "Pact-iOS-ObjC-Example" */;
 			buildPhases = (
-				AD315105251C8FD5007C8E0F /* Sources */,
-				AD315106251C8FD5007C8E0F /* Frameworks */,
-				AD315107251C8FD5007C8E0F /* Resources */,
+				AD9463F3264A240600695774 /* Sources */,
+				AD9463F4264A240600695774 /* Frameworks */,
+				AD9463F5264A240600695774 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -138,45 +169,70 @@
 			);
 			name = "Pact-iOS-ObjC-Example";
 			productName = "Pact-iOS-ObjC-Example";
-			productReference = AD315109251C8FD5007C8E0F /* Pact-iOS-ObjC-Example.app */;
+			productReference = AD9463F7264A240600695774 /* Pact-iOS-ObjC-Example.app */;
 			productType = "com.apple.product-type.application";
 		};
-		AD315123251C8FD7007C8E0F /* Pact-iOS-ObjC-ExampleTests */ = {
+		AD946411264A240700695774 /* Pact-iOS-ObjC-ExampleTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AD31513B251C8FD7007C8E0F /* Build configuration list for PBXNativeTarget "Pact-iOS-ObjC-ExampleTests" */;
+			buildConfigurationList = AD946429264A240700695774 /* Build configuration list for PBXNativeTarget "Pact-iOS-ObjC-ExampleTests" */;
 			buildPhases = (
-				AD315120251C8FD7007C8E0F /* Sources */,
-				AD315121251C8FD7007C8E0F /* Frameworks */,
-				AD315122251C8FD7007C8E0F /* Resources */,
+				AD94640E264A240700695774 /* Sources */,
+				AD94640F264A240700695774 /* Frameworks */,
+				AD946410264A240700695774 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				AD315126251C8FD7007C8E0F /* PBXTargetDependency */,
+				AD946414264A240700695774 /* PBXTargetDependency */,
 			);
 			name = "Pact-iOS-ObjC-ExampleTests";
+			packageProductDependencies = (
+				AD946434264A249500695774 /* PactSwift */,
+			);
 			productName = "Pact-iOS-ObjC-ExampleTests";
-			productReference = AD315124251C8FD7007C8E0F /* Pact-iOS-ObjC-ExampleTests.xctest */;
+			productReference = AD946412264A240700695774 /* Pact-iOS-ObjC-ExampleTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AD94641C264A240700695774 /* Pact-iOS-ObjC-ExampleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD94642C264A240700695774 /* Build configuration list for PBXNativeTarget "Pact-iOS-ObjC-ExampleUITests" */;
+			buildPhases = (
+				AD946419264A240700695774 /* Sources */,
+				AD94641A264A240700695774 /* Frameworks */,
+				AD94641B264A240700695774 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AD94641F264A240700695774 /* PBXTargetDependency */,
+			);
+			name = "Pact-iOS-ObjC-ExampleUITests";
+			productName = "Pact-iOS-ObjC-ExampleUITests";
+			productReference = AD94641D264A240700695774 /* Pact-iOS-ObjC-ExampleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		AD315101251C8FD5007C8E0F /* Project object */ = {
+		AD9463EF264A240600695774 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1250;
 				TargetAttributes = {
-					AD315108251C8FD5007C8E0F = {
-						CreatedOnToolsVersion = 12.0;
+					AD9463F6264A240600695774 = {
+						CreatedOnToolsVersion = 12.5;
 					};
-					AD315123251C8FD7007C8E0F = {
-						CreatedOnToolsVersion = 12.0;
-						TestTargetID = AD315108251C8FD5007C8E0F;
+					AD946411264A240700695774 = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = AD9463F6264A240600695774;
+					};
+					AD94641C264A240700695774 = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = AD9463F6264A240600695774;
 					};
 				};
 			};
-			buildConfigurationList = AD315104251C8FD5007C8E0F /* Build configuration list for PBXProject "Pact-iOS-ObjC-Example" */;
+			buildConfigurationList = AD9463F2264A240600695774 /* Build configuration list for PBXProject "Pact-iOS-ObjC-Example" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -184,29 +240,40 @@
 				en,
 				Base,
 			);
-			mainGroup = AD315100251C8FD5007C8E0F;
-			productRefGroup = AD31510A251C8FD5007C8E0F /* Products */;
+			mainGroup = AD9463EE264A240600695774;
+			packageReferences = (
+				AD946433264A249500695774 /* XCRemoteSwiftPackageReference "PactSwift" */,
+			);
+			productRefGroup = AD9463F8264A240600695774 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AD315108251C8FD5007C8E0F /* Pact-iOS-ObjC-Example */,
-				AD315123251C8FD7007C8E0F /* Pact-iOS-ObjC-ExampleTests */,
+				AD9463F6264A240600695774 /* Pact-iOS-ObjC-Example */,
+				AD946411264A240700695774 /* Pact-iOS-ObjC-ExampleTests */,
+				AD94641C264A240700695774 /* Pact-iOS-ObjC-ExampleUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		AD315107251C8FD5007C8E0F /* Resources */ = {
+		AD9463F5264A240600695774 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD31511C251C8FD6007C8E0F /* LaunchScreen.storyboard in Resources */,
-				AD315119251C8FD6007C8E0F /* Assets.xcassets in Resources */,
-				AD315117251C8FD5007C8E0F /* Main.storyboard in Resources */,
+				AD94640A264A240700695774 /* LaunchScreen.storyboard in Resources */,
+				AD946407264A240700695774 /* Assets.xcassets in Resources */,
+				AD946405264A240600695774 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AD315122251C8FD7007C8E0F /* Resources */ = {
+		AD946410264A240700695774 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD94641B264A240700695774 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -216,49 +283,62 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		AD315105251C8FD5007C8E0F /* Sources */ = {
+		AD9463F3264A240600695774 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD315114251C8FD5007C8E0F /* ViewController.m in Sources */,
-				AD31510E251C8FD5007C8E0F /* AppDelegate.m in Sources */,
-				AD31511F251C8FD6007C8E0F /* main.m in Sources */,
-				ADA1F797251C925400439736 /* HTTPClient.m in Sources */,
-				AD315111251C8FD5007C8E0F /* SceneDelegate.m in Sources */,
+				AD946402264A240600695774 /* ViewController.m in Sources */,
+				AD9463FC264A240600695774 /* AppDelegate.m in Sources */,
+				AD94640D264A240700695774 /* main.m in Sources */,
+				AD946432264A243900695774 /* HTTPClient.m in Sources */,
+				AD9463FF264A240600695774 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AD315120251C8FD7007C8E0F /* Sources */ = {
+		AD94640E264A240700695774 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD315129251C8FD7007C8E0F /* Pact_iOS_ObjC_ExampleTests.m in Sources */,
+				AD946417264A240700695774 /* Pact_iOS_ObjC_ExampleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD946419264A240700695774 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD946422264A240700695774 /* Pact_iOS_ObjC_ExampleUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		AD315126251C8FD7007C8E0F /* PBXTargetDependency */ = {
+		AD946414264A240700695774 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AD315108251C8FD5007C8E0F /* Pact-iOS-ObjC-Example */;
-			targetProxy = AD315125251C8FD7007C8E0F /* PBXContainerItemProxy */;
+			target = AD9463F6264A240600695774 /* Pact-iOS-ObjC-Example */;
+			targetProxy = AD946413264A240700695774 /* PBXContainerItemProxy */;
+		};
+		AD94641F264A240700695774 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD9463F6264A240600695774 /* Pact-iOS-ObjC-Example */;
+			targetProxy = AD94641E264A240700695774 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		AD315115251C8FD5007C8E0F /* Main.storyboard */ = {
+		AD946403264A240600695774 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				AD315116251C8FD5007C8E0F /* Base */,
+				AD946404264A240600695774 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		AD31511A251C8FD6007C8E0F /* LaunchScreen.storyboard */ = {
+		AD946408264A240700695774 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				AD31511B251C8FD6007C8E0F /* Base */,
+				AD946409264A240700695774 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -266,7 +346,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		AD315136251C8FD7007C8E0F /* Debug */ = {
+		AD946424264A240700695774 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -317,7 +397,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -325,7 +405,7 @@
 			};
 			name = Debug;
 		};
-		AD315137251C8FD7007C8E0F /* Release */ = {
+		AD946425264A240700695774 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -370,7 +450,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -378,115 +458,171 @@
 			};
 			name = Release;
 		};
-		AD315139251C8FD7007C8E0F /* Debug */ = {
+		AD946427264A240700695774 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Pact-iOS-ObjC-Example/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.pact-foundation.PactSwift.Pact-iOS-ObjC-Example";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fiftyoneapps.pact-foundation.demo.Pact-iOS-ObjC-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		AD31513A251C8FD7007C8E0F /* Release */ = {
+		AD946428264A240700695774 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Pact-iOS-ObjC-Example/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.pact-foundation.PactSwift.Pact-iOS-ObjC-Example";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fiftyoneapps.pact-foundation.demo.Pact-iOS-ObjC-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
-		AD31513C251C8FD7007C8E0F /* Debug */ = {
+		AD94642A264A240700695774 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
 				INFOPLIST_FILE = "Pact-iOS-ObjC-ExampleTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
-					"$(FRAMEWORK_SEARCH_PATHS)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.pact-foundation.PactSwift.Pact-iOS-ObjC-ExampleTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fiftyoneapps.pact-foundation.demo.Pact-iOS-ObjC-ExampleTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pact-iOS-ObjC-Example.app/Pact-iOS-ObjC-Example";
 			};
 			name = Debug;
 		};
-		AD31513D251C8FD7007C8E0F /* Release */ = {
+		AD94642B264A240700695774 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
 				INFOPLIST_FILE = "Pact-iOS-ObjC-ExampleTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
-					"$(FRAMEWORK_SEARCH_PATHS)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.pact-foundation.PactSwift.Pact-iOS-ObjC-ExampleTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fiftyoneapps.pact-foundation.demo.Pact-iOS-ObjC-ExampleTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pact-iOS-ObjC-Example.app/Pact-iOS-ObjC-Example";
+			};
+			name = Release;
+		};
+		AD94642D264A240700695774 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Pact-iOS-ObjC-ExampleUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fiftyoneapps.pact-foundation.demo.Pact-iOS-ObjC-ExampleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Pact-iOS-ObjC-Example";
+			};
+			name = Debug;
+		};
+		AD94642E264A240700695774 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Pact-iOS-ObjC-ExampleUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fiftyoneapps.pact-foundation.demo.Pact-iOS-ObjC-ExampleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Pact-iOS-ObjC-Example";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AD315104251C8FD5007C8E0F /* Build configuration list for PBXProject "Pact-iOS-ObjC-Example" */ = {
+		AD9463F2264A240600695774 /* Build configuration list for PBXProject "Pact-iOS-ObjC-Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AD315136251C8FD7007C8E0F /* Debug */,
-				AD315137251C8FD7007C8E0F /* Release */,
+				AD946424264A240700695774 /* Debug */,
+				AD946425264A240700695774 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AD315138251C8FD7007C8E0F /* Build configuration list for PBXNativeTarget "Pact-iOS-ObjC-Example" */ = {
+		AD946426264A240700695774 /* Build configuration list for PBXNativeTarget "Pact-iOS-ObjC-Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AD315139251C8FD7007C8E0F /* Debug */,
-				AD31513A251C8FD7007C8E0F /* Release */,
+				AD946427264A240700695774 /* Debug */,
+				AD946428264A240700695774 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AD31513B251C8FD7007C8E0F /* Build configuration list for PBXNativeTarget "Pact-iOS-ObjC-ExampleTests" */ = {
+		AD946429264A240700695774 /* Build configuration list for PBXNativeTarget "Pact-iOS-ObjC-ExampleTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AD31513C251C8FD7007C8E0F /* Debug */,
-				AD31513D251C8FD7007C8E0F /* Release */,
+				AD94642A264A240700695774 /* Debug */,
+				AD94642B264A240700695774 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD94642C264A240700695774 /* Build configuration list for PBXNativeTarget "Pact-iOS-ObjC-ExampleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD94642D264A240700695774 /* Debug */,
+				AD94642E264A240700695774 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AD946433264A249500695774 /* XCRemoteSwiftPackageReference "PactSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/surpher/PactSwift";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AD946434264A249500695774 /* PactSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AD946433264A249500695774 /* XCRemoteSwiftPackageReference "PactSwift" */;
+			productName = PactSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = AD315101251C8FD5007C8E0F /* Project object */;
+	rootObject = AD9463EF264A240600695774 /* Project object */;
 }

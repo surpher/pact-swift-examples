@@ -2,7 +2,7 @@
 //  AppDelegate.h
 //  Pact-iOS-ObjC-Example
 //
-//  Created by Marko Justinek on 24/9/20.
+//  Created by Marko Justinek on 11/5/21.
 //
 
 #import <UIKit/UIKit.h>

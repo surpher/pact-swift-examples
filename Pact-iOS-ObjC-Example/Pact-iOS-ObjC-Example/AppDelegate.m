@@ -2,7 +2,7 @@
 //  AppDelegate.m
 //  Pact-iOS-ObjC-Example
 //
-//  Created by Marko Justinek on 24/9/20.
+//  Created by Marko Justinek on 11/5/21.
 //
 
 #import "AppDelegate.h"

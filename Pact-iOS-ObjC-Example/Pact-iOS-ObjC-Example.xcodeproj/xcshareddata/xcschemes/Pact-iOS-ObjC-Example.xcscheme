@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1200"
+   LastUpgradeVersion = "1250"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AD315108251C8FD5007C8E0F"
+               BlueprintIdentifier = "AD9463F6264A240600695774"
                BuildableName = "Pact-iOS-ObjC-Example.app"
                BlueprintName = "Pact-iOS-ObjC-Example"
                ReferencedContainer = "container:Pact-iOS-ObjC-Example.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AD315123251C8FD7007C8E0F"
+               BlueprintIdentifier = "AD946411264A240700695774"
                BuildableName = "Pact-iOS-ObjC-ExampleTests.xctest"
                BlueprintName = "Pact-iOS-ObjC-ExampleTests"
                ReferencedContainer = "container:Pact-iOS-ObjC-Example.xcodeproj">
@@ -42,7 +42,7 @@
             skipped = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AD31512E251C8FD7007C8E0F"
+               BlueprintIdentifier = "AD94641C264A240700695774"
                BuildableName = "Pact-iOS-ObjC-ExampleUITests.xctest"
                BlueprintName = "Pact-iOS-ObjC-ExampleUITests"
                ReferencedContainer = "container:Pact-iOS-ObjC-Example.xcodeproj">
@@ -64,24 +64,12 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AD315108251C8FD5007C8E0F"
+            BlueprintIdentifier = "AD9463F6264A240600695774"
             BuildableName = "Pact-iOS-ObjC-Example.app"
             BlueprintName = "Pact-iOS-ObjC-Example"
             ReferencedContainer = "container:Pact-iOS-ObjC-Example.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <EnvironmentVariables>
-         <EnvironmentVariable
-            key = "PACT_ENABLE_LOGGING"
-            value = "true"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-         <EnvironmentVariable
-            key = "PACT_OUTPUT_DIR"
-            value = "$(PROJECT_DIR)/tmp/pacts"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-      </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -93,7 +81,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AD315108251C8FD5007C8E0F"
+            BlueprintIdentifier = "AD9463F6264A240600695774"
             BuildableName = "Pact-iOS-ObjC-Example.app"
             BlueprintName = "Pact-iOS-ObjC-Example"
             ReferencedContainer = "container:Pact-iOS-ObjC-Example.xcodeproj">

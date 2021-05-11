@@ -6,7 +6,7 @@
 //  Disclaimer: This file demonstrates how to use PactSwift DSL and is not an example of how to "properly" write unit tests.
 
 #import <XCTest/XCTest.h>
-#import <PactSwift/PactSwift.h>
+@import PactSwift;
 
 #include "HTTPClient.h"
 
@@ -87,7 +87,7 @@
 		uponReceiving:@"a request to add a friend"]
 		givenProviderState:@"friend does not exist"]
 		withRequestHTTPMethod:PactHTTPMethodPOST path:@"/friends/add" query:requestQuery headers:requestHeaders body:requestBody]
-	  willRespondWithStatus:201 headers:@{@"Content-Type": @"application/json"} body:responseBodyWithMatcher];
+		willRespondWithStatus:201 headers:@{@"Content-Type": @"application/json"} body:responseBodyWithMatcher];
 
 	[self.mockService run:^(CompleteBlock testComplete) {
 		[self.httpClient makeFriendsWith:@"Johnny Appleseed" age:@25

@@ -145,7 +145,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ADEFD176253F8B710081A1B1 /* Build configuration list for PBXNativeTarget "Pact-iOS-SPM-ExampleTests" */;
 			buildPhases = (
-				ADEFD1C82542BA390081A1B1 /* Build libpact_mock_server.a */,
 				ADEFD20825439B590081A1B1 /* CopyFiles */,
 				ADEFD15B253F8B710081A1B1 /* Sources */,
 				ADEFD15C253F8B710081A1B1 /* Frameworks */,
@@ -222,27 +221,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		ADEFD1C82542BA390081A1B1 /* Build libpact_mock_server.a */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Build libpact_mock_server.a";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "export PATH=\"$HOME/.cargo/bin:/usr/bin:$PATH\"\n\n# This is not good, but the only way to actually build the Rust dependency and replace it in the Swift Package\nchmod -R 755 $BUILD_DIR/../../SourcePackages/checkouts/PactSwift/Resources\nchmod -R 755 $BUILD_DIR/../../SourcePackages/checkouts/PactSwift/Submodules/pact-reference/rust \n\n# This next line runs the script that triggers `cargo build | cargo lipo` and replaces fake binary with the binary built for your machine\n$BUILD_DIR/../../SourcePackages/checkouts/PactSwift/Scripts/BuildPhases/build-spm-dependency ios\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		ADEFD14A253F8B6E0081A1B1 /* Sources */ = {
@@ -441,7 +419,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				FRAMEWORK_SEARCH_PATHS = "$BUILD_DIR/../../SourcePackages/checkouts/PactSwift/Resources/**";
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "Pact-iOS-SPM-ExampleTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -449,7 +427,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = "$BUILD_DIR/../../SourcePackages/checkouts/PactSwift/Resources/**";
+				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pact-foundation.PactSwift.Pact-iOS-SPM-ExampleTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -464,7 +442,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				FRAMEWORK_SEARCH_PATHS = "$BUILD_DIR/../../SourcePackages/checkouts/PactSwift/Resources/**";
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "Pact-iOS-SPM-ExampleTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -472,7 +450,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = "$BUILD_DIR/../../SourcePackages/checkouts/PactSwift/Resources/**";
+				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pact-foundation.PactSwift.Pact-iOS-SPM-ExampleTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
