@@ -148,3 +148,27 @@ jobs:
           cd Pact-iOS-SPM-Example
           set -o pipefail && xcodebuild test -project Pact-iOS-SPM-Example.xcodeproj -scheme Pact-iOS-SPM-Example -destination "platform=iOS Simulator,name=iPhone 12 Pro" | xcbeautify
           more pacts/iOS_app-test_provider.json
+
+  test_iOS_spec2:
+    name: iOS SPM Pact v2
+    runs-on: macOS-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
+
+      - name: Use Xcode 12.4
+        run: sudo xcode-select -switch /Applications/Xcode_12.4.app
+
+      - name: Prepare the tools
+        run: |
+          brew tap thii/xcbeautify https://github.com/thii/xcbeautify.git
+          brew install xcbeautify
+
+      - name: Run tests
+        run: |
+          cd Pact-iOS-Spec2-Example
+          set -o pipefail && xcodebuild test -project Pact-iOS-Spec2-Example.xcodeproj -scheme Pact-iOS-Spec2-Example -destination "platform=iOS Simulator,name=iPhone 12 Pro" | xcbeautify
+          more pacts/SWAPI-api-provider-ThisApp.json
