@@ -47,13 +47,9 @@ class RestManager: NSObject, URLSessionDelegate {
 	// MARK: - Properties
 
 	var requestHttpHeaders = RestEntity()
-
 	var urlQueryParameters = RestEntity()
-
 	var httpBodyParameters = RestEntity()
-
 	var httpBody: Data?
-
 
 	// MARK: - Public Methods
 
@@ -82,8 +78,6 @@ class RestManager: NSObject, URLSessionDelegate {
 			}
 	}
 
-
-
 	func getData(fromURL url: URL, completion: @escaping (_ data: Data?) -> Void) {
 			DispatchQueue.global(qos: .userInitiated).async {
 					let sessionConfiguration = URLSessionConfiguration.default
@@ -95,8 +89,6 @@ class RestManager: NSObject, URLSessionDelegate {
 					task.resume()
 			}
 	}
-
-
 
 	// MARK: - Private Methods
 
@@ -119,8 +111,6 @@ class RestManager: NSObject, URLSessionDelegate {
 			return url
 	}
 
-
-
 	private func getHttpBody() -> Data? {
 			guard let contentType = requestHttpHeaders.value(forKey: "Content-Type") else { return nil }
 
@@ -133,8 +123,6 @@ class RestManager: NSObject, URLSessionDelegate {
 					return httpBody
 			}
 	}
-
-
 
 	private func prepareRequest(withURL url: URL?, httpBody: Data?, httpMethod: HttpMethod) -> URLRequest? {
 			guard let url = url else { return nil }
@@ -167,7 +155,6 @@ class RestManager: NSObject, URLSessionDelegate {
 
 }
 
-
 // MARK: - RestManager Custom Types
 
 extension RestManager {
@@ -178,8 +165,6 @@ extension RestManager {
 			case patch
 			case delete
 	}
-
-
 
 	struct RestEntity {
 			private var values: [String: String] = [:]
@@ -201,8 +186,6 @@ extension RestManager {
 			}
 	}
 
-
-
 	struct Response {
 			var response: URLResponse?
 			var httpStatusCode: Int = 0
@@ -221,8 +204,6 @@ extension RestManager {
 			}
 	}
 
-
-
 	struct Results {
 			var data: Data?
 			var response: Response?
@@ -238,8 +219,6 @@ extension RestManager {
 					self.error = error
 			}
 	}
-
-
 
 	enum CustomError: Error {
 			case failedToCreateRequest

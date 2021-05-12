@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ADD7CB19264B7B640091A286 /* PactSwift in Frameworks */ = {isa = PBXBuildFile; productRef = ADD7CB18264B7B640091A286 /* PactSwift */; };
 		ADEFD152253F8B6E0081A1B1 /* Pact_iOS_SPM_ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEFD151253F8B6E0081A1B1 /* Pact_iOS_SPM_ExampleApp.swift */; };
 		ADEFD154253F8B6E0081A1B1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEFD153253F8B6E0081A1B1 /* ContentView.swift */; };
 		ADEFD156253F8B710081A1B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADEFD155253F8B710081A1B1 /* Assets.xcassets */; };
 		ADEFD159253F8B710081A1B1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADEFD158253F8B710081A1B1 /* Preview Assets.xcassets */; };
 		ADEFD164253F8B710081A1B1 /* Pact_iOS_SPM_ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEFD163253F8B710081A1B1 /* Pact_iOS_SPM_ExampleTests.swift */; };
-		ADEFD1C52542BA210081A1B1 /* PactSwift in Frameworks */ = {isa = PBXBuildFile; productRef = ADEFD1C42542BA210081A1B1 /* PactSwift */; };
 		ADEFD1D62542BE2B0081A1B1 /* APIClientImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEFD1D52542BE2B0081A1B1 /* APIClientImplementation.swift */; };
 		ADEFD1DE2542C82D0081A1B1 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEFD1DD2542C82D0081A1B1 /* TestData.swift */; };
 /* End PBXBuildFile section */
@@ -65,7 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADEFD1C52542BA210081A1B1 /* PactSwift in Frameworks */,
+				ADD7CB19264B7B640091A286 /* PactSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,7 +157,7 @@
 			);
 			name = "Pact-iOS-SPM-ExampleTests";
 			packageProductDependencies = (
-				ADEFD1C42542BA210081A1B1 /* PactSwift */,
+				ADD7CB18264B7B640091A286 /* PactSwift */,
 			);
 			productName = "Pact-iOS-SPM-ExampleTests";
 			productReference = ADEFD15F253F8B710081A1B1 /* Pact-iOS-SPM-ExampleTests.xctest */;
@@ -191,7 +191,7 @@
 			);
 			mainGroup = ADEFD145253F8B6E0081A1B1;
 			packageReferences = (
-				ADEFD1C32542BA210081A1B1 /* XCRemoteSwiftPackageReference "PactSwift" */,
+				ADD7CB17264B7B640091A286 /* XCRemoteSwiftPackageReference "PactSwift" */,
 			);
 			productRefGroup = ADEFD14F253F8B6E0081A1B1 /* Products */;
 			projectDirPath = "";
@@ -376,10 +376,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Pact-iOS-SPM-Example/Preview Content\"";
+				DEVELOPMENT_TEAM = 4L73KZWFMS;
 				ENABLE_BITCODE = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Pact-iOS-SPM-Example/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -398,10 +399,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Pact-iOS-SPM-Example/Preview Content\"";
+				DEVELOPMENT_TEAM = 4L73KZWFMS;
 				ENABLE_BITCODE = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Pact-iOS-SPM-Example/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -419,9 +421,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4L73KZWFMS;
 				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "Pact-iOS-SPM-ExampleTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -433,6 +436,7 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pact-iOS-SPM-Example.app/Pact-iOS-SPM-Example";
+				TVOS_DEPLOYMENT_TARGET = 14.3;
 			};
 			name = Debug;
 		};
@@ -442,9 +446,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4L73KZWFMS;
 				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "Pact-iOS-SPM-ExampleTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -456,6 +461,7 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pact-iOS-SPM-Example.app/Pact-iOS-SPM-Example";
+				TVOS_DEPLOYMENT_TARGET = 14.3;
 			};
 			name = Release;
 		};
@@ -492,7 +498,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		ADEFD1C32542BA210081A1B1 /* XCRemoteSwiftPackageReference "PactSwift" */ = {
+		ADD7CB17264B7B640091A286 /* XCRemoteSwiftPackageReference "PactSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/surpher/PactSwift";
 			requirement = {
@@ -503,9 +509,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		ADEFD1C42542BA210081A1B1 /* PactSwift */ = {
+		ADD7CB18264B7B640091A286 /* PactSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = ADEFD1C32542BA210081A1B1 /* XCRemoteSwiftPackageReference "PactSwift" */;
+			package = ADD7CB17264B7B640091A286 /* XCRemoteSwiftPackageReference "PactSwift" */;
 			productName = PactSwift;
 		};
 /* End XCSwiftPackageProductDependency section */

@@ -17,9 +17,9 @@
 		AD204B2224565DCD00ABE1EB /* Pact_iOS_FAILING_ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD204B2124565DCD00ABE1EB /* Pact_iOS_FAILING_ExampleTests.swift */; };
 		AD204B2E24565E1A00ABE1EB /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD204B1924565DAE00ABE1EB /* TestData.swift */; };
 		AD204B3024565E6100ABE1EB /* APIClientImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD204B2F24565E6100ABE1EB /* APIClientImplementation.swift */; };
-		AD204B3324565F8400ABE1EB /* PactSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD204B3224565F8400ABE1EB /* PactSwift.framework */; platformFilter = ios; };
 		AD204B3424565FB800ABE1EB /* Pact_iOS_ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD204B2924565DEC00ABE1EB /* Pact_iOS_ExampleTests.swift */; };
 		AD204B36245660D600ABE1EB /* PactSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD204B3224565F8400ABE1EB /* PactSwift.framework */; };
+		ADA8FDC9264BC7C9009A45BB /* PactSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADD7CB1C264B8A540091A286 /* PactSwift.xcframework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +57,7 @@
 		AD204B2924565DEC00ABE1EB /* Pact_iOS_ExampleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pact_iOS_ExampleTests.swift; sourceTree = "<group>"; };
 		AD204B2F24565E6100ABE1EB /* APIClientImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClientImplementation.swift; sourceTree = "<group>"; };
 		AD204B3224565F8400ABE1EB /* PactSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PactSwift.framework; path = Carthage/Build/iOS/PactSwift.framework; sourceTree = "<group>"; };
+		ADD7CB1C264B8A540091A286 /* PactSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = PactSwift.xcframework; path = Carthage/Build/PactSwift.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADA8FDC9264BC7C9009A45BB /* PactSwift.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,7 +73,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD204B3324565F8400ABE1EB /* PactSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +145,7 @@
 		AD204B3124565F8300ABE1EB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ADD7CB1C264B8A540091A286 /* PactSwift.xcframework */,
 				AD204B3224565F8400ABE1EB /* PactSwift.framework */,
 			);
 			name = Frameworks;
@@ -462,8 +464,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "Pact-iOS-Example/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -482,8 +485,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "Pact-iOS-Example/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -502,20 +506,20 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "Pact-iOS-ExampleTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
-					"$(FRAMEWORK_SEARCH_PATHS)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "au.com.pact-foundation.Pact-iOS-ExampleTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pact-iOS-Example.app/Pact-iOS-Example";
+				TVOS_DEPLOYMENT_TARGET = 14.3;
 			};
 			name = Debug;
 		};
@@ -525,20 +529,20 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "Pact-iOS-ExampleTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
-					"$(FRAMEWORK_SEARCH_PATHS)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "au.com.pact-foundation.Pact-iOS-ExampleTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pact-iOS-Example.app/Pact-iOS-Example";
+				TVOS_DEPLOYMENT_TARGET = 14.3;
 			};
 			name = Release;
 		};

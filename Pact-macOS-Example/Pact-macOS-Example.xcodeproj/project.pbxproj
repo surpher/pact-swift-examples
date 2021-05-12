@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,8 +13,8 @@
 		AD8FC77D24639AF400361854 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD8FC77C24639AF400361854 /* Assets.xcassets */; };
 		AD8FC78024639AF400361854 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD8FC77E24639AF400361854 /* Main.storyboard */; };
 		AD8FC8312463E76900361854 /* APIClientImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8FC8302463E76900361854 /* APIClientImplementation.swift */; };
-		AD8FC8432463EB3700361854 /* PactSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD8FC8332463E80900361854 /* PactSwift.framework */; };
 		AD8FC8442463EBEA00361854 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8FC82E2463E72200361854 /* TestData.swift */; };
+		ADA8FE04264BC9FA009A45BB /* PactSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADD7CB1E264B9E960091A286 /* PactSwift.xcframework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +41,7 @@
 		AD8FC8302463E76900361854 /* APIClientImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientImplementation.swift; sourceTree = "<group>"; };
 		AD8FC8332463E80900361854 /* PactSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PactSwift.framework; path = Carthage/Build/Mac/PactSwift.framework; sourceTree = "<group>"; };
 		AD8FC8392463EB1200361854 /* Pact-macOS-ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pact-macOS-ExampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADD7CB1E264B9E960091A286 /* PactSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = PactSwift.xcframework; path = Carthage/Build/PactSwift.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADA8FE04264BC9FA009A45BB /* PactSwift.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,7 +57,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD8FC8432463EB3700361854 /* PactSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +109,7 @@
 		AD8FC8322463E80900361854 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ADD7CB1E264B9E960091A286 /* PactSwift.xcframework */,
 				AD8FC8332463E80900361854 /* PactSwift.framework */,
 			);
 			name = Frameworks;
@@ -374,10 +376,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "Pact-macOS-Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -398,10 +397,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "Pact-macOS-Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -417,22 +413,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "Pact-macOS-Example-Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
-					"$(FRAMEWORK_SEARCH_PATHS)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "au.com.pact-foundation.Pact-macOS-Example-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pact-macOS-Example.app/Contents/MacOS/Pact-macOS-Example";
 			};
@@ -442,22 +436,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "Pact-macOS-Example-Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
-					"$(FRAMEWORK_SEARCH_PATHS)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "au.com.pact-foundation.Pact-macOS-Example-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pact-macOS-Example.app/Contents/MacOS/Pact-macOS-Example";
 			};
