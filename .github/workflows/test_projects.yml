@@ -171,4 +171,4 @@ jobs:
         run: |
           cd Pact-iOS-Spec2-Example
           set -o pipefail && xcodebuild test -project Pact-iOS-Spec2-Example.xcodeproj -scheme Pact-iOS-Spec2-Example -destination "platform=iOS Simulator,name=iPhone 12 Pro" | xcbeautify
-          more pacts/SWAPI-api-provider-ThisApp.json
+          more pacts/ThisApp-SWAPI-api-provider.json

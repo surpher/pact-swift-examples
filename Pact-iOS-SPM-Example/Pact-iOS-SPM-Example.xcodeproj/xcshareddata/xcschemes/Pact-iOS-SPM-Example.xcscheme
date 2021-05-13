@@ -66,6 +66,11 @@
             value = "$(PROJECT_DIR)/pacts"
             isEnabled = "YES">
          </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "PACT_ENABLE_LOGGING"
+            value = "all"
+            isEnabled = "YES">
+         </EnvironmentVariable>
       </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction

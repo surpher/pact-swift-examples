@@ -8,6 +8,15 @@
 import XCTest
 import PactSwift_spec2
 
+class MockServiceWrapper {
+	static let shared = MockServiceWrapper()
+	var mockService: MockService
+
+	private init() {
+		mockService = MockService(consumer: "ThisApp", provider: "SWAPI-api-provider")
+	}
+}
+
 @testable import Pact_iOS_Spec2_Example
 
 class Pact_iOS_Spec2_ExampleTests: XCTestCase {
@@ -20,7 +29,7 @@ class Pact_iOS_Spec2_ExampleTests: XCTestCase {
 	// MARK: - Lifecycle
 
 	override func setUpWithError() throws {
-		mockService = MockService(consumer: "SWAPI-api-provider", provider: "ThisApp")
+		mockService = MockServiceWrapper.shared.mockService
 		apiClient = SWAPIClient(baseURL: mockService.baseUrl)
 	}
 

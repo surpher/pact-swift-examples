@@ -11,9 +11,18 @@ import PactSwift
 
 @testable import Pact_iOS_Example
 
+class MockServiceWrapper {
+	static let shared = MockServiceWrapper()
+	var mockService: MockService
+
+	private init() {
+		mockService = MockService(consumer: "iOS_app", provider: "test_provider")
+	}
+}
+
 class PassingTestsExample: XCTestCase {
 
-	var mockService = MockService(consumer: "iOS_app", provider: "test_provider")
+	var mockService = MockServiceWrapper.shared.mockService
 
 	// MARK: - Tests
 

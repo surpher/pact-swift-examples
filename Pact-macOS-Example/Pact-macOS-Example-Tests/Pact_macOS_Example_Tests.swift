@@ -9,11 +9,20 @@
 import XCTest
 import PactSwift
 
+class MockServiceWrapper {
+	static let shared = MockServiceWrapper()
+	var mockService: MockService
+
+	private init() {
+		mockService = MockService(consumer: "macOS_app", provider: "test_provider")
+	}
+}
+
 @testable import Pact_macOS_Example
 
 class Pact_macOS_Example_CarthageTests: XCTestCase {
 
-	var mockService = MockService(consumer: "macOS_app", provider: "test_provider")
+	var mockService = MockServiceWrapper.shared.mockService
 
 	// MARK: - Tests
 

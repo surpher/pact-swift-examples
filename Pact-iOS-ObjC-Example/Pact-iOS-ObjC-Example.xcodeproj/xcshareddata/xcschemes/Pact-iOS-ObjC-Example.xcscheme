@@ -70,6 +70,13 @@
             ReferencedContainer = "container:Pact-iOS-ObjC-Example.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "PACT_OUTPUT_DIR"
+            value = "$(PROJECT_DIR)/pacts"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+      </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

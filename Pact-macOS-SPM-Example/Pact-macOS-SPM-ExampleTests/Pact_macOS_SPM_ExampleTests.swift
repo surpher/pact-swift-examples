@@ -10,6 +10,15 @@ import PactSwift
 
 @testable import Pact_macOS_SPM_Example
 
+class MockServiceWrapper {
+	static let shared = MockServiceWrapper()
+	var mockService: MockService
+
+	private init() {
+		mockService = MockService(consumer: "macOS_app", provider: "test_provider")
+	}
+}
+
 class Pact_macOS_SPM_ExampleTests: XCTestCase {
 
     override func setUpWithError() throws {
@@ -20,7 +29,7 @@ class Pact_macOS_SPM_ExampleTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-	var mockService = MockService(consumer: "macOS_app", provider: "test_provider")
+	var mockService = MockServiceWrapper.shared.mockService
 
 	// MARK: - Tests
 

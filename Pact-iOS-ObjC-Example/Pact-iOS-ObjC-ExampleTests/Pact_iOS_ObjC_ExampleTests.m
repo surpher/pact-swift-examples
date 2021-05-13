@@ -10,6 +10,41 @@
 
 #include "HTTPClient.h"
 
+// MARK: - MockService Singleton Wrapper
+
+@interface MockServiceWrapper: NSObject
+
++(instancetype)shared;
+
+@property (strong, retain) MockService *mockService;
+
+@end
+
+@implementation MockServiceWrapper
+
++(instancetype)shared {
+	static MockServiceWrapper *shared = nil;
+	static dispatch_once_t onceToken;
+	dispatch_once(&onceToken, ^{
+		shared = [[self alloc] init];
+	});
+
+	return shared;
+}
+
+-(id)init {
+	if (self = [super init]) {
+		_mockService = [[MockService alloc] initWithConsumer:@"Consumer-app"
+																								provider:@"Provider-server"
+																				transferProtocol:TransferProtocolStandard];
+	}
+	return self;
+}
+
+@end
+
+// MARK: - XCTestCase
+
 @interface Pact_iOS_ObjC_ExampleTests: XCTestCase
 
 @property (strong, nonatomic) MockService *mockService;
@@ -22,7 +57,7 @@
 - (void)setUp {
 	[super setUp];
 
-	self.mockService = [[MockService alloc] initWithConsumer:@"Consumer-app" provider:@"Provider-server" transferProtocol:TransferProtocolStandard];
+	self.mockService = [[MockServiceWrapper shared] mockService];
 	self.httpClient = [[HTTPClient alloc] initWithBaseUrl:self.mockService.baseUrl];
 }
 

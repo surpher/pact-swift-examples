@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD1571CD264D1CE400E1F72A /* PactSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AD1571CC264D1CE400E1F72A /* PactSwift */; };
 		ADA11F482544D84E00AFEB95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA11F472544D84E00AFEB95 /* AppDelegate.swift */; };
 		ADA11F4A2544D84E00AFEB95 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA11F492544D84E00AFEB95 /* ContentView.swift */; };
 		ADA11F4C2544D85000AFEB95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADA11F4B2544D85000AFEB95 /* Assets.xcassets */; };
@@ -16,7 +17,6 @@
 		ADA11F692544D85000AFEB95 /* Pact_macOS_SPM_ExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA11F682544D85000AFEB95 /* Pact_macOS_SPM_ExampleUITests.swift */; };
 		ADA11F892544DE4800AFEB95 /* APIClientImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA11F882544DE4800AFEB95 /* APIClientImplementation.swift */; };
 		ADA11F912544DEB900AFEB95 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA11F902544DEB900AFEB95 /* TestData.swift */; };
-		ADEB51D525452CCD005B4C23 /* PactSwift in Frameworks */ = {isa = PBXBuildFile; productRef = ADEB51D425452CCD005B4C23 /* PactSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADEB51D525452CCD005B4C23 /* PactSwift in Frameworks */,
+				AD1571CD264D1CE400E1F72A /* PactSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,7 +178,7 @@
 			);
 			name = "Pact-macOS-SPM-ExampleTests";
 			packageProductDependencies = (
-				ADEB51D425452CCD005B4C23 /* PactSwift */,
+				AD1571CC264D1CE400E1F72A /* PactSwift */,
 			);
 			productName = "Pact-macOS-SPM-ExampleTests";
 			productReference = ADA11F592544D85000AFEB95 /* Pact-macOS-SPM-ExampleTests.xctest */;
@@ -234,7 +234,7 @@
 			);
 			mainGroup = ADA11F3B2544D84E00AFEB95;
 			packageReferences = (
-				ADEB51D325452CCD005B4C23 /* XCRemoteSwiftPackageReference "PactSwift" */,
+				AD1571CB264D1CE400E1F72A /* XCRemoteSwiftPackageReference "PactSwift" */,
 			);
 			productRefGroup = ADA11F452544D84E00AFEB95 /* Products */;
 			projectDirPath = "";
@@ -616,7 +616,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		ADEB51D325452CCD005B4C23 /* XCRemoteSwiftPackageReference "PactSwift" */ = {
+		AD1571CB264D1CE400E1F72A /* XCRemoteSwiftPackageReference "PactSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/surpher/PactSwift";
 			requirement = {
@@ -627,9 +627,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		ADEB51D425452CCD005B4C23 /* PactSwift */ = {
+		AD1571CC264D1CE400E1F72A /* PactSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = ADEB51D325452CCD005B4C23 /* XCRemoteSwiftPackageReference "PactSwift" */;
+			package = AD1571CB264D1CE400E1F72A /* XCRemoteSwiftPackageReference "PactSwift" */;
 			productName = PactSwift;
 		};
 /* End XCSwiftPackageProductDependency section */

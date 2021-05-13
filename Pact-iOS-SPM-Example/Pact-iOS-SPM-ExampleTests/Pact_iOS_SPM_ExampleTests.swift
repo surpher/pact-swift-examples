@@ -10,9 +10,21 @@ import PactSwift
 
 @testable import Pact_iOS_SPM_Example
 
+class MockServiceWrapper {
+
+	static let shared = MockServiceWrapper()
+
+	var mockService: MockService
+
+	private init() {
+		mockService = MockService(consumer: "iOS_app", provider: "test_provider")
+	}
+
+}
+
 class PassingTestsExample: XCTestCase {
 
-	var mockService = MockService(consumer: "iOS_app", provider: "test_provider")
+	var mockService = MockServiceWrapper.shared.mockService
 
 	// MARK: - Tests
 
@@ -36,8 +48,8 @@ class PassingTestsExample: XCTestCase {
 		// pointing it to the mockService we programmed it just above
 
 		// This following block tests our RestManager implementation...
-		mockService.run { [unowned self] completed in
-			guard let url = URL(string: "\(self.mockService.baseUrl)/api/users") else {
+		mockService.run { [mockService] completed in
+			guard let url = URL(string: "\(mockService.baseUrl)/api/users") else {
 				XCTFail("Failed to prepare url!")
 				return
 			}
@@ -118,7 +130,7 @@ class PassingTestsExample: XCTestCase {
 	func testGetsSingleUser() {
 		// Expectations
 		mockService
-			.uponReceiving("A request for user")
+			.uponReceiving("A request for a user")
 			.given(ProviderState(description: "user exists", params: ["id": "1"]))
 			.withRequest(
 				method: .GET,
@@ -136,8 +148,8 @@ class PassingTestsExample: XCTestCase {
 		// pointing it to the mockService we programmed it just above
 
 		// This following block tests our RestManager implementation...
-		mockService.run { [unowned self] completed in
-			guard let url = URL(string: "\(self.mockService.baseUrl)/api/users/\(userId)") else {
+		mockService.run { [mockService] completed in
+			guard let url = URL(string: "\(mockService.baseUrl)/api/users/\(userId)") else {
 				XCTFail("Failed to prepare url!")
 				return
 			}
@@ -169,7 +181,7 @@ class PassingTestsExample: XCTestCase {
 		// Expectations
 		mockService
 			.uponReceiving("A request for list of users")
-			.given(ProviderState(description: "users exists", params: ["page": "3"]))
+			.given(ProviderState(description: "users exist", params: ["page": "3"]))
 			.withRequest(
 				method: .GET,
 				path: "/api/users",
@@ -184,8 +196,8 @@ class PassingTestsExample: XCTestCase {
 		let apiClient = RestManager()
 
 		// This following block tests our RestManager implementation...
-		mockService.run { [unowned self] completed in
-			guard let url = URL(string: "\(self.mockService.baseUrl)/api/users?page=3") else {
+		mockService.run { [mockService] completed in
+			guard let url = URL(string: "\(mockService.baseUrl)/api/users?page=3") else {
 				XCTFail("Failed to prepare url!")
 				return
 			}
@@ -231,8 +243,8 @@ class PassingTestsExample: XCTestCase {
 
 		let apiClient = RestManager()
 
-		mockService.run(waitFor: 1) { completed in
-			guard let url = URL(string: "\(self.mockService.baseUrl)/api/users") else {
+		mockService.run(waitFor: 1) { [mockService] completed in
+			guard let url = URL(string: "\(mockService.baseUrl)/api/users") else {
 				XCTFail("Failed to prepare url!")
 				return
 			}
@@ -282,8 +294,8 @@ class PassingTestsExample: XCTestCase {
 		let apiClient = RestManager()
 
 		// This following block tests our RestManager implementation...
-		mockService.run { [unowned self] completed in
-			guard let url = URL(string: "\(self.mockService.baseUrl)/api/users?page=3") else {
+		mockService.run { [mockService] completed in
+			guard let url = URL(string: "\(mockService.baseUrl)/api/users?page=3") else {
 				XCTFail("Failed to prepare url!")
 				return
 			}
