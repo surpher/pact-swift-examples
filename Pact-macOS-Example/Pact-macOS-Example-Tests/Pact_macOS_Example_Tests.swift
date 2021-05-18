@@ -14,7 +14,7 @@ class MockServiceWrapper {
 	var mockService: MockService
 
 	private init() {
-		mockService = MockService(consumer: "macOS_app", provider: "test_provider")
+		mockService = MockService(consumer: "macOS_app", provider: "api_provider")
 	}
 }
 
