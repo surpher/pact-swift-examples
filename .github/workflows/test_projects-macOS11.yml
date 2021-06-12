@@ -1,11 +1,11 @@
-name: PactSwift demo projects
+name: PactSwift demo projects (macOS 11) - no Carthage
 
 on: [push, workflow_dispatch, repository_dispatch]
 
 jobs:
   test_iOS_SPM:
     name: iOS SPM
-    runs-on: macOS-latest
+    runs-on: macOS-11
 
     steps:
       - name: Checkout repository
@@ -13,8 +13,8 @@ jobs:
         with:
           submodules: recursive
 
-      - name: Use Xcode 12.4
-        run: sudo xcode-select -switch /Applications/Xcode_12.4.app
+      - name: Use Xcode 13.0
+        run: sudo xcode-select -switch /Applications/Xcode_13.0.app
 
       - name: Prepare the tools
         run: |
@@ -27,33 +27,9 @@ jobs:
           set -o pipefail && xcodebuild test -project Pact-iOS-SPM-Example.xcodeproj -scheme Pact-iOS-SPM-Example -destination "platform=iOS Simulator,name=iPhone 12 Pro" | xcbeautify
           more pacts/iOS_app-test_provider.json
 
-  test_iOS_Carthage:
-    name: iOS Carthage
-    runs-on: macOS-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-        with:
-          submodules: recursive
-
-      - name: Use Xcode 12.4
-        run: sudo xcode-select -switch /Applications/Xcode_12.4.app
-
-      - name: Prepare the tools
-        run: |
-          brew tap thii/xcbeautify https://github.com/thii/xcbeautify.git
-          brew install xcbeautify
-
-      - name: Run tests
-        run: |
-          cd Pact-iOS-Example
-          ../carthage_xcode12 update --platform ios --use-xcframeworks
-          set -o pipefail && xcodebuild clean test -project Pact-iOS-Example.xcodeproj -scheme Pact-iOS-Example -destination "platform=iOS Simulator,name=iPhone 12 Pro" | xcbeautify
-
   test_iOS_SPM_ObjC:
     name: iOS (Obj-C) SPM
-    runs-on: macOS-latest
+    runs-on: macOS-11
 
     steps:
       - name: Checkout repository
@@ -61,8 +37,8 @@ jobs:
         with:
           submodules: recursive
 
-      - name: Use Xcode 12.4
-        run: sudo xcode-select -switch /Applications/Xcode_12.4.app
+      - name: Use Xcode 13.0
+        run: sudo xcode-select -switch /Applications/Xcode_13.0.app
 
       - name: Prepare the tools
         run: |
@@ -76,7 +52,7 @@ jobs:
 
   test_macOS_SPM:
     name: macOS SPM
-    runs-on: macOS-latest
+    runs-on: macOS-11
 
     steps:
       - name: Checkout repository
@@ -84,8 +60,8 @@ jobs:
         with:
           submodules: recursive
 
-      - name: Use Xcode 12.4
-        run: sudo xcode-select -switch /Applications/Xcode_12.4.app
+      - name: Use Xcode 13.0
+        run: sudo xcode-select -switch /Applications/Xcode_13.0.app
 
       - name: Prepare the tools
         run: |
@@ -97,9 +73,9 @@ jobs:
           cd Pact-macOS-SPM-Example
           set -o pipefail && xcodebuild test -project Pact-macOS-SPM-Example.xcodeproj -scheme Pact-macOS-SPM-Example -destination "platform=macOS,arch=x86_64" | xcbeautify
 
-  test_macOS_Carthage:
-    name: macOS Carthage
-    runs-on: macOS-latest
+  test_iOS_on_macOS_11:
+    name: iOS SPM macOS 11.0
+    runs-on: macOS-11
 
     steps:
       - name: Checkout repository
@@ -107,8 +83,8 @@ jobs:
         with:
           submodules: recursive
 
-      - name: Use Xcode 12.4
-        run: sudo xcode-select -switch /Applications/Xcode_12.4.app
+      - name: Use Xcode 13.0
+        run: sudo xcode-select -switch /Applications/Xcode_13.0.app
 
       - name: Prepare the tools
         run: |
@@ -117,6 +93,6 @@ jobs:
 
       - name: Run tests
         run: |
-          cd Pact-macOS-Example
-          ../carthage_xcode12 update --platform macos --use-xcframeworks
-          set -o pipefail && xcodebuild clean test -project Pact-macOS-Example.xcodeproj -scheme Pact-macOS-Example -destination "platform=macOS,arch=x86_64" | xcbeautify
+          cd Pact-iOS-SPM-Example
+          set -o pipefail && xcodebuild test -project Pact-iOS-SPM-Example.xcodeproj -scheme Pact-iOS-SPM-Example -destination "platform=iOS Simulator,name=iPhone 12 Pro" | xcbeautify
+          more pacts/iOS_app-test_provider.json
