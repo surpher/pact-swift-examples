@@ -1,4 +1,4 @@
-name: PactSwift demo projects (macOS 11) - no Carthage
+name: PactSwift demo projects (macOS 11)
 
 on: [push, workflow_dispatch, repository_dispatch]
 
@@ -26,6 +26,30 @@ jobs:
           cd Pact-iOS-SPM-Example
           set -o pipefail && xcodebuild test -project Pact-iOS-SPM-Example.xcodeproj -scheme Pact-iOS-SPM-Example -destination "platform=iOS Simulator,name=iPhone 12 Pro" | xcbeautify
           more pacts/iOS_app-test_provider.json
+
+  test_iOS_Carthage:
+    name: iOS Carthage
+    runs-on: macOS-11
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
+
+      - name: Use Xcode 13
+        run: sudo xcode-select -switch /Applications/Xcode_13.0.app
+
+      - name: Prepare the tools
+        run: |
+          brew tap thii/xcbeautify https://github.com/thii/xcbeautify.git
+          brew install xcbeautify
+
+      - name: Run tests
+        run: |
+          cd Pact-iOS-Example
+          ../carthage update --platform ios --use-xcframeworks
+          set -o pipefail && xcodebuild clean test -project Pact-iOS-Example.xcodeproj -scheme Pact-iOS-Example -destination "platform=iOS Simulator,name=iPhone 12 Pro" | xcbeautify
 
   test_iOS_SPM_ObjC:
     name: iOS (Obj-C) SPM
@@ -96,3 +120,27 @@ jobs:
           cd Pact-iOS-SPM-Example
           set -o pipefail && xcodebuild test -project Pact-iOS-SPM-Example.xcodeproj -scheme Pact-iOS-SPM-Example -destination "platform=iOS Simulator,name=iPhone 12 Pro" | xcbeautify
           more pacts/iOS_app-test_provider.json
+
+  test_macOS_Carthage:
+    name: macOS Carthage
+    runs-on: macOS-11
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
+
+      - name: Use Xcode 13.0
+        run: sudo xcode-select -switch /Applications/Xcode_13.0.app
+
+      - name: Prepare the tools
+        run: |
+          brew tap thii/xcbeautify https://github.com/thii/xcbeautify.git
+          brew install xcbeautify
+
+      - name: Run tests
+        run: |
+          cd Pact-macOS-Example
+          ../carthage update --platform macos --use-xcframeworks
+          set -o pipefail && xcodebuild clean test -project Pact-macOS-Example.xcodeproj -scheme Pact-macOS-Example -destination "platform=macOS,arch=x86_64" | xcbeautify

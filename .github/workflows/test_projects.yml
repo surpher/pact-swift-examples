@@ -48,7 +48,7 @@ jobs:
       - name: Run tests
         run: |
           cd Pact-iOS-Example
-          ../carthage_xcode12 update --platform ios --use-xcframeworks
+          ../carthage update --platform ios --use-xcframeworks
           set -o pipefail && xcodebuild clean test -project Pact-iOS-Example.xcodeproj -scheme Pact-iOS-Example -destination "platform=iOS Simulator,name=iPhone 12 Pro" | xcbeautify
 
   test_iOS_SPM_ObjC:
@@ -118,5 +118,5 @@ jobs:
       - name: Run tests
         run: |
           cd Pact-macOS-Example
-          ../carthage_xcode12 update --platform macos --use-xcframeworks
+          ../carthage update --platform macos --use-xcframeworks
           set -o pipefail && xcodebuild clean test -project Pact-macOS-Example.xcodeproj -scheme Pact-macOS-Example -destination "platform=macOS,arch=x86_64" | xcbeautify
