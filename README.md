@@ -2,7 +2,9 @@
 
 [![PactSwift demo projects](https://github.com/surpher/pact-swift-examples/actions/workflows/test_projects.yml/badge.svg)](https://github.com/surpher/pact-swift-examples/actions/workflows/test_projects.yml)
 
-Example projects using [PactSwift](https://github.com/surpher/pact-swift) framework.
+Example projects using [PactSwift][pact-swift] framework.
+
+Note that using Carthage may require you to use the [workaround script][carthage-script].
 
 ## Disclaimer
 
@@ -13,3 +15,6 @@ This repository is used solely to demonstrate the minimal effort required to set
 ## Licence
 
 [MIT](LICENSE.md)
+
+[pactswift]: https://github.com/surpher/pact-swift
+[carthage-script]: carthage
