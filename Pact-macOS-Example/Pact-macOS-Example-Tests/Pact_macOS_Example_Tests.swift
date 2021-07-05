@@ -96,7 +96,7 @@ class Pact_macOS_Example_CarthageTests: XCTestCase {
 		// pointing it to the mockService we programmed it just above
 
 		// This following block tests our RestManager implementation...
-		secureMockService.run(waitFor: 5) { completed in
+		secureMockService.run(timeout: 5) { completed in
 			guard let url = URL(string: "\(secureMockService.baseUrl)/api/users") else {
 				XCTFail("Failed to prepare url!")
 				return
@@ -243,7 +243,7 @@ class Pact_macOS_Example_CarthageTests: XCTestCase {
 
 		let apiClient = RestManager()
 
-		mockService.run(waitFor: 1) { completed in
+		mockService.run(timeout: 1) { completed in
 			guard let url = URL(string: "\(self.mockService.baseUrl)/api/users") else {
 				XCTFail("Failed to prepare url!")
 				return
@@ -294,7 +294,7 @@ class Pact_macOS_Example_CarthageTests: XCTestCase {
 
 		let apiClient = RestManager()
 
-		mockService.run(waitFor: 1) { completed in
+		mockService.run(timeout: 1) { completed in
 			guard let url = URL(string: "\(self.mockService.baseUrl)/api/users/add/verbose") else {
 				XCTFail("Failed to prepare url!")
 				return

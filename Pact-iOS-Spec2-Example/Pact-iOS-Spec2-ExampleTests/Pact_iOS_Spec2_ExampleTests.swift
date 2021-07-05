@@ -65,7 +65,7 @@ class Pact_iOS_Spec2_ExampleTests: XCTestCase {
 			)
 
 		// Run Pact test
-		mockService.run(waitFor: 5) { [apiClient] testCompleted in
+		mockService.run(timeout: 5) { [apiClient] testCompleted in
 			apiClient!.fetch(endpoint: .people, id: 1) { (result: SWPerson?, error) in
 				// Assert
 				do {
@@ -153,7 +153,7 @@ class Pact_iOS_Spec2_ExampleTests: XCTestCase {
 			)
 
 		// Run Pact test
-		mockService.run(waitFor: 1) { [apiClient] testComplete in
+		mockService.run(timeout: 1) { [apiClient] testComplete in
 			apiClient!.fetch(endpoint: .planets, id: 12) { (planet: SWPlanet?, error) in
 				do {
 					let planet = try XCTUnwrap(planet)
