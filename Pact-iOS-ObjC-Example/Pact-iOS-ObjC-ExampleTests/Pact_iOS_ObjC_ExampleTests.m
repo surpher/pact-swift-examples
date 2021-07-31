@@ -16,7 +16,7 @@
 
 +(instancetype)shared;
 
-@property (strong, retain) MockService *mockService;
+@property (strong, retain) PFMockService *mockService;
 
 @end
 
@@ -34,9 +34,7 @@
 
 -(id)init {
 	if (self = [super init]) {
-		_mockService = [[MockService alloc] initWithConsumer:@"Consumer-app"
-																								provider:@"Provider-server"
-																				transferProtocol:TransferProtocolStandard];
+		_mockService = [[PFMockService alloc] initWithConsumer:@"Consumer-app" provider:@"Provider-server" transferProtocol:TransferProtocolStandard];
 	}
 	return self;
 }
@@ -47,7 +45,7 @@
 
 @interface Pact_iOS_ObjC_ExampleTests: XCTestCase
 
-@property (strong, nonatomic) MockService *mockService;
+@property (strong, nonatomic) PFMockService *mockService;
 @property (strong, nonatomic) HTTPClient *httpClient;
 
 @end
