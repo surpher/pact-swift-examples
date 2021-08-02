@@ -11,9 +11,9 @@ Note that using Carthage may require you to use the [workaround script][carthage
 1. Clone this repo
 2. cd into a project you're interested in
 3. Fire up your Xcode 12+
-4. Wait for either SPM dependencies to resolve, or run `carthage update --use-xcframeworks` if the project is set up with a `Cartfile` (mind the issues with Silicon platform) 
+4. Wait for either SPM dependencies to resolve, or run `carthage update --use-xcframeworks` if the project is set up with a `Cartfile` (mind the issues with Silicon platform)
 5. Run tests
-6. Rejoice 🎉
+6. Happy days! 🎉
 
 ## Disclaimer
 

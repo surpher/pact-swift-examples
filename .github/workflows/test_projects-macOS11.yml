@@ -121,6 +121,35 @@ jobs:
           set -o pipefail && xcodebuild test -project Pact-iOS-SPM-Example.xcodeproj -scheme Pact-iOS-SPM-Example -destination "platform=iOS Simulator,name=iPhone 12 Pro" | xcbeautify
           more pacts/iOS_app-test_provider.json
 
+  test:
+    name: Build and Test on Linux
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: fwal/setup-swift@v1
+      - name: Get swift version
+        run: swift --version
+
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Cache Rust libs
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-rust-libs-pactswift-linux
+        with:
+          path: ~/../pact-foundation/rust/target/release
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/Package.resolved') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - name: Build Run Test
+        run: |
+          cd Pact-Linux
+          Support/build_test
+
   test_macOS_Carthage:
     name: macOS Carthage
     runs-on: macOS-11
