@@ -345,7 +345,7 @@ extension PassingTestsExample: URLSessionDelegate {
 	func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
 		guard
 			challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust,
-			(challenge.protectionSpace.host.contains("0.0.0.0") || challenge.protectionSpace.host.contains("localhost")),
+			(challenge.protectionSpace.host.contains("127.0.0.1") || challenge.protectionSpace.host.contains("localhost")),
 			let serverTrust = challenge.protectionSpace.serverTrust
 		else {
 			completionHandler(.performDefaultHandling, nil)
