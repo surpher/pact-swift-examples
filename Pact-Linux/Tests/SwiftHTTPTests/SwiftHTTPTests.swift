@@ -13,7 +13,14 @@ class MockServiceWrapper {
 
 final class SwiftHTTPTests: XCTestCase {
 
-	let mockService = MockServiceWrapper.shared.mockService
+	private let mockService = MockServiceWrapper.shared.mockService
+	private var apiClient: SWAPIClient!
+
+	override func setUpWithError() throws {
+		try super.setUpWithError()
+
+		apiClient = SWAPIClient(baseURL: mockService.baseUrl)
+	}
 
 	func testMakesRequest() {
 
@@ -29,7 +36,6 @@ final class SwiftHTTPTests: XCTestCase {
 		)
 
 		mockService.run { [unowned self] completed in
-			let apiClient = SWAPIClient(baseURL: mockService.baseUrl)
 			apiClient.fetch(endpoint: SWAPIClient.Endpoint.people, id: 1, completion: { (result: SWPerson?, error) in
 				// In this particular test we defined the response will be a status: 200. In order to get a result: SWPerson!, we need
 				// to write `.willRespondWith(status: 200, body: [ ...DSL defining a response body for SWPerson... ])`
