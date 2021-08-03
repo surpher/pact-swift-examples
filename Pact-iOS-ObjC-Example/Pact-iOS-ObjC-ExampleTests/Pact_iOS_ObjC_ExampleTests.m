@@ -56,6 +56,7 @@
 	[super setUp];
 
 	self.mockService = [[MockServiceWrapper shared] mockService];
+	self.httpClient = [[HTTPClient alloc] initWithBaseUrl:self.mockService.baseUrl];
 }
 
 - (void)tearDown {
@@ -80,10 +81,9 @@
 		willRespondWithStatus:200 headers:@{@"Content-Type": @"application/json"} body:@{@"message":@"pong"}];
 
 	[self.mockService run:^(CompleteBlock testComplete) {
-		self.httpClient = [[HTTPClient alloc] initWithBaseUrl:self.mockService.baseUrl];
-
 		// execute the http request to the provider
-		[self.httpClient pingWith:^(NSDictionary *responseDict) {
+		[self.httpClient
+		 pingWith:^(NSDictionary *responseDict) {
 			NSLog(@"### Received:\n%@", responseDict);
 
 			// Test that the response was converted to a dictionary with expected key and value
@@ -124,8 +124,6 @@
 		willRespondWithStatus:201 headers:@{@"Content-Type": @"application/json"} body:responseBodyWithMatcher];
 
 	[self.mockService run:^(CompleteBlock testComplete) {
-		self.httpClient = [[HTTPClient alloc] initWithBaseUrl:self.mockService.baseUrl];
-
 		[self.httpClient makeFriendsWith:@"Johnny Appleseed" age:@25
 		 onSuccess:^(NSDictionary *responseDict) {
 			NSLog(@"### Received:\n%@", responseDict);
