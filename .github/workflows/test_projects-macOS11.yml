@@ -138,8 +138,8 @@ jobs:
         env:
           cache-name: cache-rust-libs-pactswift-linux
         with:
-          path: ~/../pact-foundation/rust/target/release
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/Package.resolved') }}
+          path: ~/pact-foundation/rust/target/release
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/Pact-Linux/Package.resolved') }}
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
