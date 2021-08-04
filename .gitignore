@@ -126,6 +126,9 @@ x**/DerivedData/
 
 # End of https://www.gitignore.io/api/swiftpm,carthage
 pacts
-*.resolved
+# *.resolved
 Cartfile.resolved
 **/Cartfile
+/Pact-macOS-SPM-Example/Pact-macOS-SPM-Example.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved
+/Pact-iOS-SPM-Example/Pact-iOS-SPM-Example.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved
+/Pact-iOS-ObjC-Example/Pact-iOS-ObjC-Example.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved
