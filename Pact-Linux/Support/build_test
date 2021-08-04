@@ -85,11 +85,14 @@ cd ${WORKSPACE}/Pact-Linux
 # https://github.com/apple/swift-package-manager/blob/main/Documentation/Usage.md#requiring-system-libraries #
 ##############################################################################################################
 
-echo "ℹ️  Running swift build:"
+echo "ℹ️  Update packages..."
+swift package update
+
+echo "ℹ️  Running swift build..."
 swift build -Xlinker -L$LIBPACT_PRODUCT_DIR
 
-echo "  Validating build by running the default product:"
+echo "  Validating build by running the default product..."
 .build/debug/SwiftHTTP
 
-echo "ℹ️  Running swift test with -Xlinker -L$LIBPACT_PRODUCT_DIR:"
+echo "ℹ️  Running swift test with -Xlinker -L$LIBPACT_PRODUCT_DIR..."
 swift test -Xlinker -L$LIBPACT_PRODUCT_DIR

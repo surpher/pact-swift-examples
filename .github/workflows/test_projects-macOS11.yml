@@ -148,7 +148,6 @@ jobs:
       - name: Build Run Test
         run: |
           cd Pact-Linux
-          swift package update
           Support/build_test
 
   test_macOS_Carthage:
