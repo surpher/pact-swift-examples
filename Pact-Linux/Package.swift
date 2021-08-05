@@ -8,9 +8,7 @@ let package = Package(
 
 	dependencies: [
 		// Dependencies declare other packages that this package depends on.
-		// .package(url: /* package url */, from: "1.0.0"),
-//		.package(name: "PactSwift", url: "https://github.com/surpher/PactSwift.git", .upToNextMajor(from: "0.5.1")),
-		.package(name: "PactSwift", url: "https://github.com/surpher/PactSwift.git", .branch("fix/failing-test")),
+		.package(name: "PactSwift", url: "https://github.com/surpher/PactSwift.git", .upToNextMajor(from: "0.6.1")),
 	],
 
 	targets: [
