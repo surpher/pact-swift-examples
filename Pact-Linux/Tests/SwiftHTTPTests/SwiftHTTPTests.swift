@@ -47,4 +47,28 @@ final class SwiftHTTPTests: XCTestCase {
 
 	}
 
+	func testMakesPOSTRequest() {
+		mockService
+			.uponReceiving("Request to POST foo:bar")
+			.given("foo:bar does not exist")
+			.withRequest(
+				method: .POST,
+				path: "/starships",
+				body: [
+					"foo": Matcher.SomethingLike("bar"),
+					"baz": Matcher.IntegerLike(1)
+				]
+			)
+			.willRespondWith(
+				status: 201
+			)
+
+		mockService.run { [unowned self] completed in
+			apiClient
+				.submit(endpoint: SWAPIClient.Endpoint.starships, method: .POST, body: Data(#"{"foo": "bar","baz":1}"#.utf8)) { (result: SWStarship?, error) in
+					completed()
+				}
+		}
+	}
+
 }

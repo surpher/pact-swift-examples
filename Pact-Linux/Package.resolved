@@ -14,27 +14,27 @@
         "package": "PactSwift",
         "repositoryURL": "https://github.com/surpher/PactSwift.git",
         "state": {
-          "branch": null,
-          "revision": "dd0b3d241b8703f6e1c5d4625aa6cab543dbf51c",
-          "version": "0.6.1"
+          "branch": "fix/failing-test",
+          "revision": "2e1961fe5833394905a7b9f89e3e61f77184b758",
+          "version": null
         }
       },
       {
         "package": "PactSwiftMockServer",
         "repositoryURL": "https://github.com/surpher/PactSwiftMockServer.git",
         "state": {
-          "branch": null,
-          "revision": "ccc751bec6dd55db0a9e7c79dabf287fcd5a752d",
-          "version": "0.2.2"
+          "branch": "fix/sockets",
+          "revision": "52de2b9895a616ec839a3f2eb282ad8e2f858302",
+          "version": null
         }
       },
       {
         "package": "PactSwiftToolbox",
         "repositoryURL": "https://github.com/surpher/PactSwiftToolbox.git",
         "state": {
-          "branch": null,
-          "revision": "b4c52bf4f86ab03215cb9e42ffd9387dd92ad25c",
-          "version": "0.2.0"
+          "branch": "fix/sockets",
+          "revision": "38cdfc32d22410743b714ed6cedc9d4857815c98",
+          "version": null
         }
       }
     ]

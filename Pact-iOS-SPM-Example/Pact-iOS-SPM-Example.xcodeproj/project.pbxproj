@@ -512,7 +512,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/surpher/PactSwift";
 			requirement = {
-				branch = main;
+				branch = "fix/failing-test";
 				kind = branch;
 			};
 		};

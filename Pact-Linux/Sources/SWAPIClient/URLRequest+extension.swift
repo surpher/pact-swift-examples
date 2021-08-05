@@ -11,6 +11,7 @@ extension URLRequest {
 		request.setDefaultHeaders()
 		request.httpMethod = method.rawValue
 		request.httpBody = body
+		request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 
 		return request
 	}

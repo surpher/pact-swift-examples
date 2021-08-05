@@ -31,6 +31,18 @@ public class SWAPIClient: NSObject {
 			}
 	}
 
+	public func submit<D>(endpoint: Endpoint, method: HTTPMethod = .POST, body: Data? = nil, completion: @escaping (D?, Error?) -> Void) where D: Decodable {
+		URLSession.shared.decodable(
+				for: .makeRequest(url: endpoint.url(baseURL: baseURL), method: method, body: body)
+			) { (result: Result<D, Error>) in
+				print("Result: \(result)")
+				switch result {
+				case .success(let object): completion(object, nil)
+				case .failure(let error): completion(nil, error)
+				}
+			}
+	}
+
 }
 
 private extension SWAPIClient.Endpoint {
