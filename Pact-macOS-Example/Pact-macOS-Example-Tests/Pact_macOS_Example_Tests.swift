@@ -46,8 +46,8 @@ class Pact_macOS_Example_CarthageTests: XCTestCase {
 		// pointing it to the mockService we programmed it just above
 
 		// This following block tests our RestManager implementation...
-		mockService.run { [unowned self] completed in
-			guard let url = URL(string: "\(self.mockService.baseUrl)/api/users") else {
+		mockService.run { baseURL, done in
+			guard let url = URL(string: "\(baseURL)/api/users") else {
 				XCTFail("Failed to prepare url!")
 				return
 			}
@@ -61,7 +61,7 @@ class Pact_macOS_Example_CarthageTests: XCTestCase {
 						// There's something with the structure of data either on our end, or how we defined the body we are expecting...
 						// Either way, they don't match meaning there's something wrong with our decoder implementation (or model) or body defined in .willRespondWith(...)
 						XCTFail("Failed to decode UserData")
-						completed() // Notify MockService we're done with our test
+						done() // Notify MockService we're done with our test
 						return
 					}
 
@@ -70,7 +70,7 @@ class Pact_macOS_Example_CarthageTests: XCTestCase {
 					XCTAssertEqual(userData.data?.first?.firstName, "John")
 					XCTAssertEqual(userData.data?.first?.lastName, "Tester")
 				}
-				completed() // Notify MockService we're done with our test
+				done() // Notify MockService we're done with our test
 			}
 		}
 	}
@@ -96,8 +96,8 @@ class Pact_macOS_Example_CarthageTests: XCTestCase {
 		// pointing it to the mockService we programmed it just above
 
 		// This following block tests our RestManager implementation...
-		secureMockService.run(timeout: 5) { completed in
-			guard let url = URL(string: "\(secureMockService.baseUrl)/api/users") else {
+		secureMockService.run(timeout: 5) { baseURL, done in
+			guard let url = URL(string: "\(baseURL)/api/users") else {
 				XCTFail("Failed to prepare url!")
 				return
 			}
@@ -109,7 +109,7 @@ class Pact_macOS_Example_CarthageTests: XCTestCase {
 					decoder.keyDecodingStrategy = .convertFromSnakeCase
 					guard let userData = try? decoder.decode(UserData.self, from: data) else {
 						XCTFail("Failed to decode UserData")
-						completed() // Notify MockService we're done with our test
+						done() // Notify MockService we're done with our test
 						return
 					}
 
@@ -118,7 +118,7 @@ class Pact_macOS_Example_CarthageTests: XCTestCase {
 					XCTAssertEqual(userData.data?.first?.firstName, "John")
 					XCTAssertEqual(userData.data?.first?.lastName, "Tester")
 				}
-				completed() // Notify MockService we're done with our test
+				done() // Notify MockService we're done with our test
 			}
 		}
 	}
@@ -144,8 +144,8 @@ class Pact_macOS_Example_CarthageTests: XCTestCase {
 		// pointing it to the mockService we programmed it just above
 
 		// This following block tests our RestManager implementation...
-		mockService.run { [unowned self] completed in
-			guard let url = URL(string: "\(self.mockService.baseUrl)/api/users/\(userId)") else {
+		mockService.run { baseURL, done in
+			guard let url = URL(string: "\(baseURL)/api/users/\(userId)") else {
 				XCTFail("Failed to prepare url!")
 				return
 			}
@@ -159,7 +159,7 @@ class Pact_macOS_Example_CarthageTests: XCTestCase {
 						// There's something with the structure of data either on our end, or how we defined the body we are expecting...
 						// Either way, they don't match meaning there's something wrong with our decoder implementation (or model) or body defined in .willRespondWith(...)
 						XCTFail("Failed to decode UserData")
-						completed() // Notify MockService we're done with our test
+						done() // Notify MockService we're done with our test
 						return
 					}
 
@@ -168,7 +168,7 @@ class Pact_macOS_Example_CarthageTests: XCTestCase {
 					XCTAssertEqual(userData.data?.firstName, "John")
 					XCTAssertEqual(userData.data?.lastName, "Tester")
 				}
-				completed() // Notify MockService we're done with our test
+				done() // Notify MockService we're done with our test
 			}
 		}
 	}
@@ -192,8 +192,8 @@ class Pact_macOS_Example_CarthageTests: XCTestCase {
 		let apiClient = RestManager()
 
 		// This following block tests our RestManager implementation...
-		mockService.run { [unowned self] completed in
-			guard let url = URL(string: "\(self.mockService.baseUrl)/api/users?page=3") else {
+		mockService.run { baseURL, done in
+			guard let url = URL(string: "\(baseURL)/api/users?page=3") else {
 				XCTFail("Failed to prepare url!")
 				return
 			}
@@ -207,7 +207,7 @@ class Pact_macOS_Example_CarthageTests: XCTestCase {
 						// There's something with the structure of data either on our end, or how we defined the body we are expecting...
 						// Either way, they don't match meaning there's something wrong with our decoder implementation (or model) or body defined in .willRespondWith(...)
 						XCTFail("Failed to decode UserData")
-						completed() // Notify MockService we're done with our test
+						done() // Notify MockService we're done with our test
 						return
 					}
 
@@ -216,7 +216,7 @@ class Pact_macOS_Example_CarthageTests: XCTestCase {
 					XCTAssertEqual(userData.data?.first?.firstName, "John")
 					XCTAssertEqual(userData.data?.first?.lastName, "Tester")
 				}
-				completed() // Notify MockService we're done with our test
+				done() // Notify MockService we're done with our test
 			}
 		}
 	}
@@ -243,8 +243,8 @@ class Pact_macOS_Example_CarthageTests: XCTestCase {
 
 		let apiClient = RestManager()
 
-		mockService.run(timeout: 1) { completed in
-			guard let url = URL(string: "\(self.mockService.baseUrl)/api/users") else {
+		mockService.run(timeout: 1) { baseURL, done in
+			guard let url = URL(string: "\(baseURL)/api/users") else {
 				XCTFail("Failed to prepare url!")
 				return
 			}
@@ -255,7 +255,7 @@ class Pact_macOS_Example_CarthageTests: XCTestCase {
 
 			apiClient.makeRequest(toURL: url, withHttpMethod: .put) { results in
 				// Do some assertions here that the 201 response is returned and handled by our apiClient?
-				completed() // Notify MockService we're done with our test
+				done() // Notify MockService we're done with our test
 			}
 		}
 	}
@@ -294,8 +294,8 @@ class Pact_macOS_Example_CarthageTests: XCTestCase {
 
 		let apiClient = RestManager()
 
-		mockService.run(timeout: 1) { completed in
-			guard let url = URL(string: "\(self.mockService.baseUrl)/api/users/add/verbose") else {
+		mockService.run(timeout: 1) { baseURL, done in
+			guard let url = URL(string: "\(baseURL)/api/users/add/verbose") else {
 				XCTFail("Failed to prepare url!")
 				return
 			}
@@ -312,7 +312,7 @@ class Pact_macOS_Example_CarthageTests: XCTestCase {
 						// There's something with the structure of data either on our end, or how we defined the body we are expecting...
 						// Either way, they don't match meaning there's something wrong with our decoder implementation (or model) or body defined in .willRespondWith(...)
 						XCTFail("Failed to decode UserData")
-						completed() // Notify MockService we're done with our test
+						done() // Notify MockService we're done with our test
 						return
 					}
 
@@ -340,7 +340,7 @@ class Pact_macOS_Example_CarthageTests: XCTestCase {
 						XCTFail("Failed to test example generators")
 					}
 				}
-				completed() // Notify MockService we're done with our test
+				done() // Notify MockService we're done with our test
 			}
 		}
 	}
