@@ -48,8 +48,8 @@ class PassingTestsExample: XCTestCase {
 		// pointing it to the mockService we programmed it just above
 
 		// This following block tests our RestManager implementation...
-		mockService.run { [mockService] completed in
-			guard let url = URL(string: "\(mockService.baseUrl)/api/users") else {
+		mockService.run { baseURL, completed in
+			guard let url = URL(string: "\(baseURL)/api/users") else {
 				XCTFail("Failed to prepare url!")
 				return
 			}
@@ -100,8 +100,8 @@ class PassingTestsExample: XCTestCase {
 		// pointing it to the mockService we programmed it just above
 
 		// This following block tests our RestManager implementation...
-		secureMockService.run(timeout: 5) { completed in
-			guard let url = URL(string: "\(secureMockService.baseUrl)/api/users") else {
+		secureMockService.run(timeout: 5) { baseURL, completed in
+			guard let url = URL(string: "\(baseURL)/api/users") else {
 				XCTFail("Failed to prepare url!")
 				return
 			}
@@ -148,8 +148,8 @@ class PassingTestsExample: XCTestCase {
 		// pointing it to the mockService we programmed it just above
 
 		// This following block tests our RestManager implementation...
-		mockService.run { [mockService] completed in
-			guard let url = URL(string: "\(mockService.baseUrl)/api/users/\(userId)") else {
+		mockService.run { baseURL, completed in
+			guard let url = URL(string: "\(baseURL)/api/users/\(userId)") else {
 				XCTFail("Failed to prepare url!")
 				return
 			}
@@ -196,8 +196,8 @@ class PassingTestsExample: XCTestCase {
 		let apiClient = RestManager()
 
 		// This following block tests our RestManager implementation...
-		mockService.run { [mockService] completed in
-			guard let url = URL(string: "\(mockService.baseUrl)/api/users?page=3") else {
+		mockService.run { baseURL, completed in
+			guard let url = URL(string: "\(baseURL)/api/users?page=3") else {
 				XCTFail("Failed to prepare url!")
 				return
 			}
@@ -243,8 +243,8 @@ class PassingTestsExample: XCTestCase {
 
 		let apiClient = RestManager()
 
-		mockService.run(timeout: 5) { [mockService] completed in
-			guard let url = URL(string: "\(mockService.baseUrl)/api/users") else {
+		mockService.run(timeout: 5) { baseURL, completed in
+			guard let url = URL(string: "\(baseURL)/api/users") else {
 				XCTFail("Failed to prepare url!")
 				return
 			}
@@ -294,8 +294,8 @@ class PassingTestsExample: XCTestCase {
 		let apiClient = RestManager()
 
 		// This following block tests our RestManager implementation...
-		mockService.run { [mockService] completed in
-			guard let url = URL(string: "\(mockService.baseUrl)/api/users?page=3") else {
+		mockService.run { baseURL, completed in
+			guard let url = URL(string: "\(baseURL)/api/users?page=3") else {
 				XCTFail("Failed to prepare url!")
 				return
 			}
