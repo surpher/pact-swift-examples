@@ -5,13 +5,15 @@ set -euo pipefail
 REF_DIR="Sources"
 WORKSPACE=${GITHUB_WORKSPACE:-$PWD}
 LIBPACT_FFI_DIR="${WORKSPACE}/pact-reference/rust/pact_ffi"
-LIBPACT_PRODUCT_DIR="${WORKSPACE}/pact-reference/rust/target/debug"
+LIBPACT_PRODUCT_DIR="${WORKSPACE}/pact-reference/rust/target/release"
 CI=${CI:-"false"}
 PACT_FOUNDATION_REPO="https://github.com/pact-foundation/pact-reference.git"
 
 #######################
-# Pre-requisite       #
+# Pre-requisites      #
 #######################
+
+echo "👮‍♀️  Verifying project setup..."
 
 if [ ! -d "$PWD/Sources" ]
 then
@@ -23,8 +25,6 @@ fi
 #######################
 # If CI               #
 #######################
-
-echo "👮‍♀️  Verifying project and dependencies' folder setup..."
 
 if [[ "$CI" == true ]]; then
 	cd ..
@@ -48,7 +48,7 @@ cd $LIBPACT_FFI_DIR
 # Setup               #
 #######################
 
-# Validate dependencies
+# Validate dependencies - making sure Rust is installed
 
 echo "👮‍♀️  Checking if Rust is installed..."
 if which cargo >/dev/null; then
@@ -65,17 +65,13 @@ fi
 # Build libpact_ffi libraries                #
 ##############################################
 
-# Using debug build flag (or not providing it), otherwise libpact_ffi.so must be moved into /usr/local/lib/
-echo "🏗  Building libpact_ffi for current platform (debug build)"
-cargo build
-echo "✅  libpact_ffi built"
+# Using release flag to build
+echo "🏗  Building libpact_ffi for current platform (release build)"
+cargo build --release
+echo "✅  libpact_ffi.so built"
 
 echo "ℹ️  Setting LD_LIBRARY_PATH to include $LIBPACT_PRODUCT_DIR"
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$LIBPACT_PRODUCT_DIR
-
-#######################
-# Cleanup             #
-#######################
 
 echo "ℹ️  Changing directory back to ${WORKSPACE}/Pact-Linux"
 cd ${WORKSPACE}/Pact-Linux
@@ -85,14 +81,14 @@ cd ${WORKSPACE}/Pact-Linux
 # https://github.com/apple/swift-package-manager/blob/main/Documentation/Usage.md#requiring-system-libraries #
 ##############################################################################################################
 
-echo "ℹ️  Update packages..."
+echo "📦  Update packages..."
 swift package update
 
-echo "ℹ️  Running swift build..."
+echo "🏗  Running swift build..."
 swift build -Xlinker -L$LIBPACT_PRODUCT_DIR
 
-echo "  Validating build by running the default product..."
+echo "🏃  Validating build by running the default product..."
 .build/debug/SwiftHTTP
 
-echo "ℹ️  Running swift test with -Xlinker -L$LIBPACT_PRODUCT_DIR..."
+echo "⚗️  Running swift test with -Xlinker -L$LIBPACT_PRODUCT_DIR..."
 swift test -Xlinker -L$LIBPACT_PRODUCT_DIR
