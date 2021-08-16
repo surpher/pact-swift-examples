@@ -233,8 +233,12 @@ class PassingTestsExample: XCTestCase {
 			.withRequest( // this is what we promise our apiClient will call
 				method: .POST,
 				path: "/api/users",
+				headers: [
+					"x-request-id": Matcher.FromProviderState(parameter: "header-x-request-id", value: .string("some-test-value"))
+				],
 				body: [
-					"name": Matcher.SomethingLike("Julia") // We only say we care about the key name ("name") and the type of value (a `String` should be expected)
+					"name": Matcher.SomethingLike("Julia"), // We only say we care about the key name ("name") and the type of value (a `String` should be expected)
+					"identifier": Matcher.FromProviderState(parameter: "userId", value: .string("123e4567-e89b-12d3-a456-426614174000"))
 				]
 			)
 			.willRespondWith(
@@ -251,10 +255,40 @@ class PassingTestsExample: XCTestCase {
 
 			// This is using our API Client implementation in the main target.
 			apiClient.requestHttpHeaders.add(value: "application/json", forKey: "Content-Type")
+			apiClient.requestHttpHeaders.add(value: "some-test-value", forKey: "x-request-id")
 			apiClient.httpBodyParameters.add(value: "Someones Name", forKey: "name") // We only promised we will send a `String`, so we're golden
+			apiClient.httpBodyParameters.add(value: "123e4567-e89b-12d3-a456-426614174000", forKey: "identifier")
 
 			apiClient.makeRequest(toURL: url, withHttpMethod: .post) { results in
 				// Do some assertions here that the 201 response is returned and handled by our apiClient?
+				completed() // Notify MockService we're done with our test
+			}
+		}
+	}
+
+	func testCreateUser_WithStateProviderMatcher() {
+		// Expectations
+		mockService
+			.uponReceiving("A request for value")
+			.given("value exists")
+			.withRequest(
+				method: .GET,
+				path: Matcher.FromProviderState(parameter: "/api/values/${valueId}", value: .string("/api/values/666"))
+			)
+			.willRespondWith(
+				status: 200
+			)
+
+		let apiClient = RestManager()
+
+		mockService.run(timeout: 5) { baseURL, completed in
+			guard let url = URL(string: "\(baseURL)/api/values/666") else {
+				XCTFail("Failed to prepare url!")
+				return
+			}
+
+			apiClient.makeRequest(toURL: url, withHttpMethod: .get) { results in
+				// Do some assertions here that the 200 response is returned and handled by our apiClient?
 				completed() // Notify MockService we're done with our test
 			}
 		}
@@ -267,7 +301,7 @@ class PassingTestsExample: XCTestCase {
 			.given(ProviderState(description: "users exists", params: ["page": "3"]))
 			.withRequest(
 				method: .GET,
-				path: "/api/users",
+				path: Matcher.RegexLike("/api/users", term: #"^/api/u\w+$"#),
 				query: ["page": ["3"]]
 			)
 			.willRespondWith(
@@ -277,6 +311,7 @@ class PassingTestsExample: XCTestCase {
 					"page": ExampleGenerator.RandomInt(min: 0, max: 100),
 					"per_page": Matcher.SomethingLike(25),
 					"total": ExampleGenerator.RandomInt(min: 0, max: 500),
+					"from-provider-state": Matcher.FromProviderState(parameter: "someId", value: .int(100)),
 					"total_pages": ExampleGenerator.RandomInt(min: 1, max: 500),
 					"data": [
 						[
