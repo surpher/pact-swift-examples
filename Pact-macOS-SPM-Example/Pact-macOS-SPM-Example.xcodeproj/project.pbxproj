@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AD1571CD264D1CE400E1F72A /* PactSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AD1571CC264D1CE400E1F72A /* PactSwift */; };
+		AD4A7FD126CB1FEA0035B776 /* PactSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AD4A7FD026CB1FEA0035B776 /* PactSwift */; };
 		ADA11F482544D84E00AFEB95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA11F472544D84E00AFEB95 /* AppDelegate.swift */; };
 		ADA11F4A2544D84E00AFEB95 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA11F492544D84E00AFEB95 /* ContentView.swift */; };
 		ADA11F4C2544D85000AFEB95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADA11F4B2544D85000AFEB95 /* Assets.xcassets */; };
@@ -67,7 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD1571CD264D1CE400E1F72A /* PactSwift in Frameworks */,
+				AD4A7FD126CB1FEA0035B776 /* PactSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,7 +178,7 @@
 			);
 			name = "Pact-macOS-SPM-ExampleTests";
 			packageProductDependencies = (
-				AD1571CC264D1CE400E1F72A /* PactSwift */,
+				AD4A7FD026CB1FEA0035B776 /* PactSwift */,
 			);
 			productName = "Pact-macOS-SPM-ExampleTests";
 			productReference = ADA11F592544D85000AFEB95 /* Pact-macOS-SPM-ExampleTests.xctest */;
@@ -234,7 +234,7 @@
 			);
 			mainGroup = ADA11F3B2544D84E00AFEB95;
 			packageReferences = (
-				AD1571CB264D1CE400E1F72A /* XCRemoteSwiftPackageReference "PactSwift" */,
+				AD4A7FCF26CB1FEA0035B776 /* XCRemoteSwiftPackageReference "PactSwift" */,
 			);
 			productRefGroup = ADA11F452544D84E00AFEB95 /* Products */;
 			projectDirPath = "";
@@ -616,20 +616,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		AD1571CB264D1CE400E1F72A /* XCRemoteSwiftPackageReference "PactSwift" */ = {
+		AD4A7FCF26CB1FEA0035B776 /* XCRemoteSwiftPackageReference "PactSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/surpher/PactSwift";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.6.0;
+				minimumVersion = 0.8.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		AD1571CC264D1CE400E1F72A /* PactSwift */ = {
+		AD4A7FD026CB1FEA0035B776 /* PactSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = AD1571CB264D1CE400E1F72A /* XCRemoteSwiftPackageReference "PactSwift" */;
+			package = AD4A7FCF26CB1FEA0035B776 /* XCRemoteSwiftPackageReference "PactSwift" */;
 			productName = PactSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
