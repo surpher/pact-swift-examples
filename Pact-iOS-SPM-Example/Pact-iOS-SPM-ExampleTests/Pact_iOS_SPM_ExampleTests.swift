@@ -77,6 +77,39 @@ class PassingTestsExample: XCTestCase {
 		}
 	}
 
+	func testVerbatimValues() {
+		mockService
+			.uponReceiving("A request")
+			.given("values exist")
+			.withRequest(
+				method: .GET,
+				path: "/api/values"
+			)
+			.willRespondWith(
+				status: 200,
+				body: [
+					"data": "[\"hello\":\"world\", \"foo\":\"bar\"]"
+				]
+			)
+
+		let apiClient = RestManager()
+		mockService.run { baseURL, done in
+			guard let url = URL(string: "\(baseURL)/api/values") else {
+				XCTFail("Fail to prepare url!")
+				return
+			}
+
+			apiClient.makeRequest(toURL: url, withHttpMethod: .get) { results in
+				if let data = results.data {
+					print("#### [INFO]: start ####")
+					print(String(data: data, encoding: .utf8) as Any)
+					print("#### [INFO]: end ####")
+				}
+				done()
+			}
+		}
+	}
+
 	func testGetsUsers_over_SSL() {
 		// Set MockService to start up using TLS (using a self-signed certificate)
 		let secureMockService = MockService(consumer: "secure-consumer", provider: "secure-provider", scheme: .secure)
