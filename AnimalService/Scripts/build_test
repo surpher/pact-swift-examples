@@ -1,0 +1,91 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+REF_DIR="Sources"
+WORKSPACE=${GITHUB_WORKSPACE:-$PWD}
+LIBPACT_FFI_DIR="${WORKSPACE}/pact-reference/rust/pact_ffi"
+LIBPACT_PRODUCT_DIR="${WORKSPACE}/pact-reference/rust/target/release"
+CI=${CI:-"false"}
+PACT_FOUNDATION_REPO="https://github.com/pact-foundation/pact-reference.git"
+
+#######################
+# Pre-requisites      #
+#######################
+
+echo "👮‍♀️  Verifying project setup..."
+
+if [ ! -d "$PWD/Sources" ]
+then
+	echo "🚨 Run this from the same folder where your '$REF_DIR' lives."
+	echo "⚠️  You are runing it in $PWD"
+	exit 1
+fi
+
+#######################
+# If CI               #
+#######################
+
+if [[ "$CI" == true ]]; then
+	cd ..
+	echo "ℹ️ Cloning ${PACT_FOUNDATION_REPO}"
+	git clone $PACT_FOUNDATION_REPO
+
+	export LD_LIBRARY_PATH="$LIBPACT_PRODUCT_DIR"
+
+elif [ ! -d "$PWD/pact-reference" ]; then
+	echo "🚨 Missing pact-foundation/pact-reference repo."
+	echo "⚠️  Make sure you 'git clone ${PACT_FOUNDATION_REPO}' at the same folder level as your $REF_DIR."
+	exit 1
+else
+	echo "👍  Project setup seems to be in order."
+fi
+
+echo "ℹ️  Changing location to ${LIBPACT_FFI_DIR}"
+cd $LIBPACT_FFI_DIR
+
+#######################
+# Setup               #
+#######################
+
+# Validate dependencies - making sure Rust is installed
+
+echo "👮‍♀️  Checking if Rust is installed..."
+if which cargo >/dev/null; then
+	echo "👍  cargo installed"
+elif command -v ~/.cargo/bin/cargo &> /dev/null; then
+	echo "👍  cargo installed in ~/.cargo/bin/"
+else
+	echo "🚨  Rust/Cargo not installed"
+	echo "ERROR: cargo is required and is was found on this machine. See https://www.rust-lang.org/tools/install"
+ 	exit 1
+fi
+
+##############################################
+# Build libpact_ffi libraries                #
+##############################################
+
+# Using release flag to build
+echo "🏗  Building libpact_ffi for current platform (release build)"
+cargo build --release
+echo "✅  libpact_ffi.so built"
+
+echo "ℹ️  Setting LD_LIBRARY_PATH to include $LIBPACT_PRODUCT_DIR"
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$LIBPACT_PRODUCT_DIR
+
+echo "ℹ️  Changing directory back to ${WORKSPACE}/AnimalService"
+cd ${WORKSPACE}/AnimalService
+
+##############################################################################################################
+# Run Swift buld and test                                                                                    #
+# https://github.com/apple/swift-package-manager/blob/main/Documentation/Usage.md#requiring-system-libraries #
+##############################################################################################################
+
+echo "📦  Update packages..."
+swift package update
+
+echo "🏗  Running swift build..."
+swift build -Xlinker -L$LIBPACT_PRODUCT_DIR
+
+echo "⚗️  Running swift test with -Xlinker -L$LIBPACT_PRODUCT_DIR..."
+swift test -Xlinker -L$LIBPACT_PRODUCT_DIR

@@ -1,0 +1,26 @@
+name: PactSwift Provider Verification
+
+on: [push, workflow_dispatch, repository_dispatch]
+
+env:
+  PACTFLOW_TOKEN: ${{ secrets.PACTFLOW_TOKEN }}
+
+jobs:
+
+  test_provider_linux:
+    name: Verify a Vapor Provider on Linux
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: fwal/setup-swift@v1
+      - name: Setup Swift
+        run: swift --version
+
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Verify provider
+        run: |
+          cd AnimalService
+          ./Scripts/docker_start
+          Scripts/build_test

@@ -10,8 +10,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-        with:
-          submodules: recursive
 
       - name: Use Xcode 13.0
         run: sudo xcode-select -switch /Applications/Xcode_13.0.app
@@ -34,8 +32,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-        with:
-          submodules: recursive
 
       - name: Use Xcode 13
         run: sudo xcode-select -switch /Applications/Xcode_13.0.app
@@ -58,8 +54,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-        with:
-          submodules: recursive
 
       - name: Use Xcode 13.0
         run: sudo xcode-select -switch /Applications/Xcode_13.0.app
@@ -81,8 +75,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-        with:
-          submodules: recursive
 
       - name: Use Xcode 13.0
         run: sudo xcode-select -switch /Applications/Xcode_13.0.app
@@ -157,8 +149,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-        with:
-          submodules: recursive
 
       - name: Use Xcode 13.0
         run: sudo xcode-select -switch /Applications/Xcode_13.0.app
