@@ -73,8 +73,8 @@ echo "✅  libpact_ffi.so built"
 echo "ℹ️  Setting LD_LIBRARY_PATH to include $LIBPACT_PRODUCT_DIR"
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$LIBPACT_PRODUCT_DIR
 
-echo "ℹ️  Changing directory back to ${WORKSPACE}/AnimalService"
-cd ${WORKSPACE}/AnimalService
+echo "ℹ️  Changing directory back to ${WORKSPACE}/Pact-Linux-Provider"
+cd ${WORKSPACE}/Pact-Linux-Provider
 
 ##############################################################################################################
 # Run Swift buld and test                                                                                    #

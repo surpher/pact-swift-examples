@@ -10,10 +10,10 @@ Note that using Carthage may require you to use the [workaround script][carthage
 ## What? How? Huh?
 
 1. Clone this repo
-2. cd into a project you're interested in
-3. Fire up your Xcode 12+, 13+ or whatever your preference on Linux or provider side dev is
+2. `cd` into a project you're interested in
+3. Fire up your Xcode 12+, 13+ or whatever your preference to develop in is
 4. Wait for either SPM dependencies to resolve, or run `carthage update --use-xcframeworks` if the project is set up with a `Cartfile` (mind the issues with Silicon platform)
-5. Check the `../.github/workflows/` for any pointers, ideas and caveats for building, setting things up, running...
+5. Check the `../.github/workflows/` for any pointers, ideas and caveats for building, setting things up, running... (especially if you're using this on Linux)
 6. Run tests
 7. Happy days! 🎉
 

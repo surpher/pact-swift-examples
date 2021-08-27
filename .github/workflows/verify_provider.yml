@@ -21,6 +21,6 @@ jobs:
 
       - name: Verify provider
         run: |
-          cd AnimalService
+          cd Pact-Linux-Provider
           ./Scripts/docker_start
           Scripts/build_test

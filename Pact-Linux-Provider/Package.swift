@@ -12,6 +12,9 @@ let package = Package(
 		.package(url: "https://github.com/vapor/vapor.git", from: "4.0.0"),
 		.package(url: "https://github.com/vapor/fluent.git", from: "4.0.0"),
 		.package(url: "https://github.com/vapor/fluent-postgres-driver.git", from: "2.0.0"),
+
+		// 🤝 PactSwift - Consumer driven contract testing
+		// .package(name: "PactSwift", url: "https://github.com/surpher/PactSwift.git", .upToNextMajor(from: "0.9.0")),
 		.package(url: "https://github.com/surpher/PactSwift.git", .branch("provider/verification")),
 	],
 

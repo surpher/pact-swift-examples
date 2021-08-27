@@ -1,0 +1,191 @@
+swagger: "2.0"
+info:
+  description: "This is a sample AnimalService to demonstrate Consumer Driven Contract testing using Pact."
+  version: "1.0.0"
+  title: "Swagger AnimalService"
+  termsOfService: "http://some.anz.com/webpage/terms/"
+  contact:
+    email: "apiteam@anz.com"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "animal-service.anz.com"
+basePath: "/api"
+tags:
+- name: "animal"
+  description: "Everything about our Animals"
+  externalDocs:
+    description: "Find out more"
+    url: "http://anzx.com"
+- name: "species"
+  description: "Everything about our Species"
+schemes:
+- "https"
+- "http"
+paths:
+  /animals:
+    get:
+      tags:
+      - "animal"
+      summary: "List all animals"
+      description: "Multiple status values can be provided with comma separated strings"
+      operationId: "getAllAnimals"
+      produces:
+      - "application/json"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Animal"
+    post:
+      tags:
+      - "animal"
+      summary: "Create an Animal"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Animal object that needs to be added to the store"
+        required: true
+        schema:
+          $ref: "#/definitions/CreateAnimal"    
+      responses:
+        "201":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Animal"
+
+  /animals/{animalId}:
+    get:
+      tags:
+      - "animal"
+      summary: "Find Animal by ID"
+      description: "Returns a single Animal"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "animalId"
+        in: "path"
+        description: "ID of Animal to return"
+        required: true
+        type: "string"
+        format: "uuid"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Animal"
+        "400":
+          description: "Invalid ID supplied"
+        "404":
+          description: "Animal not found"
+  
+  /animals/search/{searchValue}:
+    get:
+      tags:
+      - "animal"
+      summary: "Find Animal by name"
+      description: "Returns a single Animal"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "searchValue"
+        in: "path"
+        description: "Name of an Animal"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Animal"
+        "400":
+          description: "Invalid value type supplied"
+        "404":
+          description: "Animal not found"
+          
+  /species:
+    get:
+      tags:
+      - "species"
+      summary: "List all species"
+      produces: 
+      - "application/json"
+      parameters: 
+      - name: "showAnimals"
+        in: "query"
+        type: "array"
+        items:
+          type: "string"
+          enum:
+          - "true"
+          - "false"
+          default: "false"
+        collectionFormat: "multi"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Species"
+
+definitions:
+  Animal:
+    type: "object"
+    required:
+    - "name"
+    - "age"
+    properties:
+      id:
+        type: "string"
+        format: "uuid"
+      name:
+        type: "string"
+        example: "Mary"
+      age: 
+        type: "integer"
+        format: "int32"
+        example: 23
+      species:
+        type: "string"
+        description: "Animal status in the store"
+  
+  CreateAnimal:
+    type: "object"
+    required:
+    - "name"
+    - "age"
+    - "speciesID"
+    properties:
+      name:
+        type: "string"
+        example: "Mary"
+      age: 
+        type: "integer"
+        format: "int32"
+        example: 23
+      speciesID:
+        type: "string"
+        format: "uuid"
+       
+  Species:
+    type: "object"
+    required:
+    - "name"
+    properties:
+      id:
+        type: "string"
+        format: "uuid"
+      name:
+        type: "string"
+        example: "Alligator"
+      animals:
+        type: "array"
+        items:
+          $ref: "#/definitions/Animal"
+
+externalDocs:
+  description: "Find out more about Swagger"
+  url: "http://swagger.io"

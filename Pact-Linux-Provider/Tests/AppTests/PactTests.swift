@@ -12,7 +12,8 @@ final class PactTests: XCTestCase {
 		try app.start()
 
 		//
-		// Prepare the state for the specific provider state in the Pact contract where it interaction expects to hit `/api/animals/0221825F-CD8F-4570-A034-BF74915C40A5`
+		// Prepare the state for the specific provider state
+		// Pact contract states a certain interaction is to hit `/api/animals/0221825F-CD8F-4570-A034-BF74915C40A5`
 		// and provider responds with data...
 		//
 		// Alternatively a Controller for state change handler can be created and exposed only for test runs
