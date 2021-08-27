@@ -1,20 +1,18 @@
-name: PactSwift - Consumer (macOS-latest)
+name: PactSwift - Consumer
 
 on: [push, workflow_dispatch, repository_dispatch]
 
 jobs:
   test_iOS_SPM:
     name: iOS SPM
-    runs-on: macOS-latest
+    runs-on: macOS-11
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-        with:
-          submodules: recursive
 
-      - name: Use Xcode 12.4
-        run: sudo xcode-select -switch /Applications/Xcode_12.4.app
+      - name: Use Xcode 13.0
+        run: sudo xcode-select -switch /Applications/Xcode_13.0.app
 
       - name: Prepare the tools
         run: |
@@ -29,16 +27,14 @@ jobs:
 
   test_iOS_Carthage:
     name: iOS Carthage
-    runs-on: macOS-latest
+    runs-on: macOS-11
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-        with:
-          submodules: recursive
 
-      - name: Use Xcode 12.4
-        run: sudo xcode-select -switch /Applications/Xcode_12.4.app
+      - name: Use Xcode 13
+        run: sudo xcode-select -switch /Applications/Xcode_13.0.app
 
       - name: Prepare the tools
         run: |
@@ -53,16 +49,14 @@ jobs:
 
   test_iOS_SPM_ObjC:
     name: iOS (Obj-C) SPM
-    runs-on: macOS-latest
+    runs-on: macOS-11
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-        with:
-          submodules: recursive
 
-      - name: Use Xcode 12.4
-        run: sudo xcode-select -switch /Applications/Xcode_12.4.app
+      - name: Use Xcode 13.0
+        run: sudo xcode-select -switch /Applications/Xcode_13.0.app
 
       - name: Prepare the tools
         run: |
@@ -76,16 +70,14 @@ jobs:
 
   test_macOS_SPM:
     name: macOS SPM
-    runs-on: macOS-latest
+    runs-on: macOS-11
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-        with:
-          submodules: recursive
 
-      - name: Use Xcode 12.4
-        run: sudo xcode-select -switch /Applications/Xcode_12.4.app
+      - name: Use Xcode 13.0
+        run: sudo xcode-select -switch /Applications/Xcode_13.0.app
 
       - name: Prepare the tools
         run: |
@@ -99,16 +91,11 @@ jobs:
 
   test_macOS_Carthage:
     name: macOS Carthage
-    runs-on: macOS-latest
+    runs-on: macOS-11
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-        with:
-          submodules: recursive
-
-      - name: Use Xcode 12.4
-        run: sudo xcode-select -switch /Applications/Xcode_12.4.app
 
       - name: Prepare the tools
         run: |
@@ -120,3 +107,32 @@ jobs:
           cd Pact-macOS-Example
           ../carthage update --platform macos --use-xcframeworks
           set -o pipefail && xcodebuild clean test -project Pact-macOS-Example.xcodeproj -scheme Pact-macOS-Example -destination "platform=macOS,arch=x86_64" | xcbeautify
+
+  test_ubuntu:
+    name: Ubuntu Linux
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: fwal/setup-swift@v1
+      - name: Get swift version
+        run: swift --version
+
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Cache Rust libs
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-rust-libs-pactswift-linux
+        with:
+          path: ~/pact-foundation/rust/target/release
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/Pact-Linux/Package.resolved') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - name: Build Run Test
+        run: |
+          cd Pact-Linux
+          Support/build_test
