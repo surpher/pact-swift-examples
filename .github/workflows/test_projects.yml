@@ -4,8 +4,11 @@ on: [push, workflow_dispatch, repository_dispatch]
 
 jobs:
   test_iOS_SPM:
-    name: iOS SPM
+    name: iOS SPM - AnimalClient
     runs-on: macOS-11
+
+    env:
+      PACTFLOW_TOKEN: ${{ secrets.PACTFLOW_TOKEN }}
 
     steps:
       - name: Checkout repository
@@ -22,8 +25,7 @@ jobs:
       - name: Run tests
         run: |
           cd Pact-iOS-SPM-Example
-          set -o pipefail && xcodebuild test -project Pact-iOS-SPM-Example.xcodeproj -scheme Pact-iOS-SPM-Example -destination "platform=iOS Simulator,name=iPhone 12 Pro" | xcbeautify
-          more pacts/iOS_app-test_provider.json
+          set -o pipefail && xcodebuild test -project AnimalClient.xcodeproj -scheme AnimalClient -destination "platform=iOS Simulator,name=iPhone 12 Pro" | xcbeautify
 
   test_iOS_Carthage:
     name: iOS Carthage

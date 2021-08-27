@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1200"
+   LastUpgradeVersion = "1250"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,24 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "ADEFD14D253F8B6E0081A1B1"
-               BuildableName = "Pact-iOS-SPM-Example.app"
-               BlueprintName = "Pact-iOS-SPM-Example"
-               ReferencedContainer = "container:Pact-iOS-SPM-Example.xcodeproj">
+               BlueprintIdentifier = "B1709ED626928E260016E4F6"
+               BuildableName = "AnimalClient.app"
+               BlueprintName = "AnimalClient"
+               ReferencedContainer = "container:AnimalClient.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "NO"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B1709EF726928E270016E4F6"
+               BuildableName = "AnimalClientUITests.xctest"
+               BlueprintName = "AnimalClientUITests"
+               ReferencedContainer = "container:AnimalClient.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -29,14 +43,13 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
-            skipped = "NO"
-            parallelizable = "YES">
+            skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "ADEFD15E253F8B710081A1B1"
-               BuildableName = "Pact-iOS-SPM-ExampleTests.xctest"
-               BlueprintName = "Pact-iOS-SPM-ExampleTests"
-               ReferencedContainer = "container:Pact-iOS-SPM-Example.xcodeproj">
+               BlueprintIdentifier = "B1709EEC26928E270016E4F6"
+               BuildableName = "AnimalClientTests.xctest"
+               BlueprintName = "AnimalClientTests"
+               ReferencedContainer = "container:AnimalClient.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,21 +68,16 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "ADEFD14D253F8B6E0081A1B1"
-            BuildableName = "Pact-iOS-SPM-Example.app"
-            BlueprintName = "Pact-iOS-SPM-Example"
-            ReferencedContainer = "container:Pact-iOS-SPM-Example.xcodeproj">
+            BlueprintIdentifier = "B1709ED626928E260016E4F6"
+            BuildableName = "AnimalClient.app"
+            BlueprintName = "AnimalClient"
+            ReferencedContainer = "container:AnimalClient.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <EnvironmentVariables>
          <EnvironmentVariable
             key = "PACT_OUTPUT_DIR"
-            value = "$(PROJECT_DIR)/pacts"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-         <EnvironmentVariable
-            key = "PACT_ENABLE_LOGGING"
-            value = "all"
+            value = "$(PROJECT_DIR)/tmp"
             isEnabled = "YES">
          </EnvironmentVariable>
       </EnvironmentVariables>
@@ -84,10 +92,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "ADEFD14D253F8B6E0081A1B1"
-            BuildableName = "Pact-iOS-SPM-Example.app"
-            BlueprintName = "Pact-iOS-SPM-Example"
-            ReferencedContainer = "container:Pact-iOS-SPM-Example.xcodeproj">
+            BlueprintIdentifier = "B1709ED626928E260016E4F6"
+            BuildableName = "AnimalClient.app"
+            BlueprintName = "AnimalClient"
+            ReferencedContainer = "container:AnimalClient.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
