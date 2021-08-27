@@ -134,5 +134,5 @@ jobs:
 
       - name: Build Run Test
         run: |
-          cd Pact-Linux
+          cd Pact-Linux-Consumer
           Support/build_test
