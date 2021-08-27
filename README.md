@@ -13,8 +13,9 @@ Note that using Carthage may require you to use the [workaround script][carthage
 2. cd into a project you're interested in
 3. Fire up your Xcode 12+, 13+ or whatever your preference on Linux or provider side dev is
 4. Wait for either SPM dependencies to resolve, or run `carthage update --use-xcframeworks` if the project is set up with a `Cartfile` (mind the issues with Silicon platform)
-5. Run tests
-6. Happy days! 🎉
+5. Check the `../.github/workflows/` for any pointers, ideas and caveats for building, setting things up, running...
+6. Run tests
+7. Happy days! 🎉
 
 ## Disclaimer
 
