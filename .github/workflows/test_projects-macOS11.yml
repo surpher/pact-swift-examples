@@ -1,4 +1,4 @@
-name: PactSwift demo projects (macOS 11)
+name: PactSwift - Consumer
 
 on: [push, workflow_dispatch, repository_dispatch]
 
