@@ -42,12 +42,14 @@ final class PactTests: XCTestCase {
 			providerTags.append("dev")
 		}
 
+		let verificationResults = PactBroker.VerificationResults(providerVersion: "v0.0.4-\(providerVersionHash ?? "")", providerTags: providerTags)
+
 		let pactBroker = PactBroker(
 			url: URL(string: "https://surpher.pactflow.io")!,
-			auth: .token(PactBroker.APIToken(token: token)),
+			auth: .token(PactBroker.APIToken(token)),
 			providerName: "AnimalService",
 			consumerTags: [VersionSelector(tag: "prod")],
-			publishResults: PactBroker.VerificationResults(providerVersion: "v0.0.4-\(providerVersionHash ?? "")", providerTags: providerTags)
+			publishResults: ProcessInfo.processInfo.environment["CI"]?.isEmpty == false ? verificationResults : nil
 		)
 
 		let options = ProviderVerifier.Options(
