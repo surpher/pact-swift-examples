@@ -6,8 +6,8 @@
         "repositoryURL": "https://github.com/surpher/PactMockServer.git",
         "state": {
           "branch": null,
-          "revision": "b60987978e05df375ebe6b4f6866f4e07953d17b",
-          "version": "0.1.0"
+          "revision": "11fe519e6d1b0c513c717ba507e89ba401bdf8de",
+          "version": "0.1.2"
         }
       },
       {
@@ -15,8 +15,8 @@
         "repositoryURL": "https://github.com/surpher/PactSwift",
         "state": {
           "branch": null,
-          "revision": "32e87bb67cd3b08cc750cf029d03c006329aca49",
-          "version": "0.8.2"
+          "revision": "1825aba354caba4b0922b933b964604d8b953481",
+          "version": "0.12.0"
         }
       },
       {
@@ -24,8 +24,8 @@
         "repositoryURL": "https://github.com/surpher/PactSwiftMockServer.git",
         "state": {
           "branch": null,
-          "revision": "4d597632a744ef0ca7f4a0432d2d0d1c64b8847e",
-          "version": "0.2.5"
+          "revision": "9a0933140fdd07a31f08f1d251803abb37c3be23",
+          "version": "0.3.5"
         }
       },
       {

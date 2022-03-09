@@ -36,7 +36,8 @@ class AnimalClientTests: XCTestCase {
 				body: Matcher.EachLike(
 					[
 						"name": Matcher.SomethingLike("Mary"),
-						"age": Matcher.IntegerLike(23)
+						"age": Matcher.IntegerLike(23),
+						"next_vacc_date": ExampleGenerator.DateTimeExpression(expression: "today + 1 month @ 5pm", format: "yyyy-MM-dd hh:mm"),
 					],
 					min: 0
 				)
