@@ -615,7 +615,7 @@
 			repositoryURL = "http://github.com/surpher/PactSwift";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 0.7.0;
+				minimumVersion = 1.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

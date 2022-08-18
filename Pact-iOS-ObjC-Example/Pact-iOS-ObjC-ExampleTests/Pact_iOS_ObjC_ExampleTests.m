@@ -34,7 +34,10 @@
 
 -(id)init {
 	if (self = [super init]) {
-		_mockService = [[PFMockService alloc] initWithConsumer:@"Consumer-app" provider:@"Provider-server" transferProtocol:TransferProtocolStandard];
+		_mockService = [[PFMockService alloc] initWithConsumer:@"Consumer-app"
+																									provider:@"Provider-server"
+																					transferProtocol:TransferProtocolStandard
+																										 merge:YES];
 	}
 	return self;
 }
