@@ -5,7 +5,7 @@ on: [push, workflow_dispatch, repository_dispatch]
 jobs:
   test_iOS_SPM:
     name: iOS SPM - AnimalClient
-    runs-on: macOS-11
+    runs-on: macOS-12
 
     env:
       PACTFLOW_TOKEN: ${{ secrets.PACTFLOW_TOKEN }}
@@ -13,9 +13,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-
-      - name: Use Xcode 13.2
-        run: sudo xcode-select -switch /Applications/Xcode_13.2.app
 
       - name: Prepare the tools
         run: |
@@ -86,7 +83,7 @@ jobs:
         env:
           cache-name: cache-rust-libs-pactswift-linux
         with:
-          path: ~/pact-foundation/rust/target/release
+          path: pact-foundation/rust/target/release
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/Pact-Linux/Package.resolved') }}
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-
