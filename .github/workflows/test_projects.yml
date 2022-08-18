@@ -69,25 +69,6 @@ jobs:
           cd Pact-macOS-SPM-Example
           set -o pipefail && xcodebuild test -project Pact-macOS-SPM-Example.xcodeproj -scheme Pact-macOS-SPM-Example -destination "platform=macOS,arch=x86_64" | xcbeautify
 
-  test_macOS_Carthage:
-    name: macOS Carthage
-    runs-on: macOS-11
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Prepare the tools
-        run: |
-          brew tap thii/xcbeautify https://github.com/thii/xcbeautify.git
-          brew install xcbeautify
-
-      - name: Run tests
-        run: |
-          cd Pact-macOS-Example
-          ../carthage update --platform macos --use-xcframeworks
-          set -o pipefail && xcodebuild clean test -project Pact-macOS-Example.xcodeproj -scheme Pact-macOS-Example -destination "platform=macOS,arch=x86_64" | xcbeautify
-
   test_ubuntu:
     name: Ubuntu Linux
     runs-on: ubuntu-latest
