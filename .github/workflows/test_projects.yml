@@ -27,28 +27,6 @@ jobs:
           cd Pact-iOS-SPM-Example
           set -o pipefail && xcodebuild test -project AnimalClient.xcodeproj -scheme AnimalClient -destination "platform=iOS Simulator,name=iPhone 12 Pro" | xcbeautify
 
-  test_iOS_Carthage:
-    name: iOS Carthage
-    runs-on: macOS-11
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Use Xcode 13.2
-        run: sudo xcode-select -switch /Applications/Xcode_13.2.app
-
-      - name: Prepare the tools
-        run: |
-          brew tap thii/xcbeautify https://github.com/thii/xcbeautify.git
-          brew install xcbeautify
-
-      - name: Run tests
-        run: |
-          cd Pact-iOS-Example
-          ../carthage update --platform ios --use-xcframeworks
-          set -o pipefail && xcodebuild clean test -project Pact-iOS-Example.xcodeproj -scheme Pact-iOS-Example -destination "platform=iOS Simulator,name=iPhone 12 Pro" | xcbeautify
-
   test_iOS_SPM_ObjC:
     name: iOS (Obj-C) SPM
     runs-on: macOS-11
