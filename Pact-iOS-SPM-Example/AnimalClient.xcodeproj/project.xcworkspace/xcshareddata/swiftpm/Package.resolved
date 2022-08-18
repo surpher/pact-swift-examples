@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/surpher/PactSwift",
       "state" : {
-        "revision" : "4c9bb18a746dcaa0dfb5d887969542aa90b0b3f3",
-        "version" : "0.13.1"
+        "revision" : "e105d1c332f7cc2027b6f913e10db9c5dc66878e",
+        "version" : "1.0.0"
       }
     },
     {
@@ -23,17 +23,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/surpher/PactSwiftMockServer.git",
       "state" : {
-        "revision" : "6964dc0dd56c5c6db267944eca8b06c1a367b405",
-        "version" : "0.3.8"
-      }
-    },
-    {
-      "identity" : "pactswifttoolbox",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/surpher/PactSwiftToolbox.git",
-      "state" : {
-        "revision" : "b4c52bf4f86ab03215cb9e42ffd9387dd92ad25c",
-        "version" : "0.2.0"
+        "revision" : "50c130088b9c7fe7f278beee86b3d161605a1f98",
+        "version" : "0.4.1"
       }
     }
   ],
