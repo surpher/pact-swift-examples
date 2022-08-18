@@ -1,43 +1,41 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "PactMockServer",
-        "repositoryURL": "https://github.com/surpher/PactMockServer.git",
-        "state": {
-          "branch": null,
-          "revision": "11fe519e6d1b0c513c717ba507e89ba401bdf8de",
-          "version": "0.1.2"
-        }
-      },
-      {
-        "package": "PactSwift",
-        "repositoryURL": "https://github.com/surpher/PactSwift",
-        "state": {
-          "branch": null,
-          "revision": "1825aba354caba4b0922b933b964604d8b953481",
-          "version": "0.12.0"
-        }
-      },
-      {
-        "package": "PactSwiftMockServer",
-        "repositoryURL": "https://github.com/surpher/PactSwiftMockServer.git",
-        "state": {
-          "branch": null,
-          "revision": "9a0933140fdd07a31f08f1d251803abb37c3be23",
-          "version": "0.3.5"
-        }
-      },
-      {
-        "package": "PactSwiftToolbox",
-        "repositoryURL": "https://github.com/surpher/PactSwiftToolbox.git",
-        "state": {
-          "branch": null,
-          "revision": "b4c52bf4f86ab03215cb9e42ffd9387dd92ad25c",
-          "version": "0.2.0"
-        }
+  "pins" : [
+    {
+      "identity" : "pactmockserver",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/surpher/PactMockServer.git",
+      "state" : {
+        "revision" : "11fe519e6d1b0c513c717ba507e89ba401bdf8de",
+        "version" : "0.1.2"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "pactswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/surpher/PactSwift",
+      "state" : {
+        "revision" : "4c9bb18a746dcaa0dfb5d887969542aa90b0b3f3",
+        "version" : "0.13.1"
+      }
+    },
+    {
+      "identity" : "pactswiftmockserver",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/surpher/PactSwiftMockServer.git",
+      "state" : {
+        "revision" : "6964dc0dd56c5c6db267944eca8b06c1a367b405",
+        "version" : "0.3.8"
+      }
+    },
+    {
+      "identity" : "pactswifttoolbox",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/surpher/PactSwiftToolbox.git",
+      "state" : {
+        "revision" : "b4c52bf4f86ab03215cb9e42ffd9387dd92ad25c",
+        "version" : "0.2.0"
+      }
+    }
+  ],
+  "version" : 2
 }
