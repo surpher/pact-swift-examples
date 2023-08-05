@@ -77,7 +77,7 @@ class AnimalClientTests: XCTestCase {
 				.request(method: .GET, endpoint: .animals, path: "bogus-identifier", query: nil, body: nil) { (animal: Animal?, error) in
 					XCTAssertNotNil(error)
 					if let animalServiceError = error as? AnimalServiceError, case .statusCode(let statusCode) = animalServiceError {
-						debugPrint("☣️ non existing animal with status code: \(statusCode)")
+						debugPrint("☣️ non existing animal with status code: \(statusCode ?? 0)")
 						XCTAssertEqual(statusCode, 404)
 					} else {
 						XCTFail("Expected AnimalServiceError!")
