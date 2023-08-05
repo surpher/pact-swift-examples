@@ -237,7 +237,7 @@ class Pact_macOS_SPM_ExampleTests: XCTestCase {
 				body: [
 					"name": Matcher.SomethingLike("foo"),
 					"age": ExampleGenerator.RandomInt(min: 18, max: 64)
-				]
+				] as [String : Any]
 			)
 
 		let apiClient = RestManager()
@@ -286,9 +286,9 @@ class Pact_macOS_SPM_ExampleTests: XCTestCase {
 							"last_name": Matcher.SomethingLike("Tester"),
 							"joined": ExampleGenerator.RandomDate(format: "dd.MM.yyyy"),
 							// and we don't care about the avatar 🤷‍♂️
-						]
+						] as [String : Any]
 					]
-				]
+				] as [String : Any]
 			)
 
 		let apiClient = RestManager()

@@ -21,9 +21,9 @@ var userDataResponse: Any {
 				"first_name": Matcher.SomethingLike("John"),
 				"last_name": Matcher.SomethingLike("Tester")
 				// and we don't care about the avatar 🤷‍♂️
-			]
+			] as [String : Any]
 		]
-	]
+	] as [String : Any]
 }
 
 var singleUserResponse: Any {
@@ -33,7 +33,7 @@ var singleUserResponse: Any {
 			"first_name": Matcher.SomethingLike("John"),
 			"last_name": Matcher.SomethingLike("Tester")
 			// and we don't care about the avatar 🤷‍♂️
-		]
+		] as [String : Any]
 	]
 }
 

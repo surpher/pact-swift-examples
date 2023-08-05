@@ -5,14 +5,14 @@ on: [push, workflow_dispatch, repository_dispatch]
 jobs:
   test_iOS_SPM:
     name: iOS SPM - AnimalClient
-    runs-on: macOS-12
+    runs-on: macOS-13
 
     env:
       PACTFLOW_TOKEN: ${{ secrets.PACTFLOW_TOKEN }}
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Prepare the tools
         run: |
@@ -22,18 +22,18 @@ jobs:
       - name: Run tests
         run: |
           cd Pact-iOS-SPM-Example
-          set -o pipefail && xcodebuild test -project AnimalClient.xcodeproj -scheme AnimalClient -destination "platform=iOS Simulator,name=iPhone 12 Pro" | xcbeautify
+          set -o pipefail && xcodebuild test -project AnimalClient.xcodeproj -scheme AnimalClient -destination "platform=iOS Simulator,name=iPhone 14 Pro" | xcbeautify
 
   test_iOS_SPM_ObjC:
     name: iOS (Obj-C) SPM
-    runs-on: macOS-11
+    runs-on: macOS-13
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
-      - name: Use Xcode 13.2
-        run: sudo xcode-select -switch /Applications/Xcode_13.2.app
+      - name: Use Xcode 14.3.1
+        run: sudo xcode-select -switch /Applications/Xcode_14.3.1.app
 
       - name: Prepare the tools
         run: |
@@ -43,18 +43,18 @@ jobs:
       - name: Run tests
         run: |
           cd Pact-iOS-ObjC-Example
-          set -o pipefail && xcodebuild clean test -project Pact-iOS-ObjC-Example.xcodeproj -scheme Pact-iOS-ObjC-Example -destination "platform=iOS Simulator,name=iPhone 12 Pro" | xcbeautify
+          set -o pipefail && xcodebuild clean test -project Pact-iOS-ObjC-Example.xcodeproj -scheme Pact-iOS-ObjC-Example -destination "platform=iOS Simulator,name=iPhone 14 Pro" | xcbeautify
 
   test_macOS_SPM:
     name: macOS SPM
-    runs-on: macOS-11
+    runs-on: macOS-13
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
-      - name: Use Xcode 13.2
-        run: sudo xcode-select -switch /Applications/Xcode_13.2.app
+      - name: Use Xcode 14.3.1
+        run: sudo xcode-select -switch /Applications/Xcode_14.3.1.app
 
       - name: Prepare the tools
         run: |
@@ -76,7 +76,7 @@ jobs:
         run: swift --version
 
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Cache Rust libs
         uses: actions/cache@v2
