@@ -1,30 +1,21 @@
 {
   "pins" : [
     {
-      "identity" : "pactmockserver",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/surpher/PactMockServer.git",
-      "state" : {
-        "revision" : "11fe519e6d1b0c513c717ba507e89ba401bdf8de",
-        "version" : "0.1.2"
-      }
-    },
-    {
       "identity" : "pactswift",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/surpher/PactSwift",
+      "location" : "https://github.com/surpher/PactSwift.git",
       "state" : {
-        "revision" : "e105d1c332f7cc2027b6f913e10db9c5dc66878e",
-        "version" : "1.0.0"
+        "branch" : "main",
+        "revision" : "cff1761e0fd42a6f466c03c9ac70727474856657"
       }
     },
     {
-      "identity" : "pactswiftmockserver",
+      "identity" : "pactswiftserver",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/surpher/PactSwiftMockServer.git",
+      "location" : "https://github.com/surpher/PactSwiftServer.git",
       "state" : {
-        "revision" : "50c130088b9c7fe7f278beee86b3d161605a1f98",
-        "version" : "0.4.1"
+        "revision" : "12ecc92092ecd3640dcc2dcb98ce6b3d1f2d76f7",
+        "version" : "0.4.7"
       }
     }
   ],

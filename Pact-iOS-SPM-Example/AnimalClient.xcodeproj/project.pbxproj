@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD6156BA2A7E83910063D6E5 /* PactSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AD6156B92A7E83910063D6E5 /* PactSwift */; };
 		B1709EDB26928E260016E4F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1709EDA26928E260016E4F6 /* AppDelegate.swift */; };
 		B1709EDD26928E260016E4F6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1709EDC26928E260016E4F6 /* SceneDelegate.swift */; };
 		B1709EDF26928E260016E4F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1709EDE26928E260016E4F6 /* ViewController.swift */; };
@@ -23,7 +24,6 @@
 		B1709F1626928F820016E4F6 /* URLRequest+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1709F1526928F820016E4F6 /* URLRequest+Extension.swift */; };
 		B1709F1826928FBC0016E4F6 /* URLSession+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1709F1726928FBC0016E4F6 /* URLSession+Extension.swift */; };
 		B1709F1D2692ADC00016E4F6 /* Species.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1709F1C2692ADC00016E4F6 /* Species.swift */; };
-		B1709F2026930A9F0016E4F6 /* PactSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B1709F1F26930A9F0016E4F6 /* PactSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,7 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1709F2026930A9F0016E4F6 /* PactSwift in Frameworks */,
+				AD6156BA2A7E83910063D6E5 /* PactSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,7 +197,7 @@
 			);
 			name = AnimalClientTests;
 			packageProductDependencies = (
-				B1709F1F26930A9F0016E4F6 /* PactSwift */,
+				AD6156B92A7E83910063D6E5 /* PactSwift */,
 			);
 			productName = AnimalClientTests;
 			productReference = B1709EED26928E270016E4F6 /* AnimalClientTests.xctest */;
@@ -227,8 +227,9 @@
 		B1709ECF26928E260016E4F6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1250;
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					B1709ED626928E260016E4F6 = {
 						CreatedOnToolsVersion = 12.5.1;
@@ -253,7 +254,7 @@
 			);
 			mainGroup = B1709ECE26928E260016E4F6;
 			packageReferences = (
-				B1709F1E26930A9F0016E4F6 /* XCRemoteSwiftPackageReference "PactSwift" */,
+				AD6156B82A7E83910063D6E5 /* XCRemoteSwiftPackageReference "PactSwift" */,
 			);
 			productRefGroup = B1709ED826928E260016E4F6 /* Products */;
 			projectDirPath = "";
@@ -639,20 +640,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		B1709F1E26930A9F0016E4F6 /* XCRemoteSwiftPackageReference "PactSwift" */ = {
+		AD6156B82A7E83910063D6E5 /* XCRemoteSwiftPackageReference "PactSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/surpher/PactSwift";
+			repositoryURL = "https://github.com/surpher/PactSwift.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				branch = main;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		B1709F1F26930A9F0016E4F6 /* PactSwift */ = {
+		AD6156B92A7E83910063D6E5 /* PactSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B1709F1E26930A9F0016E4F6 /* XCRemoteSwiftPackageReference "PactSwift" */;
+			package = AD6156B82A7E83910063D6E5 /* XCRemoteSwiftPackageReference "PactSwift" */;
 			productName = PactSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
