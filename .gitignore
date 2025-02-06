@@ -121,7 +121,7 @@ iOSInjectionProject/
 **/.build/
 #**/xcuserdata
 x**/DerivedData/
-# **/*.xcodeproj
+!**/*.xcodeproj
 
 
 # End of https://www.gitignore.io/api/swiftpm,carthage
