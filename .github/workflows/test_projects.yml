@@ -2,10 +2,13 @@ name: PactSwift - Consumer
 
 on: [push, workflow_dispatch, repository_dispatch]
 
+env:
+  DEVELOPER_DIR: "/Applications/Xcode_16.1.app/Contents/Developer"
+
 jobs:
-  test_iOS_SPM:
-    name: iOS SPM - AnimalClient
-    runs-on: macOS-13
+  test_projects:
+    name: iOS Concurrency
+    runs-on: macOS-15
 
     env:
       PACTFLOW_TOKEN: ${{ secrets.PACTFLOW_TOKEN }}
@@ -14,83 +17,89 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Prepare the tools
-        run: |
-          brew tap thii/xcbeautify https://github.com/thii/xcbeautify.git
-          brew install xcbeautify
-
       - name: Run tests
         run: |
-          cd Pact-iOS-SPM-Example
-          set -o pipefail && xcodebuild test -project AnimalClient.xcodeproj -scheme AnimalClient -destination "platform=iOS Simulator,name=iPhone 14 Pro" | xcbeautify
+          ls -la
+          cd Pact-Concurrency
+          ls -la
+          set -o pipefail && xcodebuild test -project Pact-Concurrency.xcodeproj -scheme Pact-Concurrency -destination "platform=iOS Simulator,name=iPhone 16 Pro" | xcbeautify
 
-  test_iOS_SPM_ObjC:
-    name: iOS (Obj-C) SPM
-    runs-on: macOS-13
+    # steps:
+    #   - name: Checkout repository
+    #     uses: actions/checkout@v3
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+    #   - name: Prepare the tools
+    #     run: |
+    #       brew tap thii/xcbeautify https://github.com/thii/xcbeautify.git
+    #       brew install xcbeautify
 
-      - name: Use Xcode 14.3.1
-        run: sudo xcode-select -switch /Applications/Xcode_14.3.1.app
+    #   - name: Run tests
+    #     run: |
+    #       cd Pact-iOS-SPM-Example
+    #       set -o pipefail && xcodebuild test -project AnimalClient.xcodeproj -scheme AnimalClient -destination "platform=iOS Simulator,name=iPhone 16 Pro" | xcbeautify
 
-      - name: Prepare the tools
-        run: |
-          brew tap thii/xcbeautify https://github.com/thii/xcbeautify.git
-          brew install xcbeautify
 
-      - name: Run tests
-        run: |
-          cd Pact-iOS-ObjC-Example
-          set -o pipefail && xcodebuild clean test -project Pact-iOS-ObjC-Example.xcodeproj -scheme Pact-iOS-ObjC-Example -destination "platform=iOS Simulator,name=iPhone 14 Pro" | xcbeautify
+  # test_iOS_SPM_ObjC:
+  #   name: iOS (Obj-C) SPM
+  #   runs-on: macOS-15
 
-  test_macOS_SPM:
-    name: macOS SPM
-    runs-on: macOS-13
+  #   steps:
+  #     - name: Checkout repository
+  #       uses: actions/checkout@v3
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+  #     - name: Prepare the tools
+  #       run: |
+  #         brew tap thii/xcbeautify https://github.com/thii/xcbeautify.git
+  #         brew install xcbeautify
 
-      - name: Use Xcode 14.3.1
-        run: sudo xcode-select -switch /Applications/Xcode_14.3.1.app
+  #     - name: Run tests
+  #       run: |
+  #         cd Pact-iOS-ObjC-Example
+  #         set -o pipefail && xcodebuild clean test -project Pact-iOS-ObjC-Example.xcodeproj -scheme Pact-iOS-ObjC-Example -destination "platform=iOS Simulator,name=iPhone 16 Pro" | xcbeautify
 
-      - name: Prepare the tools
-        run: |
-          brew tap thii/xcbeautify https://github.com/thii/xcbeautify.git
-          brew install xcbeautify
+  # test_macOS_SPM:
+  #   name: macOS SPM
+  #   runs-on: macOS-15
 
-      - name: Run tests
-        run: |
-          cd Pact-macOS-SPM-Example
-          set -o pipefail && xcodebuild test -project Pact-macOS-SPM-Example.xcodeproj -scheme Pact-macOS-SPM-Example -destination "platform=macOS,arch=x86_64" | xcbeautify
+  #   steps:
+  #     - name: Checkout repository
+  #       uses: actions/checkout@v3
 
-  test_ubuntu:
-    name: Ubuntu Linux
-    runs-on: ubuntu-latest
+  #     - name: Prepare the tools
+  #       run: |
+  #         brew tap thii/xcbeautify https://github.com/thii/xcbeautify.git
+  #         brew install xcbeautify
 
-    steps:
-      - uses: fwal/setup-swift@v1
-      - name: Get swift version
-        run: swift --version
+  #     - name: Run tests
+  #       run: |
+  #         cd Pact-macOS-SPM-Example
+  #         set -o pipefail && xcodebuild test -project Pact-macOS-SPM-Example.xcodeproj -scheme Pact-macOS-SPM-Example -destination "platform=macOS" | xcbeautify
 
-      - name: Checkout repository
-        uses: actions/checkout@v3
+  # test_ubuntu:
+  #   name: Ubuntu Linux
+  #   runs-on: ubuntu-latest
 
-      - name: Cache Rust libs
-        uses: actions/cache@v2
-        env:
-          cache-name: cache-rust-libs-pactswift-linux
-        with:
-          path: pact-foundation/rust/target/release
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/Pact-Linux/Package.resolved') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
+  #   steps:
+  #     - uses: fwal/setup-swift@v1
+  #     - name: Get swift version
+  #       run: swift --version
 
-      - name: Build Run Test
-        run: |
-          cd Pact-Linux-Consumer
-          Support/build_test
+  #     - name: Checkout repository
+  #       uses: actions/checkout@v3
+
+  #     - name: Cache Rust libs
+  #       uses: actions/cache@v2
+  #       env:
+  #         cache-name: cache-rust-libs-pactswift-linux
+  #       with:
+  #         path: pact-foundation/rust/target/release
+  #         key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/Pact-Linux/Package.resolved') }}
+  #         restore-keys: |
+  #           ${{ runner.os }}-build-${{ env.cache-name }}-
+  #           ${{ runner.os }}-build-
+  #           ${{ runner.os }}-
+
+  #     - name: Build Run Test
+  #       run: |
+  #         cd Pact-Linux-Consumer
+  #         Support/build_test

@@ -26,7 +26,7 @@ final class Pact_ConcurrencyTests: XCTestCase {
             return
         }
 
-        let pact = try Pact(consumer: "Consumer - App", provider: "API Provider")
+        let pact = try Pact(consumer: "AppConsumer", provider: "APIProvider")
             .withSpecification(.v4)
 
         let config = PactBuilder.Config(pactDirectory: Utils.getProjectRoot().appending("/tmp"))
